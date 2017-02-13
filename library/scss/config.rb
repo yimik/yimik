@@ -11,6 +11,7 @@ http_path = "/"
 # 2. probably don't need to touch these
 css_dir = "../css"
 sass_dir = "./"
+sass_path = File.expand_path(sass_dir, project_path) #to fix bug
 images_dir = "../images"
 javascripts_dir = "../js"
 environment = :development
