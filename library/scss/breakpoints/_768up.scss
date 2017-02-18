@@ -31,9 +31,21 @@ LAYOUT & GRID STYLES
 HEADER STYLES
 *********************/
 
-.header {}
+.header {
+	border-top: 4px solid $head-border-color;
+}
 
-	#logo {}
+	#logo {
+		display: inline-block;
+		float: left;
+		margin: 0;
+
+		a{
+			padding: 1.5em 0;
+			display: block;
+			text-decoration:none;
+		}
+	}
 
 /*********************
 NAVIGATION STYLES
@@ -41,8 +53,11 @@ NAVIGATION STYLES
 
 .nav {
 	border: 0;
+	float: right;
+	font-weight: 500;
+	text-transform: uppercase;
 	ul {
-		background:$black;
+		background:$head-color;
 		margin-top:0;
 	}
 	li {
@@ -51,14 +66,20 @@ NAVIGATION STYLES
 
 		a {
 			border-bottom: 0;
-
+			padding: 1.5em 0.75em;
+			outline:none;
+			@include transition(background .5s);
 			/*
 			you can use hover styles here even though this size
 			has the possibility of being a mobile device.
 			*/
-			&:hover, &:focus {
+			&:hover{
 				color: $white;
-				text-decoration: underline;
+				text-decoration: none;
+				background-color: $head-border-color;
+			}
+			&:focus{
+				color: $white;
 			}
 		}
 
@@ -77,6 +98,7 @@ NAVIGATION STYLES
 			visibility: hidden;
 			z-index: 8999;
 
+
 			li {
 
 				a {
@@ -85,9 +107,16 @@ NAVIGATION STYLES
 					display: block;
 					width: 180px;
 					border-bottom: 1px solid #ccc;
+					background-color: transparent;
 
-					&:hover,
-					&:focus {}
+					&:hover{
+						color: $white;
+						text-decoration: none;
+						background-color: $head-border-color;
+					}
+					&:focus{
+						color: $white;
+					}
 
 					&:link {}
 				}
@@ -131,8 +160,11 @@ NAVIGATION STYLES
 	/* highlight current page */
 	li.current-menu-item,
 	li.current_page_item,
+	li.current-category-ancestor,
 	li.current_page_ancestor {
-		a {}
+		a {
+			background-color: $head-border-color;
+		}
 	}  /* end current highlighters */
 
 } /* end .nav */
