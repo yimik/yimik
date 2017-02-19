@@ -422,3 +422,19 @@ msgstr "这是来自模板“taxonomy-custom_cat.php”的错误消息。"
 #: functions.php
 msgid "Theme Options"
 msgstr "Yimik配置"
+
+#: options.php
+msgid "Basic Settings"
+msgstr "基本设置"
+
+msgid "About Yimik"
+msgstr "关于Yimik"
+
+msgid "Current Version"
+msgstr "当前版本"
+
+msgid "Author"
+msgstr "作者"
+
+msgid "Description"
+msgstr "简介"

@@ -310,5 +310,29 @@ function optionsframework_options() {
 		'settings' => $wp_editor_settings
 	);
 
+	/*关于yimik，主题介绍*/
+    $options[] = array(
+        'name' => __( 'About Yimik', 'bonestheme' ),
+        'type' => 'heading'
+    );
+
+    $options[] = array(
+        'name' => __( 'Current Version', 'bonestheme' ),
+        'desc' => wp_get_theme()->get("Version"),
+        'type' => 'info'
+    );
+
+    $options[] = array(
+        'name' => __( 'Author', 'bonestheme' ),
+        'desc' => wp_get_theme()->get("Author"),
+        'type' => 'info'
+    );
+
+    $options[] = array(
+        'name' => __( 'Description', 'bonestheme' ),
+        'desc' => '本来用各路大神的主题一直觉得挺好，但总觉得哪里不对劲儿，自己动手，丰衣足食吧。',
+        'type' => 'info'
+    );
+
 	return $options;
 }

@@ -25,7 +25,13 @@
 								</header>
 
 								<section class="entry-content cf">
-									<?php the_content(); ?>
+                                   <?php the_post_thumbnail( 'bones-thumb-300' ); ?>
+                                   <?php
+                                    if (is_single() or is_page())
+                                    {the_content();}
+                                    else
+                                    {the_excerpt();}
+                                   ?>
 								</section>
 
 								<footer class="article-footer cf">
