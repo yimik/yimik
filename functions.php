@@ -14,6 +14,10 @@ require_once( 'library/bones.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 // require_once( 'library/admin.php' );
 
+// 引入主题设置面板
+define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
+require_once('inc/options-framework.php');
+
 /*********************
 LAUNCH BONES
 Let's get everything up and running.
@@ -62,6 +66,17 @@ function bones_ahoy() {
 
 // let's get this party started
 add_action( 'after_setup_theme', 'bones_ahoy' );
+
+/*************** 主题选项功能配置 ****************/
+function prefix_options_menu_filter( $menu ) {
+    $menu['mode'] = 'menu';
+    $menu['page_title'] = __( 'Theme Options', 'bonestheme');
+    $menu['menu_title'] = __( 'Theme Options', 'bonestheme');
+    $menu['menu_slug'] = 'theme-options-yimik';
+    return $menu;
+}
+add_filter( 'optionsframework_menu', 'prefix_options_menu_filter' );
+/*end 主题选项功能配置*/
 
 
 /************* OEMBED SIZE OPTIONS *************/

@@ -57,7 +57,6 @@ NAVIGATION STYLES
 	font-weight: 500;
 	text-transform: uppercase;
 	ul {
-		background:$head-color;
 		margin-top:0;
 	}
 	li {
@@ -92,7 +91,6 @@ NAVIGATION STYLES
 		ul.sub-menu,
 		ul.children {
 			margin-top: 0;
-			border: 1px solid #ccc;
 			border-top: 0;
 			position: absolute;
 			visibility: hidden;
@@ -100,7 +98,7 @@ NAVIGATION STYLES
 
 
 			li {
-
+				background:$head-color;
 				a {
 					padding-left: 10px;
 					border-right: 0;
@@ -153,6 +151,9 @@ NAVIGATION STYLES
 		&:hover > ul {
 			top: auto;
 			visibility:visible;
+		}
+		&:hover > ul > li {
+			@include animation(WobbleInX 700ms both);
 		}
 
 	} /* end .menu ul li */

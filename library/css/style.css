@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! Made with Bones: http://themble.com/bones :) */
 /******************************************************************
 Site Name:
@@ -1027,6 +1028,72 @@ them however you see fit.
     width: 8.33%;
   }
 }
+/******************************
+甯哥敤鍔ㄧ敾鏁堟灉闆嗗悎
+******************************/
+@-moz-keyframes moveIn {
+  to {
+    opacity: 0;
+    -moz-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-webkit-keyframes moveIn {
+  to {
+    opacity: 0;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@keyframes moveIn {
+  to {
+    opacity: 0;
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+@-moz-keyframes WobbleInX {
+  0% {
+    -moz-transform: perspective(250px) rotateX(90deg);
+    transform: perspective(250px) rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    -moz-transform: perspective(250px) rotateX(0deg);
+    transform: perspective(250px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes WobbleInX {
+  0% {
+    -webkit-transform: perspective(250px) rotateX(90deg);
+    transform: perspective(250px) rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: perspective(250px) rotateX(0deg);
+    transform: perspective(250px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+@keyframes WobbleInX {
+  0% {
+    -moz-transform: perspective(250px) rotateX(90deg);
+    -ms-transform: perspective(250px) rotateX(90deg);
+    -webkit-transform: perspective(250px) rotateX(90deg);
+    transform: perspective(250px) rotateX(90deg);
+    opacity: 0;
+  }
+  100% {
+    -moz-transform: perspective(250px) rotateX(0deg);
+    -ms-transform: perspective(250px) rotateX(0deg);
+    -webkit-transform: perspective(250px) rotateX(0deg);
+    transform: perspective(250px) rotateX(0deg);
+    opacity: 1;
+  }
+}
 /*********************
 IMPORTING MODULES
 Modules are reusable blocks or elements we use throughout the project.
@@ -1114,6 +1181,8 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   border-radius: 4px;
   border: 0;
   cursor: pointer;
+  -moz-transition: background-color 0.14s ease-in-out;
+  -o-transition: background-color 0.14s ease-in-out;
   -webkit-transition: background-color 0.14s ease-in-out;
   transition: background-color 0.14s ease-in-out;
 }
@@ -1198,7 +1267,9 @@ textarea,
   width: 100%;
   max-width: 400px;
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background-color: #eaedf2;
+  background-color: #f1f1f1;
+  -moz-transition: background-color 0.24s ease-in-out;
+  -o-transition: background-color 0.24s ease-in-out;
   -webkit-transition: background-color 0.24s ease-in-out;
   transition: background-color 0.24s ease-in-out;
 }
@@ -1236,7 +1307,7 @@ textarea:focus,
 textarea:active,
 .field:focus,
 .field:active {
-  background-color: #f7f8fa;
+  background-color: #fbfbfb;
   outline: none;
 }
 /* line 66, ../scss/modules/_forms.scss */
@@ -1480,7 +1551,7 @@ body {
   font-size: 100%;
   line-height: 1.5;
   color: #5c6b80;
-  background-color: #eaedf2;
+  background-color: #f1f1f1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -1745,7 +1816,7 @@ POSTS & CONTENT STYLES
 /* line 342, ../scss/breakpoints/_base.scss */
 .entry-content table {
   width: 100%;
-  border: 1px solid #eaedf2;
+  border: 1px solid #f1f1f1;
   margin-bottom: 1.5em;
 }
 /* line 347, ../scss/breakpoints/_base.scss */
@@ -1758,7 +1829,7 @@ POSTS & CONTENT STYLES
 }
 /* line 356, ../scss/breakpoints/_base.scss */
 .entry-content tr {
-  border-bottom: 1px solid #eaedf2;
+  border-bottom: 1px solid #f1f1f1;
 }
 /* line 359, ../scss/breakpoints/_base.scss */
 .entry-content tr:nth-child(even) {
@@ -1767,7 +1838,7 @@ POSTS & CONTENT STYLES
 /* line 364, ../scss/breakpoints/_base.scss */
 .entry-content td {
   padding: 7px;
-  border-right: 1px solid #eaedf2;
+  border-right: 1px solid #f1f1f1;
 }
 /* line 368, ../scss/breakpoints/_base.scss */
 .entry-content td:last-child {
@@ -1776,8 +1847,8 @@ POSTS & CONTENT STYLES
 /* line 373, ../scss/breakpoints/_base.scss */
 .entry-content th {
   background-color: #f8f9fa;
-  border-bottom: 1px solid #eaedf2;
-  border-right: 1px solid #eaedf2;
+  border-bottom: 1px solid #f1f1f1;
+  border-right: 1px solid #f1f1f1;
 }
 /* line 378, ../scss/breakpoints/_base.scss */
 .entry-content th:last-child {
@@ -1882,7 +1953,7 @@ PAGE NAVI STYLES
   float: left;
   display: inline;
   overflow: hidden;
-  border-right: 1px solid #eaedf2;
+  border-right: 1px solid #f1f1f1;
 }
 /* line 520, ../scss/breakpoints/_base.scss */
 .pagination a, .pagination span {
@@ -2316,10 +2387,9 @@ you can add resource intensive styles.
   }
   /* line 59, ../scss/breakpoints/_768up.scss */
   .nav ul {
-    background: #34302d;
     margin-top: 0;
   }
-  /* line 63, ../scss/breakpoints/_768up.scss */
+  /* line 62, ../scss/breakpoints/_768up.scss */
   .nav li {
     float: left;
     position: relative;
@@ -2328,11 +2398,13 @@ you can add resource intensive styles.
     */
     /* showing sub-menus */
   }
-  /* line 67, ../scss/breakpoints/_768up.scss */
+  /* line 66, ../scss/breakpoints/_768up.scss */
   .nav li a {
     border-bottom: 0;
     padding: 1.5em 0.75em;
     outline: none;
+    -moz-transition: background 0.5s;
+    -o-transition: background 0.5s;
     -webkit-transition: background 0.5s;
     transition: background 0.5s;
     /*
@@ -2340,37 +2412,37 @@ you can add resource intensive styles.
     has the possibility of being a mobile device.
     */
   }
-  /* line 76, ../scss/breakpoints/_768up.scss */
+  /* line 75, ../scss/breakpoints/_768up.scss */
   .nav li a:hover {
     color: #fff;
     text-decoration: none;
     background-color: #6db33f;
   }
-  /* line 81, ../scss/breakpoints/_768up.scss */
+  /* line 80, ../scss/breakpoints/_768up.scss */
   .nav li a:focus {
     color: #fff;
   }
-  /* line 92, ../scss/breakpoints/_768up.scss */
+  /* line 91, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu,
   .nav li ul.children {
     margin-top: 0;
-    border: 1px solid #ccc;
     border-top: 0;
     position: absolute;
     visibility: hidden;
     z-index: 8999;
     /* highlight sub-menu current page */
   }
-  /* line 102, ../scss/breakpoints/_768up.scss */
+  /* line 100, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li,
   .nav li ul.children li {
+    background: #34302d;
     /*
     if you need to go deeper, go nuts
     just remember deeper menus suck
     for usability. k, bai.
     */
   }
-  /* line 104, ../scss/breakpoints/_768up.scss */
+  /* line 102, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li a,
   .nav li ul.children li a {
     padding-left: 10px;
@@ -2380,35 +2452,41 @@ you can add resource intensive styles.
     border-bottom: 1px solid #ccc;
     background-color: transparent;
   }
-  /* line 112, ../scss/breakpoints/_768up.scss */
+  /* line 110, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li a:hover,
   .nav li ul.children li a:hover {
     color: #fff;
     text-decoration: none;
     background-color: #6db33f;
   }
-  /* line 117, ../scss/breakpoints/_768up.scss */
+  /* line 115, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li a:focus,
   .nav li ul.children li a:focus {
     color: #fff;
   }
-  /* line 128, ../scss/breakpoints/_768up.scss */
+  /* line 126, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li:last-child a,
   .nav li ul.children li:last-child a {
     border-bottom: 0;
   }
-  /* line 138, ../scss/breakpoints/_768up.scss */
+  /* line 136, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li ul,
   .nav li ul.children li ul {
     top: 0;
     left: 100%;
   }
-  /* line 153, ../scss/breakpoints/_768up.scss */
+  /* line 151, ../scss/breakpoints/_768up.scss */
   .nav li:hover > ul {
     top: auto;
     visibility: visible;
   }
-  /* line 165, ../scss/breakpoints/_768up.scss */
+  /* line 155, ../scss/breakpoints/_768up.scss */
+  .nav li:hover > ul > li {
+    -moz-animation: WobbleInX 700ms both;
+    -webkit-animation: WobbleInX 700ms both;
+    animation: WobbleInX 700ms both;
+  }
+  /* line 166, ../scss/breakpoints/_768up.scss */
   .nav li.current-menu-item a,
   .nav li.current_page_item a,
   .nav li.current-category-ancestor a,
@@ -2420,28 +2498,28 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 176, ../scss/breakpoints/_768up.scss */
+  /* line 177, ../scss/breakpoints/_768up.scss */
   .sidebar {
     margin-top: 2.2em;
   }
 
-  /* line 180, ../scss/breakpoints/_768up.scss */
+  /* line 181, ../scss/breakpoints/_768up.scss */
   .widgettitle {
     border-bottom: 2px solid #444;
     margin-bottom: 0.75em;
   }
 
-  /* line 185, ../scss/breakpoints/_768up.scss */
+  /* line 186, ../scss/breakpoints/_768up.scss */
   .widget {
     padding: 0 10px;
     margin: 2.2em 0;
   }
-  /* line 190, ../scss/breakpoints/_768up.scss */
+  /* line 191, ../scss/breakpoints/_768up.scss */
   .widget ul li {
     margin-bottom: 0.75em;
     /* deep nesting */
   }
-  /* line 198, ../scss/breakpoints/_768up.scss */
+  /* line 199, ../scss/breakpoints/_768up.scss */
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
@@ -2466,7 +2544,7 @@ you can add resource intensive styles.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  /* line 306, ../scss/breakpoints/_768up.scss */
+  /* line 307, ../scss/breakpoints/_768up.scss */
   .footer-links ul li {
     /*
     be careful with the depth of your menus.

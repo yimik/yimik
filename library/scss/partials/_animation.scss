@@ -1,0 +1,19 @@
+/******************************
+常用动画效果集合
+******************************/
+@include keyframes(moveIn){
+  to{
+    @include opacity(0);
+    @include transform(translateX(0));
+  }
+}
+@include keyframes(WobbleInX){
+   0% {
+     @include transform(perspective(250px) rotateX(90deg));
+     @include opacity(0);
+   }
+   100% {
+     @include transform(perspective(250px) rotateX(0deg));
+     @include opacity(1);
+   }
+ }

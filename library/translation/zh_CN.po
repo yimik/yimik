@@ -418,3 +418,7 @@ msgstr "继续阅读 &raquo;"
 #: taxonomy-custom_cat.php:63
 msgid "This is the error message in the taxonomy-custom_cat.php template."
 msgstr "这是来自模板“taxonomy-custom_cat.php”的错误消息。"
+
+#: functions.php
+msgid "Theme Options"
+msgstr "Yimik配置"
