@@ -25,6 +25,14 @@ import the mixins file so SASS can understand the variables.
 @import "partials/mixins"; // import mixins
 @import "partials/ie_grid"; // import grid
 
+// custom import
+// compass
+@import "compass";
+// compass/support
+@import "compass/support";
+//some animation
+@import "partials/animation";
+
 // import everything inside media queries
 @import "breakpoints/481up";
 @import "breakpoints/768up";
