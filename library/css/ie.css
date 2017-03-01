@@ -439,7 +439,7 @@ NAVIGATION STYLES
   padding-left: 10px;
   border-right: 0;
   display: block;
-  width: 180px;
+  width: 150px;
   border-bottom: 1px solid #ccc;
   background-color: transparent;
 }
@@ -550,7 +550,7 @@ be seen on the Desktop.
 ******************************************************************/
 /* line 12, ../scss/breakpoints/_1030up.scss */
 .wrap {
-  width: 85%;
+  width: 83%;
 }
 
 /*
