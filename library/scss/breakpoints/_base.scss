@@ -17,12 +17,15 @@ GENERAL STYLES
 
 body {
 	font-family: $lato;
-	font-size: 100%;
+	font-size: 14px;
 	line-height: 1.5;
 	color: $text-color;
 	background-color: $gray;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
+}
+button{
+  @extend .blue-btn;
 }
 
 /********************
@@ -179,6 +182,7 @@ and more scalable.
 .nav {
 	border-bottom: 0;
 	margin: 0;
+    overflow: hidden; /*fix css bug*/
 
 	li {
 
@@ -257,21 +261,25 @@ POSTS & CONTENT STYLES
 
 		.hentry {
 			background-color: $white;
-			border-radius: 3px;
-			margin-bottom: 1.5em;
+			margin-bottom: $container-padding;
 			border: 1px solid $border-color;
 
 			header {
 				border-bottom: 1px solid $light-gray;
-				padding: 1.5em;
+				padding: 0.6em;
 			}
 
 			footer {
-				padding: 1.5em;
+				padding: 0.6em;
 				border-top: 1px solid $light-gray;
 
 				p {
-					margin: 0;
+					margin:0 0 0 1.5em;
+					display: inline-block;
+
+					&:first-child{
+						margin-left: 0;
+					}
 				}
 			}
 
@@ -280,6 +288,7 @@ POSTS & CONTENT STYLES
 		.single-title,
 		.page-title,
 		.entry-title {
+			font-size:1.1em;
 			margin: 0;
 		}
 
@@ -301,18 +310,18 @@ POSTS & CONTENT STYLES
 		.category-slug {}   /* style by category (i.e. category-videos) */
 		.tag-slug {}        /* style by tag (i.e. tag-news) */
 
-		/* post meta */
-		.byline {
-			color: $meta-gray;
-			font-style: italic;
-			margin: 0;
-
-			time {}
-		}
-
 		/* entry content */
 		.entry-content {
 			padding: 1.5em 1.5em 0;
+
+			.entry-content-thumb{
+				float: left;
+				margin-right:1.5em;
+			}
+
+			.entry-content-text{
+
+			}
 
 			p {
 				margin: 0 0 1.5em;
@@ -824,28 +833,70 @@ SIDEBARS & ASIDES
 
 .sidebar {}
 
-	.widgettitle {}
+	.widgettitle {
+      border-bottom: 1px solid $light-gray;
+      padding: 0 0 0.6em 0;
+      margin: 0;
+    }
 
 	.widget {
+      padding: $container-padding;
+      background-color: $white;
+      border: 1px solid $border-color;
+      &:first-child{
+        margin-top:0;
+      }
 
-		ul {
+      a{
+        text-decoration: none;
+      }
+      ul {
 
-			li {
+          li {
 
-				&:first-child {}
+              &:first-child {}
 
-				&:last-child {}
+              &:last-child {}
 
-				a {}
+              a {}
 
-				/* deep nesting */
-				ul {}
+              /* deep nesting */
+              ul {}
 
-			}
+          }
+      }
+    }
 
-		}
+    .widget_search{
 
-	}
+      label{
+        display: none;
+      }
+      .search-field{
+        width: -webkit-calc(100% - 5em);
+        width: calc(100% - 5em);
+        display: inline-block;
+      }
+      .search-submit {
+        width: 5em;
+        height: 40px;
+        display: inline-block;
+        &:before{
+          content: "\f400";
+        }
+      }
+    }
+
+    .widget_archive{
+      ul {
+        position: relative;
+        overflow: hidden;
+        li {
+          width:50%;
+          float: left;
+        }
+      }
+    }
 
 	.no-widgets {
 		background-color: $white;

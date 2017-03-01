@@ -175,17 +175,15 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
-	margin-top: 2.2em;
+	margin-top: 0;
 }
 
 	.widgettitle {
-		border-bottom: 2px solid #444;
-		margin-bottom: 0.75em;
+
 	}
 
 	.widget {
-		padding: 0 10px;
-		margin: 2.2em 0;
+		margin: $container-padding 0;
 
 		ul {
 			li {

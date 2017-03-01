@@ -31,11 +31,9 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   text-decoration: none;
   color: $white;
   font-size: 0.9em;
-  font-size: 34px;
-  line-height: 34px;
+  line-height: 1em;
   font-weight: normal;
-  padding: 0 24px;
-  border-radius: 4px;
+  padding: 0.8em 1em;
   border: 0;
   cursor: pointer;
   @include transition(background-color 0.14s ease-in-out);

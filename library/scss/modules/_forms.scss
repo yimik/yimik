@@ -42,13 +42,12 @@ textarea,
   height: 40px;
   line-height: 1em;
   padding: 0 12px;
-  margin-bottom: 14px;
   font-size: 1em;
+  box-sizing: border-box;
   color: $text-color;
-  border-radius: 3px;
   vertical-align: middle;
   box-shadow: none;
-  border: 0;
+  border: 1px solid $border-color;
   width: 100%;
   max-width: 400px;
   font-family: $lato;

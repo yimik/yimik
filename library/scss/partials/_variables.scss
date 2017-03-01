@@ -36,16 +36,18 @@ $green:             #7dd667;
 
 $bones-pink:        #f01d4f;
 $blue:              #2980b9;
+$spring-black:      #34302d;
 
-$link-color:        $bones-pink;
+$link-color:        $spring-black;
 $link-hover:        darken($link-color, 9%);
 
 $border-color:      #ccc;
 $disabled-gray:     #cfcfcf;
 
-$head-color:        #34302d;
+$head-color:        $spring-black;
 $head-border-color: #6db33f;
 
+$container-padding: 0.6em;
 /*
 Here's a great tutorial on how to
 use color variables properly:

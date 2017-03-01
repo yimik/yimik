@@ -98,8 +98,8 @@ msgid "by"
 msgstr "作者:"
 
 #: archive.php:52 index.php:32
-msgid "filed under"
-msgstr "分类:"
+msgid "filed under:"
+msgstr "分类："
 
 #: archive.php:85
 msgid "This is the error message in the archive.php template."
@@ -107,7 +107,7 @@ msgstr "这是来自模板“archive.php”的错误消息。"
 
 #: comments.php:17 index.php:28
 msgid "<span>No</span> Comments"
-msgstr "<span>没有</span>评论"
+msgstr "<span>暂无</span>评论"
 
 #: comments.php:17 index.php:28
 msgid "<span>One</span> Comment"
@@ -140,6 +140,10 @@ msgstr "宽600px 高150px"
 #: functions.php:101
 msgid "300px by 100px"
 msgstr "宽300px 高100px"
+
+#: functions.php:103
+msgid "140px by 100px"
+msgstr "宽140px 高100px"
 
 #: functions.php:119
 msgid "Sidebar 1"
@@ -438,3 +442,12 @@ msgstr "作者"
 
 msgid "Description"
 msgstr "简介"
+
+msgid "Search"
+msgstr "搜索"
+
+msgid "Search for:"
+msgstr "搜索："
+
+msgid "Search &hellip;"
+msgstr "搜索..."
