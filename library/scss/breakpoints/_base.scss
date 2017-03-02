@@ -261,7 +261,7 @@ POSTS & CONTENT STYLES
 		.hentry {
 			background-color: $white;
 			margin-bottom: $container-padding;
-			border: 1px solid $border-color;
+			@include material-border($border-color);
 
 			header {
 				border-bottom: 1px solid $light-gray;
@@ -841,7 +841,7 @@ SIDEBARS & ASIDES
 	.widget {
       padding: $container-padding;
       background-color: $white;
-      border: 1px solid $border-color;
+      @include material-border($border-color);
       &:first-child{
         margin-top:0;
       }
@@ -871,17 +871,24 @@ SIDEBARS & ASIDES
       label{
         display: none;
       }
-      .search-field{
-        width: -webkit-calc(100% - 5em);
-        width: calc(100% - 5em);
-        display: inline-block;
-      }
-      .search-submit {
-        width: 5em;
-        height: 40px;
-        display: inline-block;
-        &:before{
-          content: "\f400";
+      form{
+        position: relative;
+
+        .search-field{
+          width: -webkit-calc(100% - 5em);
+          width: calc(100% - 5em);
+          display: inline-block;
+        }
+        .search-submit {
+          width: 5em;
+          position: absolute;
+          height: 40px;
+          display: inline-block;
+          &:before{
+            content: "\f179";
+            font-family: 'dashicons';
+            font-size: 2em;
+          }
         }
       }
     }
@@ -901,7 +908,7 @@ SIDEBARS & ASIDES
 		background-color: $white;
 		padding: 1.5em;
 		text-align: center;
-		border: 1px solid $border-color;
+        @include material-border($border-color);
 		border-radius: 2px;
 		margin-bottom: 1.5em;
 	}

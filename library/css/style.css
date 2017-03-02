@@ -1173,7 +1173,7 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-decoration: none;
   color: #fff;
-  font-size: 0.9em;
+  font-size: 1em;
   line-height: 1em;
   font-weight: normal;
   padding: 0.8em 1em;
@@ -1753,6 +1753,9 @@ POSTS & CONTENT STYLES
   background-color: #fff;
   margin-bottom: 0.6em;
   border: 1px solid #ccc;
+  -moz-box-shadow: 0 2px 4px -1px #ccc, 0 4px 5px 0 #ccc, 0 1px 10px 0 #ccc;
+  -webkit-box-shadow: 0 2px 4px -1px #ccc, 0 4px 5px 0 #ccc, 0 1px 10px 0 #ccc;
+  box-shadow: 0 2px 4px -1px #ccc, 0 4px 5px 0 #ccc, 0 1px 10px 0 #ccc;
 }
 /* line 266, ../scss/breakpoints/_base.scss */
 .hentry header {
@@ -2200,6 +2203,9 @@ SIDEBARS & ASIDES
   padding: 0.6em;
   background-color: #fff;
   border: 1px solid #ccc;
+  -moz-box-shadow: 0 2px 4px -1px #ccc, 0 4px 5px 0 #ccc, 0 1px 10px 0 #ccc;
+  -webkit-box-shadow: 0 2px 4px -1px #ccc, 0 4px 5px 0 #ccc, 0 1px 10px 0 #ccc;
+  box-shadow: 0 2px 4px -1px #ccc, 0 4px 5px 0 #ccc, 0 1px 10px 0 #ccc;
 }
 /* line 845, ../scss/breakpoints/_base.scss */
 .widget:first-child {
@@ -2219,39 +2225,49 @@ SIDEBARS & ASIDES
   display: none;
 }
 /* line 874, ../scss/breakpoints/_base.scss */
-.widget_search .search-field {
+.widget_search form {
+  position: relative;
+}
+/* line 877, ../scss/breakpoints/_base.scss */
+.widget_search form .search-field {
   width: -webkit-calc(100% - 5em);
   width: calc(100% - 5em);
   display: inline-block;
 }
-/* line 879, ../scss/breakpoints/_base.scss */
-.widget_search .search-submit {
+/* line 882, ../scss/breakpoints/_base.scss */
+.widget_search form .search-submit {
   width: 5em;
+  position: absolute;
   height: 40px;
   display: inline-block;
 }
-/* line 883, ../scss/breakpoints/_base.scss */
-.widget_search .search-submit:before {
-  content: "\f400";
+/* line 887, ../scss/breakpoints/_base.scss */
+.widget_search form .search-submit:before {
+  content: "\f179";
+  font-family: 'dashicons';
+  font-size: 2em;
 }
 
-/* line 890, ../scss/breakpoints/_base.scss */
+/* line 897, ../scss/breakpoints/_base.scss */
 .widget_archive ul {
   position: relative;
   overflow: hidden;
 }
-/* line 893, ../scss/breakpoints/_base.scss */
+/* line 900, ../scss/breakpoints/_base.scss */
 .widget_archive ul li {
   width: 50%;
   float: left;
 }
 
-/* line 900, ../scss/breakpoints/_base.scss */
+/* line 907, ../scss/breakpoints/_base.scss */
 .no-widgets {
   background-color: #fff;
   padding: 1.5em;
   text-align: center;
   border: 1px solid #ccc;
+  -moz-box-shadow: 0 2px 4px -1px #ccc, 0 4px 5px 0 #ccc, 0 1px 10px 0 #ccc;
+  -webkit-box-shadow: 0 2px 4px -1px #ccc, 0 4px 5px 0 #ccc, 0 1px 10px 0 #ccc;
+  box-shadow: 0 2px 4px -1px #ccc, 0 4px 5px 0 #ccc, 0 1px 10px 0 #ccc;
   border-radius: 2px;
   margin-bottom: 1.5em;
 }
@@ -2259,7 +2275,7 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 913, ../scss/breakpoints/_base.scss */
+/* line 920, ../scss/breakpoints/_base.scss */
 .footer {
   clear: both;
   background-color: #323944;
