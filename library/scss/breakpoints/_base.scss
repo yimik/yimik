@@ -24,9 +24,6 @@ body {
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
-button{
-  @extend .blue-btn;
-}
 
 /********************
 WORDPRESS BODY CLASSES
@@ -261,7 +258,6 @@ POSTS & CONTENT STYLES
 		.hentry {
 			background-color: $white;
 			margin-bottom: $container-padding;
-			@include material-border($border-color);
 
 			header {
 				border-bottom: 1px solid $light-gray;
@@ -509,7 +505,6 @@ PAGE NAVI STYLES
 
     ul {
       display: inline-block;
-      background-color: $white;
       white-space: nowrap;
       padding: 0;
       clear: both;
@@ -517,18 +512,20 @@ PAGE NAVI STYLES
     }
 
     li {
+      min-width:0;  //fix mdui button
       padding: 0;
-      margin: 0;
+      margin: 0 0 0 0.5em;
+      background-color: $white;
       float: left;
       display: inline;
       overflow: hidden;
-      border-right: 1px solid $gray;
     }
 
     a, span {
       margin: 0;
       text-decoration: none;
       padding: 0;
+      height: 100%;  //fix mdui button
       line-height: 1em;
       font-size: 1em;
       font-weight: normal;
@@ -536,6 +533,7 @@ PAGE NAVI STYLES
       min-width: 1em;
       display: block;
       color: $blue;
+      @include transition(background .5s,color .5s);
 
       &:hover, &:focus {
       	background-color: $blue;
@@ -546,9 +544,10 @@ PAGE NAVI STYLES
     .current{
     	cursor: default;
     	color: $text-color;
+        background-color: $disabled-gray;
 
     	&:hover, &:focus {
-    		background-color: $white;
+    		background-color: $disabled-gray;
     		color: $text-color;
     	}
     }
@@ -841,7 +840,7 @@ SIDEBARS & ASIDES
 	.widget {
       padding: $container-padding;
       background-color: $white;
-      @include material-border($border-color);
+
       &:first-child{
         margin-top:0;
       }
@@ -880,10 +879,14 @@ SIDEBARS & ASIDES
           display: inline-block;
         }
         .search-submit {
+          min-width: 5em;//override mdui
           width: 5em;
           position: absolute;
           height: 40px;
+          line-height: 40px;
           display: inline-block;
+          @extend .blue-btn;
+
           &:before{
             content: "\f179";
             font-family: 'dashicons';
@@ -908,7 +911,6 @@ SIDEBARS & ASIDES
 		background-color: $white;
 		padding: 1.5em;
 		text-align: center;
-        @include material-border($border-color);
 		border-radius: 2px;
 		margin-bottom: 1.5em;
 	}

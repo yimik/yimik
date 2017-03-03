@@ -59,9 +59,6 @@ I mean, you can do whatever you want. The world is your oyster. Unless
 you hate oysters, then the world is your peanut butter & jelly sandwich.
 *********************/
 
-// material design
-@import "modules/material";
-
 // alert boxes
 @import "modules/alerts";
 
@@ -70,6 +67,9 @@ you hate oysters, then the world is your peanut butter & jelly sandwich.
 
 // forms (inputs & labels)
 @import "modules/forms";
+
+// mdui's css
+@import "../mdui/css/mdui.min.css";
 
 /*********************
 BASE (MOBILE) SIZE
