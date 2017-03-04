@@ -111,7 +111,7 @@ msgstr "<span>暂无</span>评论"
 
 #: comments.php:17 index.php:28
 msgid "<span>One</span> Comment"
-msgstr "<span>一</span>条评论"
+msgstr "<span>1</span>条评论"
 
 #: comments.php:17 index.php:28
 msgid "<span>%</span> Comments"
@@ -451,3 +451,6 @@ msgstr "搜索："
 
 msgid "Search &hellip;"
 msgstr "搜索..."
+
+msgid "sticky"
+msgstr "置顶"

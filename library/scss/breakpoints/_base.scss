@@ -20,7 +20,7 @@ body {
 	font-size: 14px;
 	line-height: 1.5;
 	color: $text-color;
-	background-color: $gray;
+	background-color: $light-gray;
   	-webkit-font-smoothing: antialiased;
   	-moz-osx-font-smoothing: grayscale;
 }
@@ -80,16 +80,19 @@ LINK STYLES
 *********************/
 
 a, a:visited {
+    text-decoration: none;
+    outline: none;
 	color: $link-color;
 
 	/* on hover */
 	&:hover, &:focus {
-		color: $link-hover;
+	  color: $link-hover;
+      outline: none;
 	}
 
 	/* on click */
 	&:active {
-
+      outline: none;
 	}
 
 	/* mobile tap color */
@@ -260,22 +263,30 @@ POSTS & CONTENT STYLES
 			margin-bottom: $container-padding;
 
 			header {
-				border-bottom: 1px solid $light-gray;
-				padding: 0.6em;
+              border-bottom: 1px solid $light-gray;
+              padding: 0.6em;
+
+              i.stickys {
+                display: inline;
+                margin-right: 6px;
+                overflow: hidden;
+                font-style: normal;
+                padding: 2px;
+                font-size: 0.5em;
+                background-color: #dd4b39;
+                color: #fff;
+                vertical-align: text-top;
+              }
 			}
 
 			footer {
-				padding: 0.6em;
-				border-top: 1px solid $light-gray;
+              padding: 0.6em;
+              border-top: 1px solid $light-gray;
 
-				p {
-					margin:0 0 0 1.5em;
-					display: inline-block;
-
-					&:first-child{
-						margin-left: 0;
-					}
-				}
+              .yimik-chip {
+                vertical-align: middle;
+                margin:0 2.5em 0 0;
+              }
 			}
 
 		} /* end .hentry */
@@ -283,7 +294,7 @@ POSTS & CONTENT STYLES
 		.single-title,
 		.page-title,
 		.entry-title {
-			font-size:1.1em;
+			font-size: 1.2em;
 			margin: 0;
 		}
 
@@ -833,12 +844,12 @@ SIDEBARS & ASIDES
 
 	.widgettitle {
       border-bottom: 1px solid $light-gray;
-      padding: 0 0 0.6em 0;
+      padding: 0.6em;
       margin: 0;
     }
 
 	.widget {
-      padding: $container-padding;
+      padding: 0;
       background-color: $white;
 
       &:first-child{
@@ -849,19 +860,20 @@ SIDEBARS & ASIDES
         text-decoration: none;
       }
       ul {
+        padding:0.6em;
+        margin:0;
+        li {
 
-          li {
+            &:first-child {}
 
-              &:first-child {}
+            &:last-child {}
 
-              &:last-child {}
+            a {}
 
-              a {}
+            /* deep nesting */
+            ul {}
 
-              /* deep nesting */
-              ul {}
-
-          }
+        }
       }
     }
 
@@ -873,6 +885,9 @@ SIDEBARS & ASIDES
       form{
         position: relative;
 
+        div{
+          padding: 0.6em;
+        }
         .search-field{
           width: -webkit-calc(100% - 5em);
           width: calc(100% - 5em);
@@ -886,12 +901,6 @@ SIDEBARS & ASIDES
           line-height: 40px;
           display: inline-block;
           @extend .blue-btn;
-
-          &:before{
-            content: "\f179";
-            font-family: 'dashicons';
-            font-size: 2em;
-          }
         }
       }
     }

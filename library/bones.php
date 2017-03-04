@@ -150,7 +150,7 @@ function bones_scripts_and_styles() {
 		wp_enqueue_style( 'bones-ie-only' );
 
 		// enqueue dashicons
-        wp_enqueue_style( 'dashicons' );
+//        wp_enqueue_style( 'dashicons' );
 
 		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
 

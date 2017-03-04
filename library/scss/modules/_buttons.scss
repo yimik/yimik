@@ -33,3 +33,41 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
   @extend %btn;
   background-color: $blue;
 }
+
+.yimik-chip{
+  display: inline-block;
+  height: 1.5em;
+  box-sizing: border-box;
+  margin: 2px 0;
+  white-space: nowrap;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border-radius: 1em;
+  -webkit-transition: box-shadow .25s cubic-bezier(.4,0,.2,1);
+  transition: box-shadow .25s cubic-bezier(.4,0,.2,1);
+  will-change: box-shadow;
+  font-size: 0.5em;
+}
+.yimik-chip-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  overflow: hidden;
+  text-align: center;
+}
+.yimik-chip-icon i {
+  font-size: 1em;
+  vertical-align: top;
+  line-height: 1.5em;
+  height: 1.5em;
+  box-sizing: border-box;
+}
+.yimik-chip-title {
+  display: inline-block;
+  padding-right: 12px;
+  line-height: 1.5em;
+  vertical-align: top;
+}
