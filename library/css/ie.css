@@ -426,7 +426,7 @@ NAVIGATION STYLES
 /* line 100, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li,
 .nav li ul.children li {
-  background: #34302d;
+  background: #33495e !important;
   /*
   if you need to go deeper, go nuts
   just remember deeper menus suck
@@ -500,7 +500,6 @@ SIDEBARS & ASIDES
 }
 /* line 189, ../scss/breakpoints/_768up.scss */
 .widget ul li {
-  margin-bottom: 0.75em;
   /* deep nesting */
 }
 /* line 197, ../scss/breakpoints/_768up.scss */
