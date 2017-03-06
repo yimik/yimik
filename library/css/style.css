@@ -2284,18 +2284,52 @@ SIDEBARS & ASIDES
   display: inline-block;
 }
 
-/* line 1127, ../scss/breakpoints/_base.scss */
-.widget_archive ul {
+/*meta,archive,categories widget*/
+/* line 1128, ../scss/breakpoints/_base.scss */
+.widget_archive ul, .widget_meta ul, .widget_categories ul {
   position: relative;
   overflow: hidden;
 }
-/* line 1130, ../scss/breakpoints/_base.scss */
-.widget_archive ul li {
+/* line 1131, ../scss/breakpoints/_base.scss */
+.widget_archive ul li, .widget_meta ul li, .widget_categories ul li {
   width: 50%;
   float: left;
 }
 
-/* line 1137, ../scss/breakpoints/_base.scss */
+/* line 1139, ../scss/breakpoints/_base.scss */
+.widget_tag_cloud a {
+  display: inline-block;
+  padding: 3px;
+}
+
+/* calendar widget */
+/* line 1147, ../scss/breakpoints/_base.scss */
+.widget_calendar .calendar_wrap {
+  width: 100%;
+  text-align: center;
+}
+/* line 1151, ../scss/breakpoints/_base.scss */
+.widget_calendar .calendar_wrap caption {
+  font-size: 1.1em;
+}
+/* line 1155, ../scss/breakpoints/_base.scss */
+.widget_calendar .calendar_wrap table {
+  width: 100%;
+}
+/* line 1168, ../scss/breakpoints/_base.scss */
+.widget_calendar .calendar_wrap #today {
+  background-color: #6db33f;
+}
+/* line 1171, ../scss/breakpoints/_base.scss */
+.widget_calendar .calendar_wrap #prev {
+  text-align: left;
+}
+/* line 1174, ../scss/breakpoints/_base.scss */
+.widget_calendar .calendar_wrap #next {
+  text-align: right;
+}
+
+/* line 1180, ../scss/breakpoints/_base.scss */
 .no-widgets {
   background-color: #fff;
   padding: 1.5em;
@@ -2307,7 +2341,7 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 1149, ../scss/breakpoints/_base.scss */
+/* line 1192, ../scss/breakpoints/_base.scss */
 .footer {
   clear: both;
   background-color: #323944;

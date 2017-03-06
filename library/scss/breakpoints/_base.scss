@@ -1123,13 +1123,56 @@ SIDEBARS & ASIDES
   }
 }
 
-.widget_archive {
+/*meta,archive,categories widget*/
+.widget_archive,.widget_meta,.widget_categories {
   ul {
     position: relative;
     overflow: hidden;
     li {
       width: 50%;
       float: left;
+    }
+  }
+}
+
+.widget_tag_cloud{
+  a{
+    display: inline-block;
+    padding: 3px;
+  }
+}
+
+/* calendar widget */
+.widget_calendar {
+  .calendar_wrap{
+    width:100%;
+    text-align: center;
+
+    caption{
+      font-size: 1.1em;
+    }
+
+    table{
+      width:100%;
+    }
+    th{
+
+    }
+    td{
+      @extend .mdui-hoverable !optional;
+
+    }
+    a{
+
+    }
+    #today{
+      background-color: $head-border-color;
+    }
+    #prev{
+      text-align: left;
+    }
+    #next{
+      text-align: right;
     }
   }
 }

@@ -207,6 +207,41 @@ function bones_register_sidebars() {
 	*/
 } // don't remove this bracket!
 
+//custom widget tag cloud
+add_filter( 'widget_tag_cloud_args', 'theme_tag_cloud_args' );
+function theme_tag_cloud_args( $args ){
+    $newargs = array(
+        'smallest'    => 8,  //最小字号
+        'largest'     => 22, //最大字号
+        'unit'        => 'pt',   //字号单位，可以是pt、px、em或%
+        'number'      => 45,     //显示个数
+        'format'      => 'flat',//列表格式，可以是flat、list或array
+        'separator'   => "\n",   //分隔每一项的分隔符
+        'orderby'     => 'name',//排序字段，可以是name或count
+        'order'       => 'ASC', //升序或降序，ASC或DESC
+        'exclude'     => null,   //结果中排除某些标签
+        'include'     => null,  //结果中只包含这些标签
+        'link'        => 'view', //taxonomy链接，view或edit
+        'taxonomy'    => 'post_tag' //调用哪些分类法作为标签云
+    );
+    $return = array_merge( $args, $newargs);
+    return $return;
+}
+function color_cloud($text) {
+    $text = preg_replace_callback('|<a (.+?)>|i','color_cloud_callback', $text);
+    return $text;
+}
+function color_cloud_callback($matches) {
+    $text = $matches[1];
+    $color = dechex(rand(0,16777215));
+    $pattern = '/style=(\'|")([^\'^"]*)(\'|")/i';
+    $class_pattern = '/class=(\'|")([^\'^"]*)(\'|")/i';
+    $text = preg_replace($pattern, "style=\"color:#{$color};$2\"", $text);
+    $text = preg_replace($class_pattern, "class=\"mdui-ripple mdui-hoverable $2\"", $text);
+    return "<a $text>";
+}
+add_filter('wp_tag_cloud', 'color_cloud', 1);
+
 
 /************* COMMENT LAYOUT *********************/
 
