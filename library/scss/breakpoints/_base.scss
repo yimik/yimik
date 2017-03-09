@@ -409,6 +409,18 @@ POSTS & CONTENT STYLES
     }
   }
 
+  @at-root {
+    #post-not-found.hentry{
+      header{
+        border: none;
+      }
+      footer{
+        padding: 2em 0.6em;
+        border: none;
+      }
+    }
+
+  }
 }
 
 /* end .hentry */
@@ -1158,15 +1170,15 @@ SIDEBARS & ASIDES
     th{
 
     }
-    td{
-      @extend .mdui-hoverable !optional;
-
+    td:not(.pad):not(#prev):not(#next){
+      @extend %mdui-hoverable;
     }
     a{
 
     }
     #today{
-      background-color: $head-border-color;
+      background-color: $blue;
+      color: #fff;
     }
     #prev{
       text-align: left;

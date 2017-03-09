@@ -454,3 +454,16 @@ msgstr "搜索..."
 
 msgid "sticky"
 msgstr "置顶"
+
+msgid "Home"
+msgstr "主页"
+
+msgid "Search Results for: %s"
+msgstr "搜索结果：%s"
+
+msgid "Tag Archives: %s"
+msgstr "标签：%s"
+
+msgid "Author Archives: %s"
+msgstr "作者：%s"
+

@@ -413,7 +413,7 @@ NAVIGATION STYLES
 .nav li a:focus {
   color: #fff;
 }
-/* line 91, ../scss/breakpoints/_768up.scss */
+/* line 93, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu,
 .nav li ul.children {
   margin-top: 0;
@@ -423,7 +423,7 @@ NAVIGATION STYLES
   z-index: 8999;
   /* highlight sub-menu current page */
 }
-/* line 100, ../scss/breakpoints/_768up.scss */
+/* line 101, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li,
 .nav li ul.children li {
   background: #33495e !important;
@@ -433,7 +433,7 @@ NAVIGATION STYLES
   for usability. k, bai.
   */
 }
-/* line 102, ../scss/breakpoints/_768up.scss */
+/* line 103, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
   padding-left: 10px;
@@ -443,41 +443,41 @@ NAVIGATION STYLES
   border-bottom: 1px solid #ccc;
   background-color: transparent;
 }
-/* line 110, ../scss/breakpoints/_768up.scss */
+/* line 111, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li a:hover,
 .nav li ul.children li a:hover {
   color: #fff;
   text-decoration: none;
   background-color: #6db33f;
 }
-/* line 115, ../scss/breakpoints/_768up.scss */
+/* line 116, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li a:focus,
 .nav li ul.children li a:focus {
   color: #fff;
 }
-/* line 126, ../scss/breakpoints/_768up.scss */
+/* line 129, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li:last-child a,
 .nav li ul.children li:last-child a {
   border-bottom: 0;
 }
-/* line 136, ../scss/breakpoints/_768up.scss */
+/* line 139, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li ul,
 .nav li ul.children li ul {
   top: 0;
   left: 100%;
 }
-/* line 151, ../scss/breakpoints/_768up.scss */
+/* line 155, ../scss/breakpoints/_768up.scss */
 .nav li:hover > ul {
   top: auto;
   visibility: visible;
 }
-/* line 155, ../scss/breakpoints/_768up.scss */
+/* line 159, ../scss/breakpoints/_768up.scss */
 .nav li:hover > ul > li {
   -moz-animation: WobbleInX 700ms both;
   -webkit-animation: WobbleInX 700ms both;
   animation: WobbleInX 700ms both;
 }
-/* line 166, ../scss/breakpoints/_768up.scss */
+/* line 171, ../scss/breakpoints/_768up.scss */
 .nav li.current-menu-item a,
 .nav li.current_page_item a,
 .nav li.current-category-ancestor a,
@@ -486,23 +486,42 @@ NAVIGATION STYLES
 }
 
 /* end .nav */
+/*breadcrumbs*/
+/* line 182, ../scss/breakpoints/_768up.scss */
+.breadcrumbs {
+  width: 100%;
+  padding: 0.6em;
+  margin-bottom: 1.5em;
+  background: #fff;
+  color: #5c6b80;
+}
+/* line 189, ../scss/breakpoints/_768up.scss */
+.breadcrumbs a {
+  color: #5c6b80;
+}
+/* line 193, ../scss/breakpoints/_768up.scss */
+.breadcrumbs .mdui-icon {
+  display: inline-block;
+  font-size: 1.2em;
+}
+
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 177, ../scss/breakpoints/_768up.scss */
+/* line 203, ../scss/breakpoints/_768up.scss */
 .sidebar {
   margin-top: 0;
 }
 
-/* line 185, ../scss/breakpoints/_768up.scss */
+/* line 211, ../scss/breakpoints/_768up.scss */
 .widget {
   margin: 1.5em 0;
 }
-/* line 189, ../scss/breakpoints/_768up.scss */
+/* line 215, ../scss/breakpoints/_768up.scss */
 .widget ul li {
   /* deep nesting */
 }
-/* line 197, ../scss/breakpoints/_768up.scss */
+/* line 225, ../scss/breakpoints/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
@@ -527,7 +546,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 305, ../scss/breakpoints/_768up.scss */
+/* line 450, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
