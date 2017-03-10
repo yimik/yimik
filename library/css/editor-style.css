@@ -780,7 +780,7 @@ body#tinymce.wp-editor th:last-child {
 body#tinymce.wp-editor blockquote {
   margin: 0 0 1.5em 0.75em;
   padding: 0 0 0 0.75em;
-  border-left: 3px solid #2980b9;
+  border-left: 3px solid #3f51b5;
   font-style: italic;
   color: #9fa6b4;
 }

@@ -12,9 +12,11 @@ if ( post_password_required() ) {
 
 <?php // You can start editing here. ?>
 
+<div class="yimik-comment-panel">
+
   <?php if ( have_comments() ) : ?>
 
-    <h3 id="comments-title" class="h2"><?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?></h3>
+    <h3 id="comments-title"><?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?></h3>
 
     <section class="commentlist">
       <?php
@@ -28,7 +30,9 @@ if ( post_password_required() ) {
           'page'              => '',
           'per_page'          => '',
           'reverse_top_level' => null,
-          'reverse_children'  => ''
+          'reverse_children'  => '',
+          'before'            => '<span class="yimik-reply-btn mdui-btn mdui-ripple">',
+          'after'             => '</span>'
         ) );
       ?>
     </section>
@@ -48,3 +52,4 @@ if ( post_password_required() ) {
 
   <?php comment_form(); ?>
 
+</div>

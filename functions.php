@@ -248,7 +248,7 @@ add_filter('wp_tag_cloud', 'color_cloud', 1);
 // Comment Layout
 function bones_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
-  <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
+  <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf mdui-shadow-3 mdui-hoverable'); ?>>
     <article  class="cf">
       <header class="comment-author vcard">
         <?php
@@ -257,15 +257,15 @@ function bones_comments( $comment, $args, $depth ) {
           echo get_avatar($comment,$size='32',$default='<path_to_url>' );
         */
         ?>
-        <?php // custom gravatar call ?>
+        <?php echo get_avatar($comment,$size='40' ); ?>
         <?php
-          // create variable
+/*          // create variable
           $bgauthemail = get_comment_author_email();
-        ?>
-        <img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
+        */?><!--
+        <img data-gravatar="https://www.gravatar.com/avatar/<?php /*echo md5( $bgauthemail ); */?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php /*echo get_template_directory_uri(); */?>/library/images/nothing.gif" />-->
         <?php // end custom gravatar call ?>
         <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'bonestheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'bonestheme' ),'  ','') ) ?>
-        <time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'bonestheme' )); ?> </a></time>
+        <time datetime="<?php echo comment_time('Y-m-j G:i:s'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('Y-m-j G:i:s'); ?> </a></time>
 
       </header>
       <?php if ($comment->comment_approved == '0') : ?>
@@ -282,8 +282,7 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
-
-//*******************post list*************************//
+//********************author link function***************************//
 /**
  * @return string|void
  */
@@ -294,6 +293,18 @@ function get_the_author_posts_link_yimik() {
     }
     return esc_url( get_author_posts_url( $authordata->ID, $authordata->user_nicename ) );
 }
+function get_the_author_link_yimik() {
+    if ( get_the_author_meta('url') ) {
+        return sprintf( '<a href="%1$s" rel="author external">%2$s</a>',
+            esc_url(get_the_author_posts_link_yimik() ),
+            get_the_author()
+        );
+    } else {
+        return get_the_author();
+    }
+}
+
+//*******************post list*************************//
 function yimik_post_list(){
     if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -502,5 +513,16 @@ function bones_fonts() {
 }
 
 add_action('wp_enqueue_scripts', 'bones_fonts');
+
+/**
+ * replace the gravatar and fuck the gfw again
+ * @param $avatar
+ * @return mixed
+ */
+function yimik_get_avatar($avatar) {
+    $avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),"gravatar.duoshuo.com",$avatar);
+    return $avatar;
+}
+add_filter( 'get_avatar', 'yimik_get_avatar');
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>

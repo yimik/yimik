@@ -12,7 +12,7 @@
 							*/
 						?>
 
-						<div class="no-widgets">
+						<div class="no-widgets mdui-shadow-3 mdui-hoverable">
 							<p><?php _e( 'This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
 						</div>
 

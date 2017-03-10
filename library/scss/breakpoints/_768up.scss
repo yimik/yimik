@@ -167,7 +167,8 @@ NAVIGATION STYLES
   li.current-menu-item,
   li.current_page_item,
   li.current-category-ancestor,
-  li.current_page_ancestor {
+  li.current_page_ancestor,
+  li.current-post-ancestor{
     a {
       background-color: $head-border-color;
     }

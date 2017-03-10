@@ -467,3 +467,5 @@ msgstr "标签：%s"
 msgid "Author Archives: %s"
 msgstr "作者：%s"
 
+msgid "Reply"
+msgstr "回复"

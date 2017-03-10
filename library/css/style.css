@@ -1181,8 +1181,8 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 
 *********************/
 /* line 26, ../scss/modules/_buttons.scss */
-.blue-btn, .comment-reply-link, #submit, .widget_search form .search-submit {
-  background: #2980b9;
+.blue-btn, .yimik-reply-btn, #submit, .widget_search form .search-submit {
+  background: #3f51b5;
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
@@ -1190,8 +1190,8 @@ http://www.youtube.com/watch?v=hwdVpKiJzac
 }
 
 /* line 32, ../scss/modules/_buttons.scss */
-.blue-btn, .comment-reply-link, #submit, .widget_search form .search-submit {
-  background-color: #2980b9;
+.blue-btn, .yimik-reply-btn, #submit, .widget_search form .search-submit {
+  background-color: #3f51b5;
 }
 
 /* line 37, ../scss/modules/_buttons.scss */
@@ -1829,7 +1829,86 @@ POSTS & CONTENT STYLES
 }
 
 /* end .hentry */
-/* line 428, ../scss/breakpoints/_base.scss */
+/* line 429, ../scss/breakpoints/_base.scss */
+.yimik-article header {
+  border: none;
+}
+/* line 433, ../scss/breakpoints/_base.scss */
+.yimik-article header .single-title, .yimik-article header .page-title, .yimik-article header .entry-title {
+  font-size: 1.7em;
+  color: #323944;
+  text-align: center;
+}
+/* line 438, ../scss/breakpoints/_base.scss */
+.yimik-article header .entry-meta {
+  background: #f1f1f1;
+  margin: 0.6em -0.6em;
+  padding: 1em;
+  line-height: 0.6em;
+  text-align: center;
+}
+/* line 444, ../scss/breakpoints/_base.scss */
+.yimik-article header .entry-meta a {
+  display: inline-block;
+  width: auto;
+}
+/* line 450, ../scss/breakpoints/_base.scss */
+.yimik-article .entry-content {
+  color: #323944;
+  font-size: 1em;
+}
+/* line 453, ../scss/breakpoints/_base.scss */
+.yimik-article .entry-content p {
+  text-indent: 2em;
+  line-height: 2em;
+  margin-bottom: 0.6em;
+}
+/* line 459, ../scss/breakpoints/_base.scss */
+.yimik-article .entry-content h3, .yimik-article .entry-content h4, .yimik-article .entry-content h5, .yimik-article .entry-content h6 {
+  font-size: 1em;
+  margin: 1em -1.5em;
+  background: #f8f9fa;
+  padding: 0.5em 1em;
+  border-left: 5px solid #7dd667;
+}
+/* line 466, ../scss/breakpoints/_base.scss */
+.yimik-article .entry-content h1 {
+  font-size: 1.7em;
+  margin: 1em -0.88em;
+  background: #f8f9fa;
+  padding: 0.5em 1.7em;
+  border-left: 5px solid #7dd667;
+}
+/* line 473, ../scss/breakpoints/_base.scss */
+.yimik-article .entry-content h2 {
+  font-size: 1.3em;
+  margin: 1em -1.15em;
+  background: #f8f9fa;
+  padding: 0.5em 1.3em;
+  border-left: 5px solid #7dd667;
+}
+/* line 482, ../scss/breakpoints/_base.scss */
+.yimik-article .entry-content .page-links {
+  text-align: center;
+  margin: 0.5em 0;
+}
+/* line 485, ../scss/breakpoints/_base.scss */
+.yimik-article .entry-content .page-links span {
+  min-width: 0;
+  background: rgba(0, 0, 0, 0.1);
+  width: auto;
+}
+/* line 491, ../scss/breakpoints/_base.scss */
+.yimik-article .entry-content .page-links a span {
+  background: #fff;
+}
+/* line 493, ../scss/breakpoints/_base.scss */
+.yimik-article .entry-content .page-links a span:hover {
+  background: #3f51b5;
+  color: #fff;
+}
+
+/* line 504, ../scss/breakpoints/_base.scss */
 .single-title,
 .page-title,
 .entry-title {
@@ -1847,7 +1926,7 @@ POSTS & CONTENT STYLES
 /* style by category (i.e. category-videos) */
 /* style by tag (i.e. tag-news) */
 /* entry content */
-/* line 482, ../scss/breakpoints/_base.scss */
+/* line 558, ../scss/breakpoints/_base.scss */
 .entry-content {
   padding: 1.5em 1.5em 0;
   /*
@@ -1857,22 +1936,22 @@ POSTS & CONTENT STYLES
   but it's up to you. Feel free to change it up.
   */
 }
-/* line 485, ../scss/breakpoints/_base.scss */
+/* line 561, ../scss/breakpoints/_base.scss */
 .entry-content .entry-content-thumb {
   float: left;
   margin-right: 1.5em;
 }
-/* line 494, ../scss/breakpoints/_base.scss */
+/* line 570, ../scss/breakpoints/_base.scss */
 .entry-content p {
   margin: 0 0 1.5em;
 }
-/* line 522, ../scss/breakpoints/_base.scss */
+/* line 598, ../scss/breakpoints/_base.scss */
 .entry-content table {
   width: 100%;
   border: 1px solid #f1f1f1;
   margin-bottom: 1.5em;
 }
-/* line 527, ../scss/breakpoints/_base.scss */
+/* line 603, ../scss/breakpoints/_base.scss */
 .entry-content table caption {
   margin: 0 0 7px;
   font-size: 0.75em;
@@ -1880,55 +1959,55 @@ POSTS & CONTENT STYLES
   text-transform: uppercase;
   letter-spacing: 1px;
 }
-/* line 536, ../scss/breakpoints/_base.scss */
+/* line 612, ../scss/breakpoints/_base.scss */
 .entry-content tr {
   border-bottom: 1px solid #f1f1f1;
 }
-/* line 539, ../scss/breakpoints/_base.scss */
+/* line 615, ../scss/breakpoints/_base.scss */
 .entry-content tr:nth-child(even) {
   background-color: #f8f9fa;
 }
-/* line 544, ../scss/breakpoints/_base.scss */
+/* line 620, ../scss/breakpoints/_base.scss */
 .entry-content td {
   padding: 7px;
   border-right: 1px solid #f1f1f1;
 }
-/* line 548, ../scss/breakpoints/_base.scss */
+/* line 624, ../scss/breakpoints/_base.scss */
 .entry-content td:last-child {
   border-right: 0;
 }
-/* line 553, ../scss/breakpoints/_base.scss */
+/* line 629, ../scss/breakpoints/_base.scss */
 .entry-content th {
   background-color: #f8f9fa;
   border-bottom: 1px solid #f1f1f1;
   border-right: 1px solid #f1f1f1;
 }
-/* line 558, ../scss/breakpoints/_base.scss */
+/* line 634, ../scss/breakpoints/_base.scss */
 .entry-content th:last-child {
   border-right: 0;
 }
-/* line 563, ../scss/breakpoints/_base.scss */
+/* line 639, ../scss/breakpoints/_base.scss */
 .entry-content blockquote {
   margin: 0 0 1.5em 0.75em;
   padding: 0 0 0 0.75em;
-  border-left: 3px solid #2980b9;
+  border-left: 3px solid #3f51b5;
   font-style: italic;
   color: #9fa6b4;
 }
-/* line 581, ../scss/breakpoints/_base.scss */
+/* line 657, ../scss/breakpoints/_base.scss */
 .entry-content dd {
   margin-left: 0;
   font-size: 0.9em;
   color: #787878;
   margin-bottom: 1.5em;
 }
-/* line 588, ../scss/breakpoints/_base.scss */
+/* line 664, ../scss/breakpoints/_base.scss */
 .entry-content img {
   margin: 0 0 1.5em 0;
   max-width: 100%;
   height: auto;
 }
-/* line 607, ../scss/breakpoints/_base.scss */
+/* line 683, ../scss/breakpoints/_base.scss */
 .entry-content .size-auto,
 .entry-content .size-full,
 .entry-content .size-large,
@@ -1937,31 +2016,31 @@ POSTS & CONTENT STYLES
   max-width: 100%;
   height: auto;
 }
-/* line 616, ../scss/breakpoints/_base.scss */
+/* line 692, ../scss/breakpoints/_base.scss */
 .entry-content pre {
-  background: #323944;
-  color: #f8f9fa;
+  background: #f8f9fa;
+  color: #323944;
   font-size: 0.9em;
-  padding: 1.5em;
-  margin: 0 0 1.5em;
-  border-radius: 3px;
+  padding: 1em;
+  margin: 0 0 1em;
+  border: 1px solid #f1f1f1;
 }
 
 /* end .entry-content */
-/* line 629, ../scss/breakpoints/_base.scss */
+/* line 705, ../scss/breakpoints/_base.scss */
 .wp-caption {
   max-width: 100%;
   background: #eee;
   padding: 5px;
   /* images inside wp-caption */
 }
-/* line 635, ../scss/breakpoints/_base.scss */
+/* line 711, ../scss/breakpoints/_base.scss */
 .wp-caption img {
   max-width: 100%;
   margin-bottom: 0;
   width: 100%;
 }
-/* line 641, ../scss/breakpoints/_base.scss */
+/* line 717, ../scss/breakpoints/_base.scss */
 .wp-caption p.wp-caption-text {
   font-size: 0.85em;
   margin: 4px 0 7px;
@@ -1972,7 +2051,7 @@ POSTS & CONTENT STYLES
 /* image gallery styles */
 /* end .gallery */
 /* gallery caption styles */
-/* line 691, ../scss/breakpoints/_base.scss */
+/* line 767, ../scss/breakpoints/_base.scss */
 .tags {
   margin: 0;
 }
@@ -1980,17 +2059,17 @@ POSTS & CONTENT STYLES
 /******************************************************************
 PAGE NAVI STYLES
 ******************************************************************/
-/* line 699, ../scss/breakpoints/_base.scss */
+/* line 775, ../scss/breakpoints/_base.scss */
 .pagination,
 .wp-prev-next {
   margin: 1.5em 0;
 }
 
-/* line 704, ../scss/breakpoints/_base.scss */
+/* line 780, ../scss/breakpoints/_base.scss */
 .pagination {
   text-align: center;
 }
-/* line 707, ../scss/breakpoints/_base.scss */
+/* line 783, ../scss/breakpoints/_base.scss */
 .pagination ul {
   display: inline-block;
   white-space: nowrap;
@@ -1998,7 +2077,7 @@ PAGE NAVI STYLES
   clear: both;
   border-radius: 3px;
 }
-/* line 715, ../scss/breakpoints/_base.scss */
+/* line 791, ../scss/breakpoints/_base.scss */
 .pagination li {
   min-width: 0;
   padding: 0;
@@ -2008,7 +2087,7 @@ PAGE NAVI STYLES
   display: inline;
   overflow: hidden;
 }
-/* line 725, ../scss/breakpoints/_base.scss */
+/* line 801, ../scss/breakpoints/_base.scss */
 .pagination a, .pagination span {
   margin: 0;
   text-decoration: none;
@@ -2020,24 +2099,24 @@ PAGE NAVI STYLES
   padding: 0.75em;
   min-width: 1em;
   display: block;
-  color: #2980b9;
+  color: #3f51b5;
   -moz-transition: background 0.5s, color 0.5s;
   -o-transition: background 0.5s, color 0.5s;
   -webkit-transition: background 0.5s, color 0.5s;
   transition: background 0.5s, color 0.5s;
 }
-/* line 739, ../scss/breakpoints/_base.scss */
+/* line 815, ../scss/breakpoints/_base.scss */
 .pagination a:hover, .pagination a:focus, .pagination span:hover, .pagination span:focus {
-  background-color: #2980b9;
+  background-color: #3f51b5;
   color: #fff;
 }
-/* line 745, ../scss/breakpoints/_base.scss */
+/* line 821, ../scss/breakpoints/_base.scss */
 .pagination .current {
   cursor: default;
   color: #5c6b80;
   background-color: #cfcfcf;
 }
-/* line 750, ../scss/breakpoints/_base.scss */
+/* line 826, ../scss/breakpoints/_base.scss */
 .pagination .current:hover, .pagination .current:focus {
   background-color: #cfcfcf;
   color: #5c6b80;
@@ -2045,11 +2124,11 @@ PAGE NAVI STYLES
 
 /* end .bones_page_navi */
 /* fallback previous & next links */
-/* line 766, ../scss/breakpoints/_base.scss */
+/* line 842, ../scss/breakpoints/_base.scss */
 .wp-prev-next .prev-link {
   float: left;
 }
-/* line 770, ../scss/breakpoints/_base.scss */
+/* line 846, ../scss/breakpoints/_base.scss */
 .wp-prev-next .next-link {
   float: right;
 }
@@ -2059,121 +2138,126 @@ PAGE NAVI STYLES
 COMMENT STYLES
 ******************************************************************/
 /* h3 comment title */
-/* line 783, ../scss/breakpoints/_base.scss */
+/* line 861, ../scss/breakpoints/_base.scss */
 #comments-title {
-  padding: 0.75em;
+  padding: 0;
   margin: 0;
   border-top: 1px solid #f8f9fa;
   /* number of comments span */
 }
 
-/* line 804, ../scss/breakpoints/_base.scss */
+/* line 882, ../scss/breakpoints/_base.scss */
 .commentlist {
   margin: 0;
   list-style-type: none;
 }
 
-/* line 809, ../scss/breakpoints/_base.scss */
+/* line 887, ../scss/breakpoints/_base.scss */
 .comment {
   position: relative;
   clear: both;
   overflow: hidden;
-  padding: 1.5em;
-  border-bottom: 1px solid #f8f9fa;
+  padding: 0.6em;
+  background: #fff;
   /* vcard */
   /* end .commentlist .vcard */
   /* end children */
   /* general comment classes */
 }
-/* line 816, ../scss/breakpoints/_base.scss */
+/* line 894, ../scss/breakpoints/_base.scss */
 .comment .comment-author {
   padding: 7px;
   border: 0;
 }
-/* line 822, ../scss/breakpoints/_base.scss */
+/* line 900, ../scss/breakpoints/_base.scss */
 .comment .vcard {
   margin-left: 50px;
 }
-/* line 825, ../scss/breakpoints/_base.scss */
+/* line 903, ../scss/breakpoints/_base.scss */
 .comment .vcard cite.fn {
   font-weight: 700;
   font-style: normal;
 }
-/* line 834, ../scss/breakpoints/_base.scss */
+/* line 912, ../scss/breakpoints/_base.scss */
 .comment .vcard time {
   display: block;
   font-size: 0.9em;
   font-style: italic;
 }
-/* line 839, ../scss/breakpoints/_base.scss */
+/* line 917, ../scss/breakpoints/_base.scss */
 .comment .vcard time a {
   color: #9fa6b4;
   text-decoration: none;
 }
-/* line 843, ../scss/breakpoints/_base.scss */
+/* line 921, ../scss/breakpoints/_base.scss */
 .comment .vcard time a:hover {
   text-decoration: underline;
 }
-/* line 854, ../scss/breakpoints/_base.scss */
+/* line 932, ../scss/breakpoints/_base.scss */
 .comment .vcard .avatar {
   position: absolute;
   left: 16px;
   border-radius: 50%;
 }
-/* line 863, ../scss/breakpoints/_base.scss */
+/* line 941, ../scss/breakpoints/_base.scss */
 .comment:last-child {
   margin-bottom: 0;
 }
-/* line 867, ../scss/breakpoints/_base.scss */
+/* line 945, ../scss/breakpoints/_base.scss */
 .comment .children {
   margin: 0;
   /* variations */
   /* change number for different depth */
 }
-/* line 895, ../scss/breakpoints/_base.scss */
+/* line 973, ../scss/breakpoints/_base.scss */
 .comment[class*=depth-] {
   margin-top: 1.1em;
 }
-/* line 899, ../scss/breakpoints/_base.scss */
+/* line 977, ../scss/breakpoints/_base.scss */
 .comment.depth-1 {
   margin-left: 0;
-  margin-top: 0;
 }
-/* line 904, ../scss/breakpoints/_base.scss */
+/* line 981, ../scss/breakpoints/_base.scss */
 .comment:not(.depth-1) {
-  margin-top: 0;
   margin-left: 7px;
-  padding: 7px;
-}
-/* line 922, ../scss/breakpoints/_base.scss */
-.comment.odd {
-  background-color: #fff;
-}
-/* line 925, ../scss/breakpoints/_base.scss */
-.comment.even {
-  background: #f8f9fa;
 }
 
 /* comment meta */
 /* comment content */
-/* line 968, ../scss/breakpoints/_base.scss */
+/* line 1041, ../scss/breakpoints/_base.scss */
 .comment_content p {
-  margin: 0.7335em 0 1.5em;
+  margin: 0.6em;
   font-size: 1em;
   line-height: 1.5em;
 }
 
 /* end .commentlist .comment_content */
 /* comment reply link */
-/* line 979, ../scss/breakpoints/_base.scss */
+/* line 1052, ../scss/breakpoints/_base.scss */
+.yimik-reply-btn {
+  float: right;
+  min-width: 0;
+  display: block;
+  padding: 0;
+  height: 25px;
+  line-height: 25px;
+  margin-right: 1.5em;
+}
+
+/* line 1062, ../scss/breakpoints/_base.scss */
 .comment-reply-link {
+  display: block;
+  color: #fff;
   font-size: 0.9em;
   float: right;
+  width: 100%;
+  height: 100%;
+  padding: 0 1em;
 }
 
 /* end .commentlist .comment-reply-link */
 /* edit comment link */
-/* line 993, ../scss/breakpoints/_base.scss */
+/* line 1075, ../scss/breakpoints/_base.scss */
 .comment-edit-link {
   font-style: italic;
   margin: 0 7px;
@@ -2184,34 +2268,33 @@ COMMENT STYLES
 /******************************************************************
 COMMENT FORM STYLES
 ******************************************************************/
-/* line 1004, ../scss/breakpoints/_base.scss */
+/* line 1086, ../scss/breakpoints/_base.scss */
 .comment-respond {
   padding: 1.5em;
-  border-top: 1px solid #f8f9fa;
 }
 
-/* line 1010, ../scss/breakpoints/_base.scss */
+/* line 1091, ../scss/breakpoints/_base.scss */
 #reply-title {
   margin: 0;
 }
 
-/* line 1014, ../scss/breakpoints/_base.scss */
+/* line 1095, ../scss/breakpoints/_base.scss */
 .logged-in-as {
   color: #9fa6b4;
   font-style: italic;
   margin: 0;
 }
-/* line 1019, ../scss/breakpoints/_base.scss */
+/* line 1100, ../scss/breakpoints/_base.scss */
 .logged-in-as a {
   color: #5c6b80;
 }
 
-/* line 1024, ../scss/breakpoints/_base.scss */
+/* line 1105, ../scss/breakpoints/_base.scss */
 .comment-form-comment {
   margin: 1.5em 0 0.75em;
 }
 
-/* line 1028, ../scss/breakpoints/_base.scss */
+/* line 1109, ../scss/breakpoints/_base.scss */
 .form-allowed-tags {
   padding: 1.5em;
   background-color: #f8f9fa;
@@ -2219,14 +2302,14 @@ COMMENT FORM STYLES
 }
 
 /* comment submit button */
-/* line 1035, ../scss/breakpoints/_base.scss */
+/* line 1116, ../scss/breakpoints/_base.scss */
 #submit {
   float: right;
   font-size: 1em;
 }
 
 /* comment form title */
-/* line 1042, ../scss/breakpoints/_base.scss */
+/* line 1123, ../scss/breakpoints/_base.scss */
 #comment-form-title {
   margin: 0 0 1.1em;
 }
@@ -2234,13 +2317,13 @@ COMMENT FORM STYLES
 /* cancel comment reply link */
 /* logged in comments */
 /* allowed tags */
-/* line 1057, ../scss/breakpoints/_base.scss */
+/* line 1138, ../scss/breakpoints/_base.scss */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
 }
 
 /* no comments */
-/* line 1062, ../scss/breakpoints/_base.scss */
+/* line 1143, ../scss/breakpoints/_base.scss */
 .nocomments {
   margin: 0 20px 1.1em;
 }
@@ -2248,55 +2331,55 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 1073, ../scss/breakpoints/_base.scss */
+/* line 1154, ../scss/breakpoints/_base.scss */
 .widgettitle {
   border-bottom: 1px solid #f8f9fa;
   padding: 0.6em;
   margin: -0.6em -0.6em 0.6em -0.6em;
 }
 
-/* line 1079, ../scss/breakpoints/_base.scss */
+/* line 1160, ../scss/breakpoints/_base.scss */
 .widget {
   padding: 0.6em;
   background-color: #fff;
 }
-/* line 1083, ../scss/breakpoints/_base.scss */
+/* line 1164, ../scss/breakpoints/_base.scss */
 .widget:first-child {
   margin-top: 0;
 }
-/* line 1087, ../scss/breakpoints/_base.scss */
+/* line 1168, ../scss/breakpoints/_base.scss */
 .widget a {
   text-decoration: none;
 }
-/* line 1090, ../scss/breakpoints/_base.scss */
+/* line 1171, ../scss/breakpoints/_base.scss */
 .widget ul {
   margin: 0;
 }
-/* line 1092, ../scss/breakpoints/_base.scss */
+/* line 1173, ../scss/breakpoints/_base.scss */
 .widget ul li {
   margin-bottom: 0.6em;
   /* deep nesting */
 }
-/* line 1098, ../scss/breakpoints/_base.scss */
+/* line 1179, ../scss/breakpoints/_base.scss */
 .widget ul li:last-child {
   margin-bottom: 0;
 }
 
-/* line 1115, ../scss/breakpoints/_base.scss */
+/* line 1196, ../scss/breakpoints/_base.scss */
 .widget_search label {
   display: none;
 }
-/* line 1118, ../scss/breakpoints/_base.scss */
+/* line 1199, ../scss/breakpoints/_base.scss */
 .widget_search form {
   position: relative;
 }
-/* line 1121, ../scss/breakpoints/_base.scss */
+/* line 1202, ../scss/breakpoints/_base.scss */
 .widget_search form .search-field {
   width: -webkit-calc(100% - 5em);
   width: calc(100% - 5em);
   display: inline-block;
 }
-/* line 1126, ../scss/breakpoints/_base.scss */
+/* line 1207, ../scss/breakpoints/_base.scss */
 .widget_search form .search-submit {
   min-width: 5em;
   width: 5em;
@@ -2307,52 +2390,52 @@ SIDEBARS & ASIDES
 }
 
 /*meta,archive,categories widget*/
-/* line 1140, ../scss/breakpoints/_base.scss */
+/* line 1221, ../scss/breakpoints/_base.scss */
 .widget_archive ul, .widget_meta ul, .widget_categories ul {
   position: relative;
   overflow: hidden;
 }
-/* line 1143, ../scss/breakpoints/_base.scss */
+/* line 1224, ../scss/breakpoints/_base.scss */
 .widget_archive ul li, .widget_meta ul li, .widget_categories ul li {
   width: 50%;
   float: left;
 }
 
-/* line 1151, ../scss/breakpoints/_base.scss */
+/* line 1232, ../scss/breakpoints/_base.scss */
 .widget_tag_cloud a {
   display: inline-block;
   padding: 3px;
 }
 
 /* calendar widget */
-/* line 1159, ../scss/breakpoints/_base.scss */
+/* line 1240, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap {
   width: 100%;
   text-align: center;
 }
-/* line 1163, ../scss/breakpoints/_base.scss */
+/* line 1244, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap caption {
   font-size: 1.1em;
 }
-/* line 1167, ../scss/breakpoints/_base.scss */
+/* line 1248, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap table {
   width: 100%;
 }
-/* line 1179, ../scss/breakpoints/_base.scss */
+/* line 1260, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap #today {
-  background-color: #2980b9;
+  background-color: #3f51b5;
   color: #fff;
 }
-/* line 1183, ../scss/breakpoints/_base.scss */
+/* line 1264, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap #prev {
   text-align: left;
 }
-/* line 1186, ../scss/breakpoints/_base.scss */
+/* line 1267, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap #next {
   text-align: right;
 }
 
-/* line 1192, ../scss/breakpoints/_base.scss */
+/* line 1273, ../scss/breakpoints/_base.scss */
 .no-widgets {
   background-color: #fff;
   padding: 1.5em;
@@ -2364,7 +2447,7 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 1204, ../scss/breakpoints/_base.scss */
+/* line 1285, ../scss/breakpoints/_base.scss */
 .footer {
   clear: both;
   background-color: #323944;
@@ -2643,17 +2726,18 @@ you can add resource intensive styles.
     -webkit-animation: WobbleInX 700ms both;
     animation: WobbleInX 700ms both;
   }
-  /* line 171, ../scss/breakpoints/_768up.scss */
+  /* line 172, ../scss/breakpoints/_768up.scss */
   .nav li.current-menu-item a,
   .nav li.current_page_item a,
   .nav li.current-category-ancestor a,
-  .nav li.current_page_ancestor a {
+  .nav li.current_page_ancestor a,
+  .nav li.current-post-ancestor a {
     background-color: #6db33f;
   }
 
   /* end .nav */
   /*breadcrumbs*/
-  /* line 182, ../scss/breakpoints/_768up.scss */
+  /* line 183, ../scss/breakpoints/_768up.scss */
   .breadcrumbs {
     width: 100%;
     padding: 0.6em;
@@ -2661,11 +2745,11 @@ you can add resource intensive styles.
     background: #fff;
     color: #5c6b80;
   }
-  /* line 189, ../scss/breakpoints/_768up.scss */
+  /* line 190, ../scss/breakpoints/_768up.scss */
   .breadcrumbs a {
     color: #5c6b80;
   }
-  /* line 193, ../scss/breakpoints/_768up.scss */
+  /* line 194, ../scss/breakpoints/_768up.scss */
   .breadcrumbs .mdui-icon {
     display: inline-block;
     font-size: 1.2em;
@@ -2674,20 +2758,20 @@ you can add resource intensive styles.
   /*********************
   SIDEBARS & ASIDES
   *********************/
-  /* line 203, ../scss/breakpoints/_768up.scss */
+  /* line 204, ../scss/breakpoints/_768up.scss */
   .sidebar {
     margin-top: 0;
   }
 
-  /* line 211, ../scss/breakpoints/_768up.scss */
+  /* line 212, ../scss/breakpoints/_768up.scss */
   .widget {
     margin: 1.5em 0;
   }
-  /* line 215, ../scss/breakpoints/_768up.scss */
+  /* line 216, ../scss/breakpoints/_768up.scss */
   .widget ul li {
     /* deep nesting */
   }
-  /* line 225, ../scss/breakpoints/_768up.scss */
+  /* line 226, ../scss/breakpoints/_768up.scss */
   .widget ul li ul {
     margin-top: 0.75em;
     padding-left: 1em;
@@ -2712,7 +2796,7 @@ you can add resource intensive styles.
   of overriding here if you styled them for
   mobile. Make sure to double check these!
   */
-  /* line 450, ../scss/breakpoints/_768up.scss */
+  /* line 451, ../scss/breakpoints/_768up.scss */
   .footer-links ul li {
     /*
     be careful with the depth of your menus.

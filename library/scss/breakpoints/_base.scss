@@ -424,6 +424,82 @@ POSTS & CONTENT STYLES
 }
 
 /* end .hentry */
+//sigle view aritile
+.yimik-article{
+  header{
+    border:none;
+
+
+    .single-title,.page-title,.entry-title {
+      font-size: 1.7em;
+      color: $black;
+      text-align: center;
+    }
+    .entry-meta{
+      background: $gray;
+      margin: 0.6em -0.6em;
+      padding: 1em;
+      line-height: 0.6em;
+      text-align: center;
+      a{
+        display: inline-block;
+        width: auto;
+      }
+    }
+  }
+  .entry-content{
+    color: $black;
+    font-size: 1em;
+    p{
+      text-indent: 2em;
+      line-height: 2em;
+      margin-bottom: 0.6em;
+    }
+
+    h3,h4,h5,h6{
+      font-size: 1em;
+      margin: 1em -1.5em;
+      background: $light-gray;
+      padding: 0.5em 1em;
+      @include border-left();
+    }
+    h1{
+      font-size: 1.7em;
+      margin: 1em -0.88em;;
+      background: $light-gray;
+      padding: 0.5em 1.7em;
+      @include border-left();
+    }
+    h2{
+      font-size: 1.3em;
+      margin: 1em -1.15em;
+      background: $light-gray;
+      padding: 0.5em 1.3em;
+      @include border-left();
+    }
+
+    //pagination
+    .page-links{
+      text-align: center;
+      margin:0.5em 0;
+      span{
+        min-width: 0;
+        background:rgba(0,0,0,.1);
+        width: auto;
+      }
+      a{
+        span{
+          background: $white;
+          &:hover{
+            background: $blue;
+            color: #fff;
+          }
+        }
+      }
+
+    }
+  }
+}
 
 .single-title,
 .page-title,
@@ -614,12 +690,12 @@ POSTS & CONTENT STYLES
   }
 
   pre {
-    background: $black;
-    color: $light-gray;
+    background: $light-gray;
+    color: $black;
     font-size: 0.9em;
-    padding: 1.5em;
-    margin: 0 0 1.5em;
-    border-radius: 3px;
+    padding: 1em;
+    margin: 0 0 1em;
+    border: 1px solid $gray;
   }
 
 }
@@ -778,10 +854,12 @@ PAGE NAVI STYLES
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/
+.yimik-comment-panel{
+}
 
 /* h3 comment title */
 #comments-title {
-  padding: 0.75em;
+  padding: 0;
   margin: 0;
   border-top: 1px solid $light-gray;
 
@@ -810,8 +888,8 @@ COMMENT STYLES
   position: relative;
   clear: both;
   overflow: hidden;
-  padding: 1.5em;
-  border-bottom: 1px solid $light-gray;
+  padding: 0.6em;
+  background: $white;
 
   .comment-author {
     padding: 7px;
@@ -898,13 +976,10 @@ COMMENT STYLES
 
   &.depth-1 {
     margin-left: 0;
-    margin-top: 0;
   }
 
   &:not(.depth-1) {
-    margin-top: 0;
     margin-left: 7px;
-    padding: 7px;
   }
 
   &.depth-2 {
@@ -920,10 +995,8 @@ COMMENT STYLES
   &.alt {
   }
   &.odd {
-    background-color: $white;
   }
   &.even {
-    background: $light-gray;
   }
   &.parent {
   }
@@ -966,7 +1039,7 @@ COMMENT STYLES
 .comment_content {
 
   p {
-    margin: 0.7335em 0 1.5em;
+    margin: 0.6em;
     font-size: 1em;
     line-height: 1.5em;
   }
@@ -976,15 +1049,24 @@ COMMENT STYLES
 /* end .commentlist .comment_content */
 
 /* comment reply link */
-.comment-reply-link {
+.yimik-reply-btn{
   @extend .blue-btn;
+  float: right;
+  min-width: 0;
+  display: block;
+  padding: 0;
+  height: 25px;
+  line-height: 25px;
+  margin-right: 1.5em;
+}
+.comment-reply-link {
+  display: block;
+  color: $white;
   font-size: 0.9em;
   float: right;
-
-  &:hover,
-  &:focus {
-  }
-
+  width: 100%;
+  height: 100%;
+  padding: 0 1em;
 }
 
 /* end .commentlist .comment-reply-link */
@@ -1004,7 +1086,6 @@ COMMENT FORM STYLES
 .comment-respond {
   @extend .cf;
   padding: 1.5em;
-  border-top: 1px solid $light-gray;
 }
 
 #reply-title {

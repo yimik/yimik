@@ -477,17 +477,18 @@ NAVIGATION STYLES
   -webkit-animation: WobbleInX 700ms both;
   animation: WobbleInX 700ms both;
 }
-/* line 171, ../scss/breakpoints/_768up.scss */
+/* line 172, ../scss/breakpoints/_768up.scss */
 .nav li.current-menu-item a,
 .nav li.current_page_item a,
 .nav li.current-category-ancestor a,
-.nav li.current_page_ancestor a {
+.nav li.current_page_ancestor a,
+.nav li.current-post-ancestor a {
   background-color: #6db33f;
 }
 
 /* end .nav */
 /*breadcrumbs*/
-/* line 182, ../scss/breakpoints/_768up.scss */
+/* line 183, ../scss/breakpoints/_768up.scss */
 .breadcrumbs {
   width: 100%;
   padding: 0.6em;
@@ -495,11 +496,11 @@ NAVIGATION STYLES
   background: #fff;
   color: #5c6b80;
 }
-/* line 189, ../scss/breakpoints/_768up.scss */
+/* line 190, ../scss/breakpoints/_768up.scss */
 .breadcrumbs a {
   color: #5c6b80;
 }
-/* line 193, ../scss/breakpoints/_768up.scss */
+/* line 194, ../scss/breakpoints/_768up.scss */
 .breadcrumbs .mdui-icon {
   display: inline-block;
   font-size: 1.2em;
@@ -508,20 +509,20 @@ NAVIGATION STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 203, ../scss/breakpoints/_768up.scss */
+/* line 204, ../scss/breakpoints/_768up.scss */
 .sidebar {
   margin-top: 0;
 }
 
-/* line 211, ../scss/breakpoints/_768up.scss */
+/* line 212, ../scss/breakpoints/_768up.scss */
 .widget {
   margin: 1.5em 0;
 }
-/* line 215, ../scss/breakpoints/_768up.scss */
+/* line 216, ../scss/breakpoints/_768up.scss */
 .widget ul li {
   /* deep nesting */
 }
-/* line 225, ../scss/breakpoints/_768up.scss */
+/* line 226, ../scss/breakpoints/_768up.scss */
 .widget ul li ul {
   margin-top: 0.75em;
   padding-left: 1em;
@@ -546,7 +547,7 @@ you'll probably need to do quite a bit
 of overriding here if you styled them for
 mobile. Make sure to double check these!
 */
-/* line 450, ../scss/breakpoints/_768up.scss */
+/* line 451, ../scss/breakpoints/_768up.scss */
 .footer-links ul li {
   /*
   be careful with the depth of your menus.
