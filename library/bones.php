@@ -288,8 +288,8 @@ function bones_page_navi() {
 		'mid_size'  => 3
 	) );
 	$pageHtml  = "";
-	$pageHtml .= "<ul class='page-numbers'>\n\t<li class='mdui-shadow-3 mdui-hoverable mdui-btn mdui-ripple'>";
-	$pageHtml .= join( "</li>\n\t<li class='mdui-shadow-3 mdui-hoverable mdui-btn mdui-ripple'>", $pageArray );
+	$pageHtml .= "<ul class='page-numbers'>\n\t<li class='mdui-shadow-1 mdui-hoverable mdui-btn mdui-ripple'>";
+	$pageHtml .= join( "</li>\n\t<li class='mdui-shadow-1 mdui-hoverable mdui-btn mdui-ripple'>", $pageArray );
 	$pageHtml .= "</li>\n</ul>\n";
 
 	echo $pageHtml;

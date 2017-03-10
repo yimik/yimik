@@ -175,7 +175,7 @@ function bones_register_sidebars() {
 		'id' => 'sidebar1',
 		'name' => __( 'Sidebar 1', 'bonestheme' ),
 		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
-		'before_widget' => '<div id="%1$s" class="widget mdui-shadow-3 mdui-hoverable %2$s">',
+		'before_widget' => '<div id="%1$s" class="widget mdui-shadow-1 mdui-hoverable %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
@@ -248,7 +248,7 @@ add_filter('wp_tag_cloud', 'color_cloud', 1);
 // Comment Layout
 function bones_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
-  <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf mdui-shadow-3 mdui-hoverable'); ?>>
+  <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf mdui-shadow-1 mdui-hoverable'); ?>>
     <article  class="cf">
       <header class="comment-author vcard">
         <?php
@@ -308,7 +308,7 @@ function get_the_author_link_yimik() {
 function yimik_post_list(){
     if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-        <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf mdui-shadow-3 mdui-hoverable' ); ?> role="article">
+        <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf mdui-shadow-1 mdui-hoverable' ); ?> role="article">
             <header class="article-header mdui-ripple">
                 <h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php if(is_sticky()){printf("<i class='stickys'>".__("sticky","bonestheme")."</i>");} the_title(); ?></a></h1>
             </header>
@@ -364,7 +364,7 @@ function yimik_post_list(){
     <?php bones_page_navi(); ?>
     <?php else : ?>
 
-        <article id="post-not-found" class="hentry cf mdui-shadow-3 mdui-hoverable">
+        <article id="post-not-found" class="hentry cf mdui-shadow-1 mdui-hoverable">
             <header class="article-header">
                 <h1 class="entry-title"><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
             </header>
@@ -415,7 +415,7 @@ function breadcrumbs() {
     $before = '<span class="current">'; // 在当前链接前插入
     $after = '</span>'; // 在当前链接后插入
     if ( !is_home() && !is_front_page() || is_paged() ) {
-        echo '<div itemscope itemtype="http://schema.org/WebPage" class="breadcrumbs mdui-shadow-3 mdui-hoverable">';
+        echo '<div itemscope itemtype="http://schema.org/WebPage" class="breadcrumbs mdui-shadow-1 mdui-hoverable">';
         global $post;
         $homeLink = home_url();
         echo ' <a itemprop="breadcrumb" href="' . $homeLink . '"><i class="mdui-icon material-icons">&#xe88a;</i>' . __( 'Home' , 'bonestheme' ) . '</a> ' . $delimiter . ' ';

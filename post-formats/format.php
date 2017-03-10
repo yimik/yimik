@@ -13,7 +13,7 @@
 */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('cf yimik-article mdui-shadow-3 mdui-hoverable'); ?>
+<article id="post-<?php the_ID(); ?>" <?php post_class('cf yimik-article mdui-shadow-1 mdui-hoverable'); ?>
          role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 
     <header class="article-header entry-header">
