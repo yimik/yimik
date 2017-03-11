@@ -248,8 +248,8 @@ add_filter('wp_tag_cloud', 'color_cloud', 1);
 // Comment Layout
 function bones_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
-  <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf mdui-shadow-1 mdui-hoverable'); ?>>
-    <article  class="cf">
+  <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
+    <article  class="cf mdui-shadow-1 mdui-hoverable">
       <header class="comment-author vcard">
         <?php
         /*
@@ -281,6 +281,29 @@ function bones_comments( $comment, $args, $depth ) {
   <?php // </li> is added by WordPress automatically ?>
 <?php
 } // don't remove this bracket!
+
+/**
+ * change comment move id
+ * @param $args
+ * @return mixed
+ */
+function yimik_comment_form_args($args){
+    $args['respond_id'] = "yimik-respond";
+    return $args;
+}
+add_filter("comment_reply_link_args","yimik_comment_form_args");
+
+/**
+ * change comment style
+ * @param $fields
+ * @return mixed
+ */
+function alter_comment_form_defaults($defaults){
+    $defaults['class_submit'] = 'mdui-btn mdui-ripple';
+    $defaults['submit_button'] = '<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>';
+    return $defaults;
+}
+add_filter('comment_form_defaults','alter_comment_form_defaults');
 
 //********************author link function***************************//
 /**

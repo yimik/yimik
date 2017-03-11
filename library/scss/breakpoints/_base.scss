@@ -880,16 +880,18 @@ COMMENT STYLES
 }
 
 .commentlist {
-  margin: 0;
+  margin: 0 0 1.1em;
   list-style-type: none;
 }
 
 .comment {
   position: relative;
   clear: both;
-  overflow: hidden;
-  padding: 0.6em;
-  background: $white;
+
+  article{
+    background: $white;
+    padding: 0.6em;
+  }
 
   .comment-author {
     padding: 7px;
@@ -979,7 +981,7 @@ COMMENT STYLES
   }
 
   &:not(.depth-1) {
-    margin-left: 7px;
+    margin-left: $container-padding;
   }
 
   &.depth-2 {
@@ -1083,9 +1085,29 @@ COMMENT STYLES
 COMMENT FORM STYLES
 ******************************************************************/
 
-.comment-respond {
+.yimik-comment-panel-respond{
   @extend .cf;
   padding: 1.5em;
+  margin: 1.1em 0 1.1em 0;
+  background: $white;
+}
+.comment-respond {
+  margin:0;
+
+  p{
+    width: 49%;
+
+    &:nth-child(odd){
+      float: left;
+    }
+    &:nth-child(even){
+      float: right;
+    }
+
+    &.comment-notes,&.comment-form-comment,&.form-submit{
+      width: 100%;
+    }
+  }
 }
 
 #reply-title {
@@ -1117,6 +1139,7 @@ COMMENT FORM STYLES
   @extend .blue-btn;
   float: right;
   font-size: 1em;
+  width: 100%;
 }
 
 /* comment form title */
