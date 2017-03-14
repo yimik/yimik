@@ -12,7 +12,7 @@ if (post_password_required()) {
 
 <?php // You can start editing here. ?>
 
-<div class="yimik-comment-panel">
+<div id="comments" class="yimik-comment-panel">
 
     <?php if (have_comments()) : ?>
 
@@ -38,10 +38,7 @@ if (post_password_required()) {
         </section>
 
         <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) : ?>
-            <nav class="navigation comment-navigation" role="navigation">
-                <div class="comment-nav-prev"><?php previous_comments_link(__('&larr; Previous Comments', 'bonestheme')); ?></div>
-                <div class="comment-nav-next"><?php next_comments_link(__('More Comments &rarr;', 'bonestheme')); ?></div>
-            </nav>
+            <?php yimik_comments_navi()?>
         <?php endif; ?>
 
         <?php if (!comments_open()) : ?>

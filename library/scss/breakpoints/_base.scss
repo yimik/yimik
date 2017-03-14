@@ -914,16 +914,10 @@ COMMENT STYLES
     time {
       display: block;
       font-size: 0.9em;
-      font-style: italic;
 
       a {
         color: $meta-gray;
         text-decoration: none;
-
-        &:hover {
-          text-decoration: underline;
-        }
-
       }
 
     }
@@ -1061,7 +1055,7 @@ COMMENT STYLES
   line-height: 25px;
   margin-right: 1.5em;
 }
-.comment-reply-link {
+a.comment-reply-link {
   display: block;
   color: $white;
   font-size: 0.9em;
@@ -1069,16 +1063,24 @@ COMMENT STYLES
   width: 100%;
   height: 100%;
   padding: 0 1em;
+
+  &:visited,&:active,&:focus{
+    color: $white;
+  }
+  &:hover{
+    color: $black;
+  }
 }
 
 /* end .commentlist .comment-reply-link */
 
 /* edit comment link */
-.comment-edit-link {
-  font-style: italic;
-  margin: 0 7px;
-  text-decoration: none;
-  font-size: 0.9em;
+.yimik-comment-edit-btn{
+  @extend .yimik-reply-btn;
+  background: $bones-pink;
+}
+a.comment-edit-link {
+  @extend .comment-reply-link;
 }
 
 /******************************************************************
@@ -1112,11 +1114,11 @@ COMMENT FORM STYLES
 
 #reply-title {
   margin: 0;
+  height: 25px;
 }
 
 .logged-in-as {
   color: $meta-gray;
-  font-style: italic;
   margin: 0;
 
   a {
@@ -1148,9 +1150,16 @@ COMMENT FORM STYLES
 }
 
 /* cancel comment reply link */
-#cancel-comment-reply {
-  a {
-  }
+#cancel-comment-reply-link {
+  @extend %btn;
+  background: $green;
+  float: right;
+  min-width: 0;
+  display: block;
+  height: 25px;
+  line-height: 25px;
+  color: $white;
+  padding: 0 1em;
 }
 
 /* logged in comments */
@@ -1163,8 +1172,9 @@ COMMENT FORM STYLES
 }
 
 /* no comments */
-.nocomments {
-  margin: 0 20px 1.1em;
+.no-comments {
+  text-align: center;
+  font-weight: bold;
 }
 
 /*********************

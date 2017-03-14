@@ -296,6 +296,25 @@ function bones_page_navi() {
 	echo '</nav>';
 } /* end page navi */
 
+function yimik_comments_navi(){
+    $navigation = '';
+    $args = array(
+        'screen_reader_text' => '',
+    );
+    $args['echo'] = false;
+
+    // Make sure we get plain links, so we get a string we can work with.
+    $args['type'] = 'plain';
+
+    $links = paginate_comments_links( $args );
+
+    if ( $links ) {
+        $navigation = _navigation_markup( $links, 'comments-pagination', $args['screen_reader_text'] );
+    }
+
+    echo $navigation;
+}
+
 /*********************
 RANDOM CLEANUP ITEMS
 *********************/

@@ -159,8 +159,8 @@ msgid "<cite class=\"fn\">%1$s</cite> %2$s"
 msgstr ""
 
 #: functions.php:175
-msgid "(Edit)"
-msgstr "【编辑】"
+msgid "Edit"
+msgstr "编辑"
 
 #: functions.php:181
 msgid "Your comment is awaiting moderation."
@@ -237,10 +237,6 @@ msgstr "新建"
 #: library/custom-post-type.php:35
 msgid "Add New Custom Type"
 msgstr "新建自定义类型"
-
-#: library/custom-post-type.php:36
-msgid "Edit"
-msgstr "编辑"
 
 #: library/custom-post-type.php:37
 msgid "Edit Post Types"

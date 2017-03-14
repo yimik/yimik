@@ -264,7 +264,7 @@ function bones_comments( $comment, $args, $depth ) {
         */?><!--
         <img data-gravatar="https://www.gravatar.com/avatar/<?php /*echo md5( $bgauthemail ); */?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php /*echo get_template_directory_uri(); */?>/library/images/nothing.gif" />-->
         <?php // end custom gravatar call ?>
-        <?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'bonestheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'bonestheme' ),'  ','') ) ?>
+        <?php printf('<cite class="fn">%1$s</cite>', get_comment_author_link()) ?>
         <time datetime="<?php echo comment_time('Y-m-j G:i:s'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time('Y-m-j G:i:s'); ?> </a></time>
 
       </header>
@@ -276,6 +276,7 @@ function bones_comments( $comment, $args, $depth ) {
       <section class="comment_content cf">
         <?php comment_text() ?>
       </section>
+      <?php edit_comment_link(__( 'Edit', 'bonestheme' ),'<span class="yimik-comment-edit-btn mdui-btn mdui-ripple">','</span>')?>
       <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
     </article>
   <?php // </li> is added by WordPress automatically ?>
@@ -349,7 +350,7 @@ function yimik_post_list(){
                 </div>
             </section>
             <footer class="article-footer cf">
-                <a class="yimik-chip mdui-ripple mdui-hoverable">
+                <a href="<?php comments_link();?>" class="yimik-chip mdui-ripple mdui-hoverable">
                     <span class="yimik-chip-icon"><i class="mdui-icon material-icons">&#xe0b9;</i></span>
                     <span class="yimik-chip-title">
                         <?php comments_number( __( '<span>No</span> Comments', 'bonestheme' ), __( '<span>One</span> Comment', 'bonestheme' ), __( '<span>%</span> Comments', 'bonestheme' ) );?>
