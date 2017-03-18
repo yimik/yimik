@@ -173,7 +173,7 @@ add_action( 'customize_register', 'bones_theme_customizer' );
 function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar1',
-		'name' => __( 'Sidebar 1', 'bonestheme' ),
+		'name' => __( 'Right Sidebar', 'bonestheme' ),
 		'description' => __( 'The first (primary) sidebar.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget mdui-shadow-1 mdui-hoverable %2$s">',
 		'after_widget' => '</div>',
@@ -335,22 +335,24 @@ function yimik_post_list(){
     if (have_posts()) : while (have_posts()) : the_post(); ?>
 
         <article id="post-<?php the_ID(); ?>" <?php post_class( 'cf mdui-shadow-1 mdui-hoverable' ); ?> role="article">
-            <header class="article-header mdui-ripple">
-                <h1 class="h2 entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php if(is_sticky()){printf("<i class='stickys'>".__("sticky","bonestheme")."</i>");} the_title(); ?></a></h1>
-            </header>
-            <section class="entry-content cf">
-                <div class="entry-content-thumb">
-                    <?php the_post_thumbnail( 'yimik-thumb-140' ); ?>
-                </div>
-                <div class="entry-content-text">
-                    <?php
-                    if (is_single() or is_page())
-                    {the_content();}
-                    else
-                    {the_excerpt();}
-                    ?>
-                </div>
-            </section>
+            <a href="<?php the_permalink() ?>" class="mdui-ripple" rel="bookmark" title="<?php the_title_attribute(); ?>">
+                <header class="article-header">
+                    <h1 class="h2 entry-title"><?php if(is_sticky()){printf("<i class='stickys'>".__("sticky","bonestheme")."</i>");} the_title(); ?></h1>
+                </header>
+                <section class="entry-content cf">
+                    <div class="entry-content-thumb">
+                        <?php the_post_thumbnail( 'yimik-thumb-140' ); ?>
+                    </div>
+                    <div class="entry-content-text">
+                        <?php
+                        if (is_single() or is_page())
+                        {the_content();}
+                        else
+                        {the_excerpt();}
+                        ?>
+                    </div>
+                </section>
+            </a>
             <footer class="article-footer cf">
                 <a href="<?php comments_link();?>" class="yimik-chip mdui-ripple mdui-hoverable">
                     <span class="yimik-chip-icon"><i class="mdui-icon material-icons">&#xe0b9;</i></span>

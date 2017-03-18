@@ -377,14 +377,14 @@ POSTS & CONTENT STYLES
   background-color: $white;
   margin-bottom: $container-padding;
 
+  &>a{
+    width:100%;
+    display: block;
+  }
+
   header {
     border-bottom: 1px solid $light-gray;
     padding: 0.6em;
-
-    a{
-      width:100%;
-      display: block;
-    }
 
     i.stickys {
       display: inline;

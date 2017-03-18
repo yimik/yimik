@@ -1787,14 +1787,14 @@ POSTS & CONTENT STYLES
   margin-bottom: 1.5em;
 }
 /* line 380, ../scss/breakpoints/_base.scss */
+.hentry > a {
+  width: 100%;
+  display: block;
+}
+/* line 385, ../scss/breakpoints/_base.scss */
 .hentry header {
   border-bottom: 1px solid #f8f9fa;
   padding: 0.6em;
-}
-/* line 384, ../scss/breakpoints/_base.scss */
-.hentry header a {
-  width: 100%;
-  display: block;
 }
 /* line 389, ../scss/breakpoints/_base.scss */
 .hentry header i.stickys {

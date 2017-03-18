@@ -146,8 +146,8 @@ msgid "140px by 100px"
 msgstr "宽140px 高100px"
 
 #: functions.php:119
-msgid "Sidebar 1"
-msgstr "边栏 1"
+msgid "Right Sidebar"
+msgstr "右侧边栏"
 
 #: functions.php:120
 msgid "The first (primary) sidebar."
