@@ -923,7 +923,7 @@ COMMENT STYLES
 
   /* vcard */
   .vcard {
-    margin-left: 50px;
+    //margin-left: 50px;
 
     cite.fn {
       font-weight: 700;
@@ -949,8 +949,8 @@ COMMENT STYLES
     }
 
     .avatar {
-      position: absolute;
-      left: 16px;
+      float: left;
+      margin-right: 1em;
       border-radius: 50%;
     }
 

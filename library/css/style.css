@@ -2197,10 +2197,6 @@ COMMENT STYLES
   padding: 7px;
   border: 0;
 }
-/* line 925, ../scss/breakpoints/_base.scss */
-.comment .vcard {
-  margin-left: 50px;
-}
 /* line 928, ../scss/breakpoints/_base.scss */
 .comment .vcard cite.fn {
   font-weight: 700;
@@ -2218,8 +2214,8 @@ COMMENT STYLES
 }
 /* line 951, ../scss/breakpoints/_base.scss */
 .comment .vcard .avatar {
-  position: absolute;
-  left: 16px;
+  float: left;
+  margin-right: 1em;
   border-radius: 50%;
 }
 /* line 960, ../scss/breakpoints/_base.scss */

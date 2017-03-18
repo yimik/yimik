@@ -248,7 +248,7 @@ add_filter('wp_tag_cloud', 'color_cloud', 1);
 // Comment Layout
 function bones_comments( $comment, $args, $depth ) {
    $GLOBALS['comment'] = $comment; ?>
-  <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf'); ?>>
+  <div id="comment-<?php comment_ID(); ?>" <?php comment_class('cf comment'); ?>>
     <article  class="cf mdui-shadow-1 mdui-hoverable">
       <header class="comment-author vcard">
         <?php
