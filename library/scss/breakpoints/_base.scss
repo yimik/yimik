@@ -266,6 +266,7 @@ HEADER STYLES
 
 #logo {
   margin: 0.75em 0;
+  text-align: center;
 
   a {
     color: $white;
@@ -276,6 +277,25 @@ HEADER STYLES
 NAVIGATION STYLES
 *********************/
 
+//mobile nav
+#yimik-mobile-menu{
+  .nav{
+    display: block;
+    ul{
+      margin:0;
+    }
+    li{
+      div{
+        border-bottom: 1px solid $dark-gray;
+        padding-left: 3em;
+      }
+      a{
+        color: $black;
+      }
+    }
+  }
+}
+
 /*
 all navs have a .nav class applied via
 the wp_menu function; this is so we can
@@ -285,6 +305,7 @@ and more scalable.
 */
 
 .nav {
+  display: none;
   border-bottom: 0;
   margin: 0;
 
@@ -365,6 +386,10 @@ and more scalable.
 
 /* end .nav */
 
+//breadcrumbs
+.breadcrumbs{
+  display: none;
+}
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -1120,18 +1145,7 @@ COMMENT FORM STYLES
   margin:0;
 
   p{
-    width: 49%;
-
-    &:nth-child(even){
-      float: left;
-    }
-    &:nth-child(odd){
-      float: right;
-    }
-
-    &.logged-in-as,&.comment-notes,&.comment-form-comment,&.form-submit,&.yimik-comment-smiles{
-      width: 100%;
-    }
+    width: 100%;
 
     //fix emoji size
     &.yimik-comment-smiles{
@@ -1211,6 +1225,7 @@ SIDEBARS & ASIDES
 *********************/
 
 .sidebar {
+  display: none;
 }
 
 .widgettitle {
@@ -1373,4 +1388,11 @@ view.
 /* end .footer-links */
 
 .copyright {
+}
+
+//fixed button
+#mobile-menu-bar{
+  &.mdui-fab-wrapper {
+    bottom: 50px;
+  }
 }

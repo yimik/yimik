@@ -39,6 +39,7 @@ HEADER STYLES
   display: inline-block;
   float: left;
   margin: 0;
+  text-align: left;
 
   a {
     padding: 1.5em 0;
@@ -52,6 +53,7 @@ NAVIGATION STYLES
 *********************/
 
 .nav {
+  display: block;
   border: 0;
   float: right;
   font-weight: 500;
@@ -181,6 +183,7 @@ NAVIGATION STYLES
 
 /*breadcrumbs*/
 .breadcrumbs {
+  display: block;
   width: 100%;
   padding: 0.6em;
   margin-bottom: $container-padding;
@@ -203,6 +206,7 @@ SIDEBARS & ASIDES
 
 .sidebar {
   margin-top: 0;
+  display: block;
 }
 
 .widgettitle {
@@ -466,3 +470,23 @@ mobile. Make sure to double check these!
 
 /* end .footer-links */
 
+
+//comment
+.comment-respond {
+  margin:0;
+
+  p{
+    width: 49%;
+
+    &:nth-child(even){
+      float: left;
+    }
+    &:nth-child(odd){
+      float: right;
+    }
+
+    &.logged-in-as,&.comment-notes,&.comment-form-comment,&.form-submit,&.yimik-comment-smiles{
+      width: 100%;
+    }
+  }
+}

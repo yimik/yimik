@@ -130,8 +130,8 @@ msgid "Comments are closed."
 msgstr "评论已关闭"
 
 #: footer.php:9 library/bones.php:217
-msgid "Footer Links"
-msgstr "底部链接"
+msgid "The Mobile Menu"
+msgstr "移动端菜单"
 
 #: functions.php:100
 msgid "600px by 150px"

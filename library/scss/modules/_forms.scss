@@ -49,7 +49,6 @@ textarea,
   box-shadow: none;
   border: 1px solid $border-color;
   width: 100%;
-  max-width: 400px;
   font-family: $lato;
   background-color: $gray;
   @include transition(background-color 0.24s ease-in-out);
