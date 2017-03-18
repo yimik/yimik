@@ -31,6 +31,7 @@
         }
     }
 </script>
+
 <?php
     function get_smiley_yimik(){
         global $wpsmiliestrans;
