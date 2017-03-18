@@ -270,20 +270,14 @@ PAGE NAVI
 
 // Numeric Page Navi (built into the theme by default)
 function bones_page_navi() {
-	global $wp_query;
-	$bignum = 999999999;
-	if ( $wp_query->max_num_pages <= 1 ) {
-		return;
-	}
+    global $wp_query;
+    if( $wp_query->max_num_pages <= 1 || is_single() ) return;
 	echo '<nav class="pagination">';
 	$pageArray = paginate_links( array(
-		'base'      => str_replace( $bignum, '%#%', esc_url( get_pagenum_link( $bignum ) ) ),
-		'format'    => '',
-		'current'   => max( 1, get_query_var( 'paged' ) ),
-		'total'     => $wp_query->max_num_pages,
-		'prev_text' => '&larr;',
-		'next_text' => '&rarr;',
-		'type'      => 'array',
+        'prev_text' => '&larr;',
+        'next_text' => '&rarr;',
+        'echo' => false,
+        'type' => 'array',
 		'end_size'  => 3,
 		'mid_size'  => 3
 	) );
@@ -297,22 +291,19 @@ function bones_page_navi() {
 } /* end page navi */
 
 function yimik_comments_navi(){
-    $navigation = '';
-    $args = array(
-        'screen_reader_text' => '',
-    );
-    $args['echo'] = false;
-
-    // Make sure we get plain links, so we get a string we can work with.
-    $args['type'] = 'plain';
-
-    $links = paginate_comments_links( $args );
-
-    if ( $links ) {
-        $navigation = _navigation_markup( $links, 'comments-pagination', $args['screen_reader_text'] );
-    }
-
-    echo $navigation;
+    echo '<nav class="pagination">';
+    $pageArray = paginate_comments_links(array(
+        'prev_text' => '&larr;',
+        'next_text' => '&rarr;',
+        'echo' => false,
+        'type' => 'array'
+    ));
+    $pageHtml  = "";
+    $pageHtml .= "<ul class='page-numbers'>\n\t<li class='mdui-shadow-1 mdui-hoverable mdui-btn mdui-ripple'>";
+    $pageHtml .= join( "</li>\n\t<li class='mdui-shadow-1 mdui-hoverable mdui-btn mdui-ripple'>", $pageArray );
+    $pageHtml .= "</li>\n</ul>\n";
+    echo $pageHtml;
+    echo '</nav>';
 }
 
 /*********************

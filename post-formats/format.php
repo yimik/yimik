@@ -77,9 +77,7 @@
 
     <footer class="article-footer">
 
-        <?php printf(__('filed under:', 'bonestheme') . ' %1$s', get_the_category_list(', ')); ?>
-
-        <?php the_tags('<p class="tags"><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', ', ', '</p>'); ?>
+        <?php the_tags('<p class="tags"><i class="mdui-icon material-icons">&#xe54e;</i><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', '', '</p>'); ?>
 
     </footer> <?php // end article footer ?>
 

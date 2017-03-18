@@ -184,7 +184,7 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 
-a, a:visited {
+a{
   text-decoration: none;
   outline: none;
   color: $link-color;
@@ -766,6 +766,29 @@ POSTS & CONTENT STYLES
 // the tag output
 .tags {
   margin: 0;
+  color: darken($dark-gray, 20%);
+
+  i{
+    font-size: 1em;
+  }
+  .tags-title{
+
+  }
+  a{
+    display: inline-block;
+    background: darken($dark-gray, 20%);
+    padding: 0 5px;
+    line-height: 2em;
+    height: 2em;
+    color: $white;
+    @include transition(background,400ms);
+    &:not(:last-child){
+      margin-right: 1em;
+    }
+    &:hover,&:focus{
+      background: darken($dark-gray, 40%);
+    }
+  }
 }
 
 /******************************************************************
@@ -1099,15 +1122,21 @@ COMMENT FORM STYLES
   p{
     width: 49%;
 
-    &:nth-child(odd){
+    &:nth-child(even){
       float: left;
     }
-    &:nth-child(even){
+    &:nth-child(odd){
       float: right;
     }
 
-    &.comment-notes,&.comment-form-comment,&.form-submit{
+    &.logged-in-as,&.comment-notes,&.comment-form-comment,&.form-submit,&.yimik-comment-smiles{
       width: 100%;
+    }
+
+    //fix emoji size
+    &.yimik-comment-smiles{
+      margin-top:0.5em;
+      font-size: 24px;
     }
   }
 }
@@ -1127,7 +1156,7 @@ COMMENT FORM STYLES
 }
 
 .comment-form-comment {
-  margin: 1.5em 0 0.75em;
+  margin: 1.5em 0 0;
 }
 
 .form-allowed-tags {

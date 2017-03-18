@@ -302,6 +302,8 @@ add_filter("comment_reply_link_args","yimik_comment_form_args");
 function alter_comment_form_defaults($defaults){
     $defaults['class_submit'] = 'mdui-btn mdui-ripple';
     $defaults['submit_button'] = '<button name="%1$s" type="submit" id="%2$s" class="%3$s">%4$s</button>';
+    //add comment smiles
+    $defaults['comment_field'] .= get_smiley_yimik();
     return $defaults;
 }
 add_filter('comment_form_defaults','alter_comment_form_defaults');

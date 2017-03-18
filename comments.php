@@ -49,6 +49,7 @@ if (post_password_required()) {
 
     <?php if ( comments_open( $post_id ) ) : ?>
     <div id="yimik-respond" class="yimik-comment-panel-respond mdui-shadow-1 mdui-hoverable">
+        <?php include(get_template_directory() . '/smiley.php');?>
         <?php comment_form(); ?>
     </div>
     <?php endif;?>
