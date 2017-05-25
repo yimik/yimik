@@ -427,8 +427,74 @@ msgstr "Yimik配置"
 msgid "Basic Settings"
 msgstr "基本设置"
 
+msgid "Display Logo"
+msgstr "显示logo"
+
+msgid "Display Logo or not, defaults to true."
+msgstr "是否显示logo，默认显示"
+
+msgid "Upload the logo image if you want."
+msgstr "上传你的网站logo"
+
+msgid "Remove"
+msgstr "移除"
+
+msgid "No file chosen"
+msgstr "请选择文件"
+
+msgid "Upload"
+msgstr "上传"
+
+msgid "Keywords"
+msgstr "网站关键词"
+
+msgid "Site Keywords."
+msgstr "网站关键词"
+
+msgid "input site keywords here."
+msgstr "在这里输入你的网站关键词"
+
+msgid "Description"
+msgstr "网站描述"
+
+msgid "Site Description."
+msgstr "网站描述"
+
+msgid "input site description here."
+msgstr "在这里输入你的网站描述"
+
+msgid "Advanced Settings"
+msgstr "高级设置"
+
+msgid "Custom CSS"
+msgstr "自定义CSS"
+
+msgid "you can input custom css code here."
+msgstr "你可以在这里自定义CSS代码"
+
+msgid "Custom Header Code"
+msgstr "自定义头部代码"
+
+msgid "you can input custom header code here."
+msgstr "你可以在这里自定义网站头部代码"
+
+msgid "Custom Footer Code"
+msgstr "自定义底部代码"
+
+msgid "you can input custom footer code here."
+msgstr "你可以在这里自定义网站底部代码"
+
+msgid "Advertisement Settings"
+msgstr "广告设置"
+
+msgid "The function will be open later."
+msgstr "该功能将在以后放出"
+
 msgid "About Yimik"
 msgstr "关于Yimik"
+
+msgid "Introduction"
+msgstr "简介"
 
 msgid "Current Version"
 msgstr "当前版本"
@@ -436,8 +502,17 @@ msgstr "当前版本"
 msgid "Author"
 msgstr "作者"
 
-msgid "Description"
-msgstr "简介"
+msgid "Donate"
+msgstr "捐助我"
+
+msgid "Save Options"
+msgstr "保存设置"
+
+msgid "Restore Defaults"
+msgstr "恢复默认设置"
+
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr "点击确定继续恢复。注意，此操作将清空所有设置！"
 
 msgid "Search"
 msgstr "搜索"
