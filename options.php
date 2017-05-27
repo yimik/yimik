@@ -114,7 +114,7 @@ function optionsframework_options() {
 
     $options[] = array(
         'name' => __( 'Introduction', 'bonestheme' ),
-        'desc' => '本来用各路大神的主题一直觉得挺好，但总觉得哪里不对劲儿，自己动手，丰衣足食吧。',
+        'desc' => '本来用各路大神的主题一直觉得挺好，但总觉得哪里不对劲儿，自己动手，丰衣足食吧。本主题基于<a href="https://github.com/eddiemachado/bones" target="_blank">bones主题</a>二次开发，感谢原作者详细的注释。',
         'type' => 'info'
     );
 
