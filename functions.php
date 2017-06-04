@@ -24,6 +24,14 @@ require_once(get_template_directory().'/inc/options-framework.php');
  */
 add_action('admin_init','optionscheck_change_santiziation', 100);
 
+//引入主题自动更新插件
+require get_template_directory().'/library/plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+    'https://github.com/yimik/yimik',
+    __FILE__,
+    'yimik'
+);
+
 /*********************
 LAUNCH BONES
 Let's get everything up and running.
