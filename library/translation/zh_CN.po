@@ -427,6 +427,12 @@ msgstr "Yimik配置"
 msgid "Basic Settings"
 msgstr "基本设置"
 
+msgid "Display Site Title and Tagline"
+msgstr "显示站点标题和副标题"
+
+msgid "Display Site Title/Tagline or not, defaults to true."
+msgstr "是否显示站点标题和副标题，默认显示"
+
 msgid "Display Logo"
 msgstr "显示logo"
 
@@ -513,6 +519,9 @@ msgstr "恢复默认设置"
 
 msgid "Click OK to reset. Any theme settings will be lost!"
 msgstr "点击确定继续恢复。注意，此操作将清空所有设置！"
+
+msgid "Options saved."
+msgstr "配置保存成功！"
 
 msgid "Search"
 msgstr "搜索"

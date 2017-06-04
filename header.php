@@ -25,7 +25,7 @@
 			<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 		<![endif]-->
 		<?php // or, set /favicon.ico for IE10 win ?>
-		<meta name="msapplication-TileColor" content="#f01d4f">
+		<meta name="msapplication-TileColor" content="#33495e">
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
             <meta name="theme-color" content="#121212">
 
@@ -50,10 +50,21 @@
 
 					<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
 					<p id="logo" class="" itemscope itemtype="http://schema.org/Organization">
-                        <?php if(of_get_option("logo_display")) :?>
-                            <img src="of_get_option('logo_uploader',get_template_directory_uri().'/library/images/login-logo.png')"/>
-                        <?php endif;?>
-                        <a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a>
+                        <a href="<?php echo home_url(); ?>" rel="nofollow">
+                            <?php if(of_get_option("logo_display",true)) :?>
+                            <img src="<?php echo of_get_option('logo_uploader',get_template_directory_uri().'/library/images/login-logo.png')?>">
+                            <?php endif;?>
+                            <?php if(of_get_option("blog_name_display",true)) :?>
+                            <span class="blog_title">
+                                <strong>
+                                    <?php bloginfo('name'); ?>
+                                </strong>
+                                <i>
+                                    <?php bloginfo('description'); ?>
+                                </i>
+                            </span>
+                            <?php endif;?>
+                        </a>
                     </p>
 
 					<?php // if you'd like to use the site description you can un-comment it below ?>

@@ -40,11 +40,33 @@ HEADER STYLES
   float: left;
   margin: 0;
   text-align: left;
+  height: 4.5em;
 
   a {
-    padding: 1.5em 0;
+    //padding: 1.5em 0;
     display: block;
     text-decoration: none;
+
+    img{
+      max-height: 4.5em;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    .blog_title{
+      padding: 0.6em;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 1em;
+      strong{
+        display: block;
+        font-size: 1.2em;
+      }
+      i{
+        display: block;
+        font-style: normal;
+      }
+    }
   }
 }
 

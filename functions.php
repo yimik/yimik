@@ -16,7 +16,13 @@ require_once( 'library/bones.php' );
 
 // 引入主题设置面板
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-require_once('inc/options-framework.php');
+require_once(get_template_directory().'/options.php');
+require_once(get_template_directory().'/inc/options-framework.php');
+/*
+ * This is an example of how to override a default filter
+ * for 'textarea' sanitization and $allowedposttags + embed and script.
+ */
+add_action('admin_init','optionscheck_change_santiziation', 100);
 
 /*********************
 LAUNCH BONES
@@ -60,7 +66,14 @@ function bones_ahoy() {
   add_filter( 'the_content', 'bones_filter_ptags_on_images' );
   // cleaning up excerpt
   add_filter( 'excerpt_more', 'bones_excerpt_more' );
-
+  //add seo meta
+  add_action('wp_head', 'meta_seo');
+  //add custom css code
+  add_action('wp_head', 'custom_css_code', 14 );
+  //add header code
+  add_action('wp_head', 'header_code', 14 );
+  //add footer code
+  add_action('wp_footer', 'footer_code', 14 );
 } /* end bones ahoy */
 
 // let's get this party started
@@ -552,4 +565,89 @@ function yimik_get_avatar($avatar) {
 }
 add_filter( 'get_avatar', 'yimik_get_avatar');
 
+/**
+ * add seo meta to head
+ */
+function meta_seo(){
+    $description = '';
+    $keywords = '';
+
+    global $post;
+
+    if (is_single()) {
+        $description1 = str_replace("\n","",mb_strimwidth(strip_tags($post->post_excerpt), 0, 200, "…", 'utf-8'));
+        $description2 = str_replace("\n","",mb_strimwidth(strip_tags($post->post_content), 0, 200, "…", 'utf-8'));
+
+        // 填写摘要时显示自定义字段的内容，否则使用文章内容前200字作为描述
+        $description = $description1 ? $description1 : $description2;
+
+        //填写自定义字段keywords时显示自定义字段的内容，否则使用文章tags作为关键词
+        $tags = wp_get_post_tags($post->ID);
+        foreach ($tags as $tag ) {
+            $keywords = $keywords . $tag->name . ",";
+        }
+        $keywords = rtrim($keywords, ',');
+    }elseif (is_category()) {
+        // 分类的description可以到后台 - 文章 -分类目录，修改分类的描述
+        $description = category_description();
+        $keywords = single_cat_title('', false);
+    }elseif (is_tag()){
+        // 标签的description可以到后台 - 文章 - 标签，修改标签的描述
+        $description = tag_description();
+        $keywords = single_tag_title('', false);
+    }
+    if(!$description){
+        $description = of_get_option("meta_description");
+    }
+    if(!$keywords){
+        $keywords = of_get_option("meta_keywords");
+    }
+    $description = trim(strip_tags($description));
+    $keywords = trim(strip_tags($keywords));
+    printf('<meta name="keywords" content="%s"/>',$keywords);
+    printf('<meta name="description" content="%s"/>',$description);
+}
+
+/**
+ * 自定义全局css
+ */
+function custom_css_code(){
+    printf('<style type="text/css">%s</style>',of_get_option('custom_css',''));
+}
+/**
+ * 自定义头部代码
+ */
+function header_code(){
+    echo of_get_option('custom_header_code','');
+}
+/**
+ * 自定义页脚代码
+ */
+function footer_code(){
+    echo of_get_option('custom_footer_code','');
+}
+
+/**
+ * 允许script标签
+ */
+function optionscheck_change_santiziation() {
+    remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
+    add_filter( 'of_sanitize_textarea', 'custom_sanitize_textarea' );
+}
+function custom_sanitize_textarea($input) {
+    global $allowedposttags;
+    $custom_allowedtags["embed"] = array(
+        "src" => array(),
+        "type" => array(),
+        "allowfullscreen" => array(),
+        "allowscriptaccess" => array(),
+        "height" => array(),
+        "width" => array()
+    );
+    $custom_allowedtags["script"] = array();
+
+    $custom_allowedtags = array_merge($custom_allowedtags, $allowedposttags);
+    $output = wp_kses( $input, $custom_allowedtags);
+    return $output;
+}
 /* DON'T DELETE THIS CLOSING TAG */ ?>

@@ -26,6 +26,14 @@ function optionsframework_options() {
 	);
 
     $options[] = array(
+        'name' => __( 'Display Site Title and Tagline', 'bonestheme' ),
+        'desc' => __( 'Display Site Title/Tagline or not, defaults to true.', 'bonestheme' ),
+        'id' => 'blog_name_display',
+        'std' => '1',
+        'type' => 'checkbox'
+    );
+
+    $options[] = array(
         'name' => __( 'Display Logo', 'bonestheme' ),
         'desc' => __( 'Display Logo or not, defaults to true.', 'bonestheme' ),
         'id' => 'logo_display',
