@@ -27,7 +27,7 @@
 		<?php // or, set /favicon.ico for IE10 win ?>
 		<meta name="msapplication-TileColor" content="#33495e">
 		<meta name="msapplication-TileImage" content="<?php echo get_template_directory_uri(); ?>/library/images/win8-tile-icon.png">
-            <meta name="theme-color" content="#121212">
+            <meta name="theme-color" content="#33495e">
 
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
@@ -54,8 +54,7 @@
                             <?php if(of_get_option("logo_display",true)) :?>
                             <img src="<?php echo of_get_option('logo_uploader',get_template_directory_uri().'/library/images/login-logo.png')?>">
                             <?php endif;?>
-                            <?php if(of_get_option("blog_name_display",true)) :?>
-                            <span class="blog_title">
+                            <span class="blog_title <?php if(of_get_option("blog_name_display",true)): echo "hide-768"; endif;?>">
                                 <strong>
                                     <?php bloginfo('name'); ?>
                                 </strong>
@@ -63,7 +62,6 @@
                                     <?php bloginfo('description'); ?>
                                 </i>
                             </span>
-                            <?php endif;?>
                         </a>
                     </p>
 
