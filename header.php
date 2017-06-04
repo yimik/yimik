@@ -54,7 +54,7 @@
                             <?php if(of_get_option("logo_display",true)) :?>
                             <img src="<?php echo of_get_option('logo_uploader',get_template_directory_uri().'/library/images/login-logo.png')?>">
                             <?php endif;?>
-                            <span class="blog_title <?php if(of_get_option("blog_name_display",true)): echo "hide-768"; endif;?>">
+                            <span class="blog_title <?php if(!of_get_option("blog_name_display",true)): echo "hide-768"; endif;?>">
                                 <strong>
                                     <?php bloginfo('name'); ?>
                                 </strong>
