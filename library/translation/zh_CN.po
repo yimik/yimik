@@ -451,6 +451,12 @@ msgstr "请选择文件"
 msgid "Upload"
 msgstr "上传"
 
+msgid "ICP Licensing"
+msgstr "备案号"
+
+msgid "input ICP Licensing here."
+msgstr "在这里输入网站备案号"
+
 msgid "Keywords"
 msgstr "网站关键词"
 

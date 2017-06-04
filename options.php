@@ -49,6 +49,13 @@ function optionsframework_options() {
     );
 
     $options[] = array(
+        'name' => __( 'ICP Licensing', 'bonestheme' ),
+        'placeholder' => __( 'input ICP Licensing here.', 'bonestheme' ),
+        'id' => 'icp_licensing',
+        'type' => 'text'
+    );
+
+    $options[] = array(
         'name' => __( 'Keywords', 'bonestheme' ),
         'desc' => __( 'Site Keywords.', 'bonestheme' ),
         'id' => 'meta_keywords',

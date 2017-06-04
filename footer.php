@@ -2,8 +2,15 @@
 
 				<div id="inner-footer" class="wrap cf">
 
-					<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>.</p>
-
+					<p class="source-org copyright mdui-float-left">
+                        &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
+                        <?php if (of_get_option('icp_licensing')):
+                            echo '|'.of_get_option('icp_licensing');
+                        endif;?>
+                    </p>
+                    <p class="mdui-float-right">
+                        Power by WordPress | Theme <a href="https://blog.yimik.com/archives/1121" target="_blank" style="color: #fff;">Yimik</a>
+                    </p>
 				</div>
                 <button id="return-top" class="mdui-fab-hide mdui-fab mdui-fab-mini mdui-fab-fixed mdui-ripple mdui-color-blue"><i class="mdui-icon material-icons">&#xe5d8;</i></button>
                 <button id="mobile-menu-bar" class="mdui-fab-hide mdui-fab mdui-fab-mini mdui-fab-fixed mdui-ripple mdui-color-blue"><i class="mdui-icon material-icons">&#xe5d2;</i></button>
