@@ -1753,10 +1753,10 @@ NAVIGATION STYLES
   -o-background-size: 100%, 100%;
   -webkit-background-size: 100%, 100%;
   background-size: 100%, 100%;
-  height: 5em;
+  height: 6.5em;
   margin: 0;
   text-align: center;
-  padding: 2em 0;
+  padding: 3em 0;
   color: #f2f2f2;
 }
 /* line 310, ../scss/breakpoints/_base.scss */

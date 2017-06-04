@@ -13,9 +13,6 @@
 
         <div id="yimik-mobile-menu" class="mdui-drawer mdui-drawer-close">
             <h1 class="mobile-menu-head"><?php bloginfo('name'); ?></h1>
-            <div class="mdui-typo">
-                <hr/>
-            </div>
             <?php wp_nav_menu(array(
                 'container' => 'div',                           // enter '' to remove nav container (just make sure .footer-links in _base.scss isn't wrapping)
                 'container_class' => 'footer-links cf',         // class of container (should you choose to use it)
