@@ -508,6 +508,14 @@ POSTS & CONTENT STYLES
       line-height: 2em;
       margin-bottom: 0.6em;
     }
+    ul{
+      margin-left:3em;
+      list-style-type:circle;
+    }
+    ol{
+      margin-left:3em;
+      list-style-type:decimal;
+    }
 
     h3,h4,h5,h6{
       font-size: 1em;
