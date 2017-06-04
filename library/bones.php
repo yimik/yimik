@@ -87,7 +87,7 @@ function bones_rss_version() { return ''; }
 
 // remove WP version from scripts
 function bones_remove_wp_ver_css_js( $src ) {
-	if ( strpos( $src, 'ver=' ) )
+	if ( strpos( $src, 'ver='.get_bloginfo( 'version' ) ) )
 		$src = remove_query_arg( 'ver', $src );
 	return $src;
 }
@@ -128,20 +128,20 @@ function bones_scripts_and_styles() {
 		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
 
 		// register main stylesheet
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), '', 'all' );
+		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), wp_get_theme()->get("Version"), 'all' );
 
 		// ie-only style sheet
-		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), '' );
+		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), wp_get_theme()->get("Version") );
 
     // comment reply script for threaded comments
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
 		  wp_enqueue_script( 'comment-reply' );
     }
 	  //adding library mdui
-	  wp_register_script('mdui',get_stylesheet_directory_uri() . '/library/mdui/js/mdui.min.js',array(),'',true);
+	  wp_register_script('mdui',get_stylesheet_directory_uri() . '/library/mdui/js/mdui.min.js',array(),'0.2.1',true);
 
 	  //adding scripts file in the footer
-		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );
+		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), wp_get_theme()->get("Version"), true );
 
 
 		// enqueue styles and scripts
