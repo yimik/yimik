@@ -128,7 +128,7 @@ NAVIGATION STYLES
       li {
         background: $head-color;
         a {
-          padding-left: 10px;
+          padding:1em 0.75em;
           border-right: 0;
           display: block;
           width: 150px;
@@ -502,12 +502,21 @@ mobile. Make sure to double check these!
 
   p{
     width: 49%;
+    clear:none;
 
     &:nth-child(even){
       float: left;
     }
     &:nth-child(odd){
       float: right;
+    }
+
+    //fix Captcha by BestWebSoft bug
+    &>:first-child{
+      padding-bottom: 0;
+    }
+    &>:last-child{
+
     }
 
     &.logged-in-as,&.comment-notes,&.comment-form-comment,&.form-submit,&.yimik-comment-smiles{

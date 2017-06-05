@@ -2377,29 +2377,33 @@ COMMENT FORM STYLES
   margin-top: 0.5em;
   font-size: 24px;
 }
+/* line 1191, ../scss/breakpoints/_base.scss */
+.comment-respond p.yimik-comment-smiles a {
+  margin-right: 3px !important;
+}
 
-/* line 1194, ../scss/breakpoints/_base.scss */
+/* line 1198, ../scss/breakpoints/_base.scss */
 #reply-title {
   margin: 0;
   height: 25px;
 }
 
-/* line 1199, ../scss/breakpoints/_base.scss */
+/* line 1203, ../scss/breakpoints/_base.scss */
 .logged-in-as {
   color: #9fa6b4;
   margin: 0;
 }
-/* line 1203, ../scss/breakpoints/_base.scss */
+/* line 1207, ../scss/breakpoints/_base.scss */
 .logged-in-as a {
   color: #5c6b80;
 }
 
-/* line 1208, ../scss/breakpoints/_base.scss */
+/* line 1212, ../scss/breakpoints/_base.scss */
 .comment-form-comment {
   margin: 1.5em 0 0;
 }
 
-/* line 1212, ../scss/breakpoints/_base.scss */
+/* line 1216, ../scss/breakpoints/_base.scss */
 .form-allowed-tags {
   padding: 1.5em;
   background-color: #f8f9fa;
@@ -2407,7 +2411,7 @@ COMMENT FORM STYLES
 }
 
 /* comment submit button */
-/* line 1219, ../scss/breakpoints/_base.scss */
+/* line 1223, ../scss/breakpoints/_base.scss */
 #submit {
   float: right;
   font-size: 1em;
@@ -2415,13 +2419,13 @@ COMMENT FORM STYLES
 }
 
 /* comment form title */
-/* line 1227, ../scss/breakpoints/_base.scss */
+/* line 1231, ../scss/breakpoints/_base.scss */
 #comment-form-title {
   margin: 0 0 1.1em;
 }
 
 /* cancel comment reply link */
-/* line 1232, ../scss/breakpoints/_base.scss */
+/* line 1236, ../scss/breakpoints/_base.scss */
 #cancel-comment-reply-link {
   background: #7dd667;
   float: right;
@@ -2435,13 +2439,13 @@ COMMENT FORM STYLES
 
 /* logged in comments */
 /* allowed tags */
-/* line 1249, ../scss/breakpoints/_base.scss */
+/* line 1253, ../scss/breakpoints/_base.scss */
 #allowed_tags {
   margin: 1.5em 10px 0.7335em 0;
 }
 
 /* no comments */
-/* line 1254, ../scss/breakpoints/_base.scss */
+/* line 1258, ../scss/breakpoints/_base.scss */
 .no-comments {
   text-align: center;
   font-weight: bold;
@@ -2450,60 +2454,60 @@ COMMENT FORM STYLES
 /*********************
 SIDEBARS & ASIDES
 *********************/
-/* line 1263, ../scss/breakpoints/_base.scss */
+/* line 1267, ../scss/breakpoints/_base.scss */
 .sidebar {
   display: none;
 }
 
-/* line 1267, ../scss/breakpoints/_base.scss */
+/* line 1271, ../scss/breakpoints/_base.scss */
 .widgettitle {
   border-bottom: 1px solid #f8f9fa;
   padding: 0.6em;
   margin: -0.6em -0.6em 0.6em -0.6em;
 }
 
-/* line 1273, ../scss/breakpoints/_base.scss */
+/* line 1277, ../scss/breakpoints/_base.scss */
 .widget {
   padding: 0.6em;
   background-color: #fff;
 }
-/* line 1277, ../scss/breakpoints/_base.scss */
+/* line 1281, ../scss/breakpoints/_base.scss */
 .widget:first-child {
   margin-top: 0;
 }
-/* line 1281, ../scss/breakpoints/_base.scss */
+/* line 1285, ../scss/breakpoints/_base.scss */
 .widget a {
   text-decoration: none;
 }
-/* line 1284, ../scss/breakpoints/_base.scss */
+/* line 1288, ../scss/breakpoints/_base.scss */
 .widget ul {
   margin: 0;
 }
-/* line 1286, ../scss/breakpoints/_base.scss */
+/* line 1290, ../scss/breakpoints/_base.scss */
 .widget ul li {
   margin-bottom: 0.6em;
   /* deep nesting */
 }
-/* line 1292, ../scss/breakpoints/_base.scss */
+/* line 1296, ../scss/breakpoints/_base.scss */
 .widget ul li:last-child {
   margin-bottom: 0;
 }
 
-/* line 1309, ../scss/breakpoints/_base.scss */
+/* line 1313, ../scss/breakpoints/_base.scss */
 .widget_search label {
   display: none;
 }
-/* line 1312, ../scss/breakpoints/_base.scss */
+/* line 1316, ../scss/breakpoints/_base.scss */
 .widget_search form {
   position: relative;
 }
-/* line 1315, ../scss/breakpoints/_base.scss */
+/* line 1319, ../scss/breakpoints/_base.scss */
 .widget_search form .search-field {
   width: -webkit-calc(100% - 5em);
   width: calc(100% - 5em);
   display: inline-block;
 }
-/* line 1320, ../scss/breakpoints/_base.scss */
+/* line 1324, ../scss/breakpoints/_base.scss */
 .widget_search form .search-submit {
   min-width: 5em;
   width: 5em;
@@ -2514,52 +2518,52 @@ SIDEBARS & ASIDES
 }
 
 /*meta,archive,categories widget*/
-/* line 1334, ../scss/breakpoints/_base.scss */
+/* line 1338, ../scss/breakpoints/_base.scss */
 .widget_archive ul, .widget_meta ul, .widget_categories ul {
   position: relative;
   overflow: hidden;
 }
-/* line 1337, ../scss/breakpoints/_base.scss */
+/* line 1341, ../scss/breakpoints/_base.scss */
 .widget_archive ul li, .widget_meta ul li, .widget_categories ul li {
   width: 50%;
   float: left;
 }
 
-/* line 1345, ../scss/breakpoints/_base.scss */
+/* line 1349, ../scss/breakpoints/_base.scss */
 .widget_tag_cloud a {
   display: inline-block;
   padding: 3px;
 }
 
 /* calendar widget */
-/* line 1353, ../scss/breakpoints/_base.scss */
+/* line 1357, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap {
   width: 100%;
   text-align: center;
 }
-/* line 1357, ../scss/breakpoints/_base.scss */
+/* line 1361, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap caption {
   font-size: 1.1em;
 }
-/* line 1361, ../scss/breakpoints/_base.scss */
+/* line 1365, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap table {
   width: 100%;
 }
-/* line 1373, ../scss/breakpoints/_base.scss */
+/* line 1377, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap #today {
   background-color: #3f51b5;
   color: #fff;
 }
-/* line 1377, ../scss/breakpoints/_base.scss */
+/* line 1381, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap #prev {
   text-align: left;
 }
-/* line 1380, ../scss/breakpoints/_base.scss */
+/* line 1384, ../scss/breakpoints/_base.scss */
 .widget_calendar .calendar_wrap #next {
   text-align: right;
 }
 
-/* line 1386, ../scss/breakpoints/_base.scss */
+/* line 1390, ../scss/breakpoints/_base.scss */
 .no-widgets {
   background-color: #fff;
   padding: 1.5em;
@@ -2571,7 +2575,7 @@ SIDEBARS & ASIDES
 /*********************
 FOOTER STYLES
 *********************/
-/* line 1398, ../scss/breakpoints/_base.scss */
+/* line 1402, ../scss/breakpoints/_base.scss */
 .footer {
   clear: both;
   background-color: #323944;
@@ -2588,7 +2592,7 @@ override these styles for the desktop
 view.
 */
 /* end .footer-links */
-/* line 1431, ../scss/breakpoints/_base.scss */
+/* line 1435, ../scss/breakpoints/_base.scss */
 #mobile-menu-bar.mdui-fab-wrapper {
   bottom: 50px;
 }
@@ -2843,7 +2847,7 @@ you can add resource intensive styles.
   /* line 130, ../scss/breakpoints/_768up.scss */
   .nav li ul.sub-menu li a,
   .nav li ul.children li a {
-    padding-left: 10px;
+    padding: 1em 0.75em;
     border-right: 0;
     display: block;
     width: 150px;
@@ -2973,16 +2977,21 @@ you can add resource intensive styles.
   /* line 503, ../scss/breakpoints/_768up.scss */
   .comment-respond p {
     width: 49%;
+    clear: none;
   }
-  /* line 506, ../scss/breakpoints/_768up.scss */
+  /* line 507, ../scss/breakpoints/_768up.scss */
   .comment-respond p:nth-child(even) {
     float: left;
   }
-  /* line 509, ../scss/breakpoints/_768up.scss */
+  /* line 510, ../scss/breakpoints/_768up.scss */
   .comment-respond p:nth-child(odd) {
     float: right;
   }
-  /* line 513, ../scss/breakpoints/_768up.scss */
+  /* line 515, ../scss/breakpoints/_768up.scss */
+  .comment-respond p > :first-child {
+    padding-bottom: 0;
+  }
+  /* line 522, ../scss/breakpoints/_768up.scss */
   .comment-respond p.logged-in-as, .comment-respond p.comment-notes, .comment-respond p.comment-form-comment, .comment-respond p.form-submit, .comment-respond p.yimik-comment-smiles {
     width: 100%;
   }

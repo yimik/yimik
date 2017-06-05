@@ -1187,6 +1187,10 @@ COMMENT FORM STYLES
     &.yimik-comment-smiles{
       margin-top:0.5em;
       font-size: 24px;
+
+      a{
+        margin-right: 3px !important;
+      }
     }
   }
 }

@@ -465,7 +465,7 @@ NAVIGATION STYLES
 /* line 130, ../scss/breakpoints/_768up.scss */
 .nav li ul.sub-menu li a,
 .nav li ul.children li a {
-  padding-left: 10px;
+  padding: 1em 0.75em;
   border-right: 0;
   display: block;
   width: 150px;
@@ -595,16 +595,21 @@ mobile. Make sure to double check these!
 /* line 503, ../scss/breakpoints/_768up.scss */
 .comment-respond p {
   width: 49%;
+  clear: none;
 }
-/* line 506, ../scss/breakpoints/_768up.scss */
+/* line 507, ../scss/breakpoints/_768up.scss */
 .comment-respond p:nth-child(even) {
   float: left;
 }
-/* line 509, ../scss/breakpoints/_768up.scss */
+/* line 510, ../scss/breakpoints/_768up.scss */
 .comment-respond p:nth-child(odd) {
   float: right;
 }
-/* line 513, ../scss/breakpoints/_768up.scss */
+/* line 515, ../scss/breakpoints/_768up.scss */
+.comment-respond p > :first-child {
+  padding-bottom: 0;
+}
+/* line 522, ../scss/breakpoints/_768up.scss */
 .comment-respond p.logged-in-as, .comment-respond p.comment-notes, .comment-respond p.comment-form-comment, .comment-respond p.form-submit, .comment-respond p.yimik-comment-smiles {
   width: 100%;
 }
