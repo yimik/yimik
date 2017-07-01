@@ -74,6 +74,8 @@ function bones_ahoy() {
   add_filter( 'the_content', 'bones_filter_ptags_on_images' );
   // cleaning up excerpt
   add_filter( 'excerpt_more', 'bones_excerpt_more' );
+  // change excerpt length
+  add_filter("excerpt_length", "yimik_excerpt_length");
   //add seo meta
   add_action('wp_head', 'meta_seo');
   //add custom css code
