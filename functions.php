@@ -568,7 +568,7 @@ add_action('wp_enqueue_scripts', 'bones_fonts');
  * @return mixed
  */
 function yimik_get_avatar($avatar) {
-    $avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),"gravatar.duoshuo.com",$avatar);
+    $avatar = str_replace(array("http://www.gravatar.com","http://0.gravatar.com","http://1.gravatar.com","http://2.gravatar.com"),"https://secure.gravatar.com",$avatar);
     return $avatar;
 }
 add_filter( 'get_avatar', 'yimik_get_avatar');
