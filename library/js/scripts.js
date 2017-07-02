@@ -149,5 +149,26 @@ jQuery(document).ready(function ($) {
     $mobileMenuBar.click(function () {
         yimikMobileMenu.toggle();
     });
+
+    //slider
+    if($('.swiper-container').length){
+        var galleryLeft = new Swiper('.gallery-left', {
+            spaceBetween: 10,
+            direction: 'vertical',
+            mousewheelControl: true,
+            loop:true,
+            parallax: true,
+        });
+        var galleryThumbs = new Swiper('.gallery-thumbs', {
+            spaceBetween: 10,
+            direction: 'vertical',
+            slidesPerView: 4,
+            touchRatio: 0.2,
+            loop:true,
+            slideToClickedSlide: true
+        });
+        galleryLeft.params.control = galleryThumbs;
+        galleryThumbs.params.control = galleryLeft;
+    }
 });
 /* end of as page load scripts */

@@ -617,6 +617,40 @@ function meta_seo(){
 }
 
 /**
+ * 生成首页轮播图代码
+ */
+function swiper_code(){
+    if(!of_get_option("swiper_display")){
+        return;
+    }
+    $sliders = trim(of_get_option("sliders"));
+    if(!$sliders){
+        return;
+    }
+    $sliders = trim($sliders,',[]');
+    $sliders = json_decode("[$sliders]",true);
+    $slidersHtml = '';
+    $slidersHtml2 = '';
+    foreach ($sliders as $slider){
+        $slidersHtml .= sprintf('<a href="%s" class="swiper-slide"><img src="%s"><p class="slide-title" data-swiper-parallax-y="3300">%s</p></a>',$slider['link'],$slider['image'],$slider['title']);
+        $slidersHtml2 .= sprintf('<div class="swiper-slide"><img src="%s"></div>',$slider['image']);
+    }?>
+    <div class="swiper-container cf mdui-shadow-1 mdui-hoverable">
+      <!-- Swiper -->
+      <div class="gallery-left">
+          <div class="swiper-wrapper">
+              <?php echo $slidersHtml;?>
+          </div>
+      </div>
+      <div class="gallery-thumbs">
+          <div class="swiper-wrapper">
+              <?php echo $slidersHtml2;?>
+          </div>
+      </div>
+    </div><?php
+}
+
+/**
  * 自定义全局css
  */
 function custom_css_code(){

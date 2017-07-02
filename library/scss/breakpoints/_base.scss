@@ -426,6 +426,57 @@ POSTS & CONTENT STYLES
   margin-top: 1.5em;
 }
 
+//sliders
+.swiper-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:$container-padding;
+  padding: 0.5em;
+  height: 30em;
+
+  .swiper-slide {
+    overflow: hidden;
+
+    img{
+      width:100%;
+    }
+  }
+  .gallery-left {
+    width: 43em;
+    float: left;
+    height: 100%;
+
+    a{
+      position: relative;
+      display: block;
+
+      .slide-title{
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0.5em;
+        color: $white;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
+  .gallery-thumbs {
+    width: 20%;
+    box-sizing: border-box;
+    float: right;
+    height: 100%;
+
+    .swiper-slide{
+      opacity: 0.3;
+    }
+    .swiper-slide-active {
+      opacity: 1;
+    }
+  }
+}
+
 .hentry {
   background-color: $white;
   margin-bottom: $container-padding;
