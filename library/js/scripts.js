@@ -152,23 +152,17 @@ jQuery(document).ready(function ($) {
 
     //slider
     if($('.swiper-container').length){
-        var galleryLeft = new Swiper('.gallery-left', {
-            spaceBetween: 10,
-            direction: 'vertical',
+        var gallery = new Swiper('.swiper-container', {
+            autoHeight: true,
+            autoplay : 4000,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            pagination: '.swiper-pagination',
+            paginationType: 'progress',
+            loop:true,
             mousewheelControl: true,
-            loop:true,
-            parallax: true,
+            parallax: true
         });
-        var galleryThumbs = new Swiper('.gallery-thumbs', {
-            spaceBetween: 10,
-            direction: 'vertical',
-            slidesPerView: 4,
-            touchRatio: 0.2,
-            loop:true,
-            slideToClickedSlide: true
-        });
-        galleryLeft.params.control = galleryThumbs;
-        galleryThumbs.params.control = galleryLeft;
     }
 });
 /* end of as page load scripts */

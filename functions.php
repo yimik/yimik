@@ -632,23 +632,24 @@ function swiper_code(){
     $sliders = trim($sliders,',[]');
     $sliders = json_decode("[$sliders]",true);
     $slidersHtml = '';
-    $slidersHtml2 = '';
+    if(!$sliders){
+        echo '<script type="application/javascript">alert("轮播图格式错误！请检查！");</script>';
+        return;
+    }
     foreach ($sliders as $slider){
-        $slidersHtml .= sprintf('<a href="%s" class="swiper-slide"><img src="%s"><p class="slide-title" data-swiper-parallax-y="3300">%s</p></a>',$slider['link'],$slider['image'],$slider['title']);
-        $slidersHtml2 .= sprintf('<div class="swiper-slide"><img src="%s"></div>',$slider['image']);
-    }?>
-    <div class="swiper-container cf mdui-shadow-1 mdui-hoverable">
+        $slidersHtml .= sprintf('<div class="swiper-slide"><a class="mdui-ripple" href="%s"><img src="%s"><p class="slide-title" data-swiper-parallax-x="2000">%s</p></a></div>',$slider['link'],$slider['image'],$slider['title']);
+    }
+    ?>
+    <div class="swiper-container mdui-shadow-1 mdui-hoverable">
       <!-- Swiper -->
-      <div class="gallery-left">
-          <div class="swiper-wrapper">
-              <?php echo $slidersHtml;?>
-          </div>
+      <div class="swiper-wrapper">
+          <?php echo $slidersHtml;?>
       </div>
-      <div class="gallery-thumbs">
-          <div class="swiper-wrapper">
-              <?php echo $slidersHtml2;?>
-          </div>
-      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev mdui-shadow-4 mdui-hoverable mdui-ripple"></div>
+      <div class="swiper-button-next mdui-shadow-4 mdui-hoverable mdui-ripple"></div>
     </div><?php
 }
 
