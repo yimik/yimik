@@ -74,6 +74,8 @@ function bones_ahoy() {
   add_filter( 'the_content', 'bones_filter_ptags_on_images' );
   // cleaning up excerpt
   add_filter( 'excerpt_more', 'bones_excerpt_more' );
+  // change excerpt length
+  add_filter("excerpt_length", "yimik_excerpt_length");
   //add seo meta
   add_action('wp_head', 'meta_seo');
   //add custom css code
@@ -568,7 +570,7 @@ add_action('wp_enqueue_scripts', 'bones_fonts');
  * @return mixed
  */
 function yimik_get_avatar($avatar) {
-    $avatar = str_replace(array("www.gravatar.com","0.gravatar.com","1.gravatar.com","2.gravatar.com"),"gravatar.duoshuo.com",$avatar);
+    $avatar = str_replace(array("http://www.gravatar.com","http://0.gravatar.com","http://1.gravatar.com","http://2.gravatar.com"),"https://secure.gravatar.com",$avatar);
     return $avatar;
 }
 add_filter( 'get_avatar', 'yimik_get_avatar');

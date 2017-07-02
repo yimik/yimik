@@ -567,3 +567,6 @@ msgstr "作者：%s"
 
 msgid "Reply"
 msgstr "回复"
+
+msgid "This is the 404 page."
+msgstr "这里是404页面(´･ω･`)"
