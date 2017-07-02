@@ -14,7 +14,7 @@
    }
    100% {
      @include transform(perspective(250px) rotateX(0deg));
-     @include opacity(0.8);
+     @include opacity(0.9);
    }
 }
 

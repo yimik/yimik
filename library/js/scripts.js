@@ -149,5 +149,20 @@ jQuery(document).ready(function ($) {
     $mobileMenuBar.click(function () {
         yimikMobileMenu.toggle();
     });
+
+    //slider
+    if($('.swiper-container').length){
+        var gallery = new Swiper('.swiper-container', {
+            autoHeight: true,
+            autoplay : 4000,
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            pagination: '.swiper-pagination',
+            paginationType: 'progress',
+            loop:true,
+            mousewheelControl: true,
+            parallax: true
+        });
+    }
 });
 /* end of as page load scripts */

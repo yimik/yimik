@@ -71,11 +71,26 @@ function optionsframework_options() {
         'type' => 'textarea'
     );
 
+    $options[] = array(
+        'name' => __( 'Enable slideshow', 'bonestheme' ),
+        'desc' => __( 'Enable slideshow or not, defaults to false.', 'bonestheme' ),
+        'id' => 'swiper_display',
+        'std' => '0',
+        'type' => 'checkbox'
+    );
+
+    $options[] = array(
+        'name' => __( 'Slideshow', 'bonestheme' ),
+        'desc' => __( 'JSON format,like {"title":"title","link":"url","image":"imageUrl"}, multiple pictures separated by commas.', 'bonestheme' ),
+        'id' => 'sliders',
+        'placeholder' => __( '{"title":"The Great Wall","link":"http://blog.yimik.com","image":"http://xxx.xxx.xxx/xxx.jpg"}', 'bonestheme' ),
+        'type' => 'textarea'
+    );
+
 	$options[] = array(
 		'name' => __( 'Advanced Settings', 'bonestheme' ),
 		'type' => 'heading'
 	);
-
 
     $options[] = array(
         'name' => __( 'Custom CSS', 'bonestheme' ),

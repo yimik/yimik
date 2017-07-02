@@ -12,3 +12,18 @@ be seen on the Desktop.
 .wrap {
   width: 83%;
 }
+
+//sliders show 1030up
+.swiper-container {
+  .swiper-wrapper {
+    a {
+      .slide-title {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+      display: block;
+  }
+}

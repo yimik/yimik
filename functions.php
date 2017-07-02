@@ -619,6 +619,41 @@ function meta_seo(){
 }
 
 /**
+ * 生成首页轮播图代码
+ */
+function swiper_code(){
+    if(!of_get_option("swiper_display")){
+        return;
+    }
+    $sliders = trim(of_get_option("sliders"));
+    if(!$sliders){
+        return;
+    }
+    $sliders = trim($sliders,',[]');
+    $sliders = json_decode("[$sliders]",true);
+    $slidersHtml = '';
+    if(!$sliders){
+        echo '<script type="application/javascript">alert("轮播图格式错误！请检查！");</script>';
+        return;
+    }
+    foreach ($sliders as $slider){
+        $slidersHtml .= sprintf('<div class="swiper-slide"><a class="mdui-ripple" href="%s"><img src="%s"><p class="slide-title" data-swiper-parallax-x="2000">%s</p></a></div>',$slider['link'],$slider['image'],$slider['title']);
+    }
+    ?>
+    <div class="swiper-container mdui-shadow-1 mdui-hoverable">
+      <!-- Swiper -->
+      <div class="swiper-wrapper">
+          <?php echo $slidersHtml;?>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-prev mdui-shadow-4 mdui-hoverable mdui-ripple"></div>
+      <div class="swiper-button-next mdui-shadow-4 mdui-hoverable mdui-ripple"></div>
+    </div><?php
+}
+
+/**
  * 自定义全局css
  */
 function custom_css_code(){

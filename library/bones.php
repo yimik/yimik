@@ -118,54 +118,63 @@ SCRIPTS & ENQUEUEING
 *********************/
 
 // loading modernizr and jquery, and reply script
-function bones_scripts_and_styles() {
+function bones_scripts_and_styles(){
 
-  global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+    global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
-  if (!is_admin()) {
+    if (!is_admin()) {
 
-		// modernizr (without media query polyfill)
-		wp_register_script( 'bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false );
+        // modernizr (without media query polyfill)
+        wp_register_script('bones-modernizr', get_stylesheet_directory_uri() . '/library/js/libs/modernizr.custom.min.js', array(), '2.5.3', false);
 
-		// register main stylesheet
-		wp_register_style( 'bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), wp_get_theme()->get("Version"), 'all' );
+        // register main stylesheet
+        wp_register_style('bones-stylesheet', get_stylesheet_directory_uri() . '/library/css/style.css', array(), wp_get_theme()->get("Version"), 'all');
 
-		// ie-only style sheet
-		wp_register_style( 'bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), wp_get_theme()->get("Version") );
+        // ie-only style sheet
+        wp_register_style('bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), wp_get_theme()->get("Version"));
 
-    // comment reply script for threaded comments
-    if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
-		  wp_enqueue_script( 'comment-reply' );
+        // comment reply script for threaded comments
+        if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+            wp_enqueue_script('comment-reply');
+        }
+        //adding library mdui
+        wp_register_script('mdui', get_stylesheet_directory_uri() . '/library/mdui/js/mdui.min.js', array(), '0.2.1', true);
+        //add swiper library
+        wp_register_script('swiper', get_stylesheet_directory_uri() . '/library/swiper/js/swiper.min.js', array(), '3.4.2', true);
+        wp_register_style('swiper', get_stylesheet_directory_uri() . '/library/swiper/css/swiper.min.css', array(), '3.4.2');
+
+        //adding scripts file in the footer
+        wp_register_script('bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array('jquery'), wp_get_theme()->get("Version"), true);
+
+
+        // enqueue styles and scripts
+        wp_enqueue_script('bones-modernizr');
+        wp_enqueue_style('bones-stylesheet');
+        wp_enqueue_style('bones-ie-only');
+
+        // enqueue dashicons
+        //wp_enqueue_style( 'dashicons' );
+
+        $wp_styles->add_data('bones-ie-only', 'conditional', 'lt IE 9'); // add conditional wrapper around ie stylesheet
+
+        /*
+        I recommend using a plugin to call jQuery
+        using the google cdn. That way it stays cached
+        and your site will load faster.
+        */
+        wp_enqueue_script('jquery');
+
+        //add swiper if set display=true
+        if(of_get_option("swiper_display")){
+            wp_enqueue_style('swiper');
+            wp_enqueue_script('swiper');
+        }
+        wp_enqueue_script('bones-js');
+
+        // enqueue mdui
+        wp_enqueue_script('mdui');
+
     }
-	  //adding library mdui
-	  wp_register_script('mdui',get_stylesheet_directory_uri() . '/library/mdui/js/mdui.min.js',array(),'0.2.1',true);
-
-	  //adding scripts file in the footer
-		wp_register_script( 'bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), wp_get_theme()->get("Version"), true );
-
-
-		// enqueue styles and scripts
-		wp_enqueue_script( 'bones-modernizr' );
-		wp_enqueue_style( 'bones-stylesheet' );
-		wp_enqueue_style( 'bones-ie-only' );
-
-		// enqueue dashicons
-//        wp_enqueue_style( 'dashicons' );
-
-		$wp_styles->add_data( 'bones-ie-only', 'conditional', 'lt IE 9' ); // add conditional wrapper around ie stylesheet
-
-		/*
-		I recommend using a plugin to call jQuery
-		using the google cdn. That way it stays cached
-		and your site will load faster.
-		*/
-		wp_enqueue_script( 'jquery' );
-		wp_enqueue_script( 'bones-js' );
-
-	    // enqueue mdui
-	    wp_enqueue_script( 'mdui' );
-
-	}
 }
 
 /*********************

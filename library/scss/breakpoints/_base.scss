@@ -486,6 +486,57 @@ POSTS & CONTENT STYLES
   margin-top: 1.5em;
 }
 
+//sliders
+.swiper-container {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom:$container-padding;
+  //padding: 0.5em;
+  width: 100%;
+
+  .swiper-wrapper{
+    a{
+      position: relative;
+      display: block;
+
+      .slide-title{
+        position: absolute;
+        bottom: 0em;
+        width: 100%;
+        margin: 0;
+        padding: 0.5em;
+        color: $white;
+        font-weight: bold;
+        font-size: 1em;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    }
+
+    .swiper-slide {
+      overflow: hidden;
+      img{
+        width:100%;
+        margin: 0;
+        display: block;
+      }
+    }
+  }
+
+  .swiper-button-next, .swiper-button-prev{
+    display: none;
+    background-color: #fff;
+    @include border-radius(100%);
+    width: 3.5em;
+    height: 3.5em;
+    background-size: 1.3em;
+  }
+  .swiper-pagination{
+    bottom: 0;
+    top:auto !important;
+  }
+}
+
 .hentry {
   background-color: $white;
   margin-bottom: $container-padding;
