@@ -114,6 +114,24 @@ add_image_size( 'yimik-thumb-600', 600, 150, true );
 add_image_size( 'yimik-thumb-300', 300, 100, true );
 add_image_size( 'yimik-thumb-140', 140, 100, true );
 
+/**
+ * 取特色图片，没有则取文章第一张图
+ */
+function the_yimik_post_thumbnail(){
+    global $post;
+    // 判断该文章是否设置的缩略图，如果有则直接显示
+    if ( has_post_thumbnail() ) {
+        the_post_thumbnail('yimik-thumb-140');
+    } else { //如果文章没有设置缩略图，则查找文章内是否包含图片
+        $content = $post->post_content;
+        preg_match_all('/<img.*?(?: |\\t|\\r|\\n)?src=[\'"]?(.+?)[\'"]?(?:(?: |\\t|\\r|\\n)+.*?)?>/sim', $content, $strResult, PREG_PATTERN_ORDER);
+        $n = count($strResult[1]);
+        if($n > 0){
+            echo '<img width="140" src="'.$strResult[1][0].'" alt="'.get_the_title().'" title="'.get_the_title().'"/>';
+        }
+    }
+}
+
 /*
 to add more sizes, simply copy a line from above
 and change the dimensions & name. As long as you
@@ -363,7 +381,7 @@ function yimik_post_list(){
                 </header>
                 <section class="entry-content cf">
                     <div class="entry-content-thumb">
-                        <?php the_post_thumbnail( 'yimik-thumb-140' ); ?>
+                        <?php the_yimik_post_thumbnail(); ?>
                     </div>
                     <div class="entry-content-text">
                         <?php
