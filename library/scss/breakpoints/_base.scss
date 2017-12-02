@@ -530,6 +530,7 @@ POSTS & CONTENT STYLES
     width: 3.5em;
     height: 3.5em;
     background-size: 1.3em;
+    position: absolute;
   }
   .swiper-pagination{
     bottom: 0;
@@ -960,6 +961,26 @@ POSTS & CONTENT STYLES
     }
     &:hover,&:focus{
       background: darken($dark-gray, 40%);
+    }
+  }
+}
+
+/******************************************************************
+POST NAVI STYLES
+******************************************************************/
+.post-navigation{
+  margin-bottom:$container-padding;
+  background-color: $white;
+  padding: 0.6em $container-padding;
+
+  h1,h2,h3,h4,h5,h6{
+    font-size: 1em;
+    margin-top:0;
+  }
+
+  .nav-links{
+    div{
+      margin-top: 0.5em;
     }
   }
 }

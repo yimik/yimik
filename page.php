@@ -74,6 +74,9 @@
 
 							<?php endwhile; endif; ?>
 
+                            <!--add comment-->
+                            <?php comments_template(); ?>
+
 						</main>
 
 						<?php get_sidebar(); ?>

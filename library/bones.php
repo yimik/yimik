@@ -138,7 +138,9 @@ function bones_scripts_and_styles(){
             wp_enqueue_script('comment-reply');
         }
         //adding library mdui
-        wp_register_script('mdui', get_stylesheet_directory_uri() . '/library/mdui/js/mdui.min.js', array(), '0.2.1', true);
+        wp_register_script('mdui', get_stylesheet_directory_uri() . '/library/mdui/js/mdui.min.js', array(), '0.3.0', true);
+        wp_register_style('mdui', get_stylesheet_directory_uri() . '/library/mdui/css/mdui.min.css', array(), '0.3.0');
+
         //add swiper library
         wp_register_script('swiper', get_stylesheet_directory_uri() . '/library/swiper/js/swiper.min.js', array(), '3.4.2', true);
         wp_register_style('swiper', get_stylesheet_directory_uri() . '/library/swiper/css/swiper.min.css', array(), '3.4.2');
@@ -146,6 +148,17 @@ function bones_scripts_and_styles(){
         //adding scripts file in the footer
         wp_register_script('bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array('jquery'), wp_get_theme()->get("Version"), true);
 
+
+        //add swiper if set display=true
+        if(of_get_option("swiper_display")){
+            wp_enqueue_style('swiper');
+            wp_enqueue_script('swiper');
+        }
+        wp_enqueue_script('bones-js');
+
+        // enqueue mdui
+        wp_enqueue_script('mdui');
+        wp_enqueue_style('mdui');
 
         // enqueue styles and scripts
         wp_enqueue_script('bones-modernizr');
@@ -163,17 +176,6 @@ function bones_scripts_and_styles(){
         and your site will load faster.
         */
         wp_enqueue_script('jquery');
-
-        //add swiper if set display=true
-        if(of_get_option("swiper_display")){
-            wp_enqueue_style('swiper');
-            wp_enqueue_script('swiper');
-        }
-        wp_enqueue_script('bones-js');
-
-        // enqueue mdui
-        wp_enqueue_script('mdui');
-
     }
 }
 

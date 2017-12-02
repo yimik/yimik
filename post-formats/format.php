@@ -82,4 +82,14 @@
     </footer> <?php // end article footer ?>
 
 </article> <?php // end article ?>
+
+<?php
+yimik_post_navigation( array(
+    'next_text' => '<span class="screen-reader-text">' . __( 'Next post:', 'bonestheme' ) . '</span> ' .
+        '<span class="post-title">%title</span>',
+    'prev_text' => '<span class="screen-reader-text">' . __( 'Previous post:', 'bonestheme' ) . '</span> ' .
+        '<span class="post-title">%title</span>',
+    'screen_reader_text' => __( 'If you link this blog, Please note its orginal linkage, Thanks!', 'bonestheme' )
+) );
+?>
 <?php comments_template(); ?>

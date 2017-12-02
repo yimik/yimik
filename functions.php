@@ -713,4 +713,59 @@ function custom_sanitize_textarea($input) {
     $output = wp_kses( $input, $custom_allowedtags);
     return $output;
 }
+
+/**
+ * Retrieves the navigation to next/previous post, when applicable.
+ *
+ * @since 4.1.0
+ * @since 4.4.0 Introduced the `in_same_term`, `excluded_terms`, and `taxonomy` arguments.
+ *
+ * @param array $args {
+ *     Optional. Default post navigation arguments. Default empty array.
+ *
+ *     @type string       $prev_text          Anchor text to display in the previous post link. Default '%title'.
+ *     @type string       $next_text          Anchor text to display in the next post link. Default '%title'.
+ *     @type bool         $in_same_term       Whether link should be in a same taxonomy term. Default false.
+ *     @type array|string $excluded_terms     Array or comma-separated list of excluded term IDs. Default empty.
+ *     @type string       $taxonomy           Taxonomy, if `$in_same_term` is true. Default 'category'.
+ *     @type string       $screen_reader_text Screen reader text for nav element. Default 'Post navigation'.
+ * }
+ * @return string Markup for post links.
+ */
+function yimik_post_navigation( $args = array() ) {
+	$args = wp_parse_args( $args, array(
+		'prev_text'          => '%title',
+		'next_text'          => '%title',
+		'in_same_term'       => false,
+		'excluded_terms'     => '',
+		'taxonomy'           => 'category',
+		'screen_reader_text' => __( 'Post navigation' ),
+	) );
+
+	$navigation = '';
+
+	$previous = get_previous_post_link(
+		'<div class="nav-previous">%link</div>',
+		$args['prev_text'],
+		$args['in_same_term'],
+		$args['excluded_terms'],
+		$args['taxonomy']
+	);
+
+	$next = get_next_post_link(
+		'<div class="nav-next">%link</div>',
+		$args['next_text'],
+		$args['in_same_term'],
+		$args['excluded_terms'],
+		$args['taxonomy']
+	);
+
+	$template = '
+	<nav class="navigation %1$s" role="navigation">
+		<h2 class="screen-reader-text">%2$s</h2>
+		<div class="nav-links">%3$s</div>
+	</nav>';
+
+	printf( $template, 'post-navigation mdui-shadow-1 mdui-hoverable', esc_html($args['screen_reader_text']), $previous . $next );
+}
 /* DON'T DELETE THIS CLOSING TAG */ ?>
