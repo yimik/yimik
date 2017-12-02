@@ -78,8 +78,27 @@
     <footer class="article-footer">
 
         <?php the_tags('<p class="tags"><i class="mdui-icon material-icons">&#xe54e;</i><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', '', '</p>'); ?>
-
     </footer> <?php // end article footer ?>
 
 </article> <?php // end article ?>
+<div style="background-color:white;padding:15px;">
+		文章版权所有，转载请注明出处!<br/>
+        <?php
+            echo '上一篇：';
+            if (get_next_post()) {
+                next_post_link('%link','%title',TRUE);
+            } else {
+                echo "已经是最新文章了"; 
+            } 
+        ?> <br/>
+		<?php
+			echo '下一篇：';
+			if (get_previous_post()) {
+				previous_post_link('%link');
+			} else {
+				echo "已经是最后一篇文章了";
+			}
+		?>
+		
+</div>
 <?php comments_template(); ?>
