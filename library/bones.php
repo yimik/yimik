@@ -145,6 +145,9 @@ function bones_scripts_and_styles(){
         wp_register_script('swiper', get_stylesheet_directory_uri() . '/library/swiper/js/swiper.min.js', array(), '3.4.2', true);
         wp_register_style('swiper', get_stylesheet_directory_uri() . '/library/swiper/css/swiper.min.css', array(), '3.4.2');
 
+        // register pjax lib
+        wp_register_script('pjax', get_stylesheet_directory_uri() . '/library/js/libs/jquery.pjax.js', array(), '2.0.1', true);
+
         //adding scripts file in the footer
         wp_register_script('bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array('jquery'), wp_get_theme()->get("Version"), true);
 
@@ -154,6 +157,9 @@ function bones_scripts_and_styles(){
             wp_enqueue_style('swiper');
             wp_enqueue_script('swiper');
         }
+        // enqueue pjax
+        wp_enqueue_script('pjax');
+
         wp_enqueue_script('bones-js');
 
         // enqueue mdui
