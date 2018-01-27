@@ -715,6 +715,11 @@ function custom_sanitize_textarea($input) {
 }
 
 /**
+* 开启link manager
+ */
+add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+
+/**
  * Retrieves the navigation to next/previous post, when applicable.
  *
  * @since 4.1.0
