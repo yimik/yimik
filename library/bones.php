@@ -133,8 +133,8 @@ function bones_scripts_and_styles(){
         // ie-only style sheet
         wp_register_style('bones-ie-only', get_stylesheet_directory_uri() . '/library/css/ie.css', array(), wp_get_theme()->get("Version"));
 
-        // comment reply script for threaded comments
-        if (is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
+        // comment reply script for threaded comments,remove is_singular for pjax
+        if (/*is_singular() AND */comments_open() AND (get_option('thread_comments') == 1)) {
             wp_enqueue_script('comment-reply');
         }
         //adding library mdui
@@ -146,7 +146,10 @@ function bones_scripts_and_styles(){
         wp_register_style('swiper', get_stylesheet_directory_uri() . '/library/swiper/css/swiper.min.css', array(), '3.4.2');
 
         // register pjax lib
-        wp_register_script('pjax', get_stylesheet_directory_uri() . '/library/js/libs/jquery.pjax.js', array(), '2.0.1', true);
+        if(of_get_option("pjax")) {
+            wp_register_script('pjax', get_stylesheet_directory_uri() . '/library/js/libs/jquery.pjax.js', array(), '2.0.1', true);
+            wp_register_script('toProgress', get_stylesheet_directory_uri() . '/library/js/libs/ToProgress.min.js', array(), '0.1.1', true);
+        }
 
         //adding scripts file in the footer
         wp_register_script('bones-js', get_stylesheet_directory_uri() . '/library/js/scripts.js', array('jquery'), wp_get_theme()->get("Version"), true);
@@ -158,7 +161,10 @@ function bones_scripts_and_styles(){
             wp_enqueue_script('swiper');
         }
         // enqueue pjax
-        wp_enqueue_script('pjax');
+        if(of_get_option("pjax")) {
+            wp_enqueue_script('pjax');
+            wp_enqueue_script('toProgress');
+        }
 
         wp_enqueue_script('bones-js');
 

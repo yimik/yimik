@@ -26,6 +26,14 @@ function optionsframework_options() {
 	);
 
     $options[] = array(
+        'name' => __( 'Enable PJAX', 'bonestheme' ),
+        'desc' => __( 'Enable PJAX or not, defaults to false.', 'bonestheme' ),
+        'id' => 'pjax',
+        'std' => '0',
+        'type' => 'checkbox'
+    );
+
+    $options[] = array(
         'name' => __( 'Display Site Title and Tagline', 'bonestheme' ),
         'desc' => __( 'Display Site Title/Tagline or not, defaults to true.', 'bonestheme' ),
         'id' => 'blog_name_display',

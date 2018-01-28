@@ -108,9 +108,6 @@ function loadGravatars() {
     }
 } // end function
 
-// loading plugin
-!function(t,s){"function"==typeof define&&define.amd?define([],s):"object"==typeof exports?module.exports=s():t.ToProgress=s()}(this,function(){function t(){var t,s=document.createElement("fakeelement"),i={transition:"transitionend",OTransition:"oTransitionEnd",MozTransition:"transitionend",WebkitTransition:"webkitTransitionEnd"};for(t in i)if(void 0!==s.style[t])return i[t]}function s(t,s){if(this.progress=0,this.options={id:"top-progress-bar",color:"#F44336",height:"2px",duration:.2},t&&"object"==typeof t)for(var i in t)this.options[i]=t[i];if(this.options.opacityDuration=3*this.options.duration,this.progressBar=document.createElement("div"),this.progressBar.id=this.options.id,this.progressBar.setCSS=function(t){for(var s in t)this.style[s]=t[s]},this.progressBar.setCSS({position:s?"relative":"fixed",top:"0",left:"0",right:"0","background-color":this.options.color,height:this.options.height,width:"0%",transition:"width "+this.options.duration+"s, opacity "+this.options.opacityDuration+"s","-moz-transition":"width "+this.options.duration+"s, opacity "+this.options.opacityDuration+"s","-webkit-transition":"width "+this.options.duration+"s, opacity "+this.options.opacityDuration+"s"}),s){var o=document.querySelector(s);o&&(o.hasChildNodes()?o.insertBefore(this.progressBar,o.firstChild):o.appendChild(this.progressBar))}else document.body.appendChild(this.progressBar)}var i=t();return s.prototype.transit=function(){this.progressBar.style.width=this.progress+"%"},s.prototype.getProgress=function(){return this.progress},s.prototype.setProgress=function(t,s){this.show(),this.progress=t>100?100:0>t?0:t,this.transit(),s&&s()},s.prototype.increase=function(t,s){this.show(),this.setProgress(this.progress+t,s)},s.prototype.decrease=function(t,s){this.show(),this.setProgress(this.progress-t,s)},s.prototype.finish=function(t){var s=this;this.setProgress(100,t),this.hide(),i&&this.progressBar.addEventListener(i,function(t){s.reset(),s.progressBar.removeEventListener(t.type,arguments.callee)})},s.prototype.reset=function(t){this.progress=0,this.transit(),t&&t()},s.prototype.hide=function(){this.progressBar.style.opacity="0"},s.prototype.show=function(){this.progressBar.style.opacity="1"},s});
-
 /*
  * Put all your regular jQuery in here.
  */
@@ -168,27 +165,60 @@ jQuery(document).ready(function ($) {
     }
 
     // pjax
-    var progressBar = new ToProgress({
-        color: '#FF6A00',
-        height: '4px',
-        duration: 0.2,
-        id:'yimik-loading-bar'
-    });
-    $(document).pjax('a', '#content',{fragment:'#content', timeout:8000});
-    var progressInterval;
-    $(document).on('pjax:send', function() { //loading start
-        $('#yimik-loading-bar').css('z-index',99999);
-        progressInterval = setInterval(function () {
-            if(progressBar.getProgress()<=90){
-                progressBar.increase(10);
+    if($.fn.pjax){
+        var progressBar = new ToProgress({
+            color: '#FF6A00',
+            height: '4px',
+            duration: 0.2,
+            id:'yimik-loading-bar'
+        });
+        $(document).pjax('a', '#content',{fragment:'#content', timeout:8000});
+        //pjax评论、搜索
+        $(document).on('submit', 'form', function(event) {
+            $.pjax.submit(event,'#content',{fragment:'#content', timeout:8000})
+        });
+        var progressInterval;
+        $(document).on('pjax:send', function() { //loading start
+            $('#yimik-loading-bar').css('z-index',99999);
+            $('#main').fadeTo(500,0.3);
+            progressInterval = setInterval(function () {
+                if(progressBar.getProgress()<=80){
+                    progressBar.increase(10);
+                }
+            },200);
+        });
+        $(document).on('pjax:complete', function() { //loading end
+            $('#main').fadeTo(500,1);
+            if(progressInterval){
+                clearInterval(progressInterval);
             }
-        },200);
-    });
-    $(document).on('pjax:complete', function() { //loading end
-        if(progressInterval){
-            clearInterval(progressInterval);
-        }
-        progressBar.finish();
-    });
+            progressBar.finish();
+        });
+        //禁止hash走ajax
+        $(document).on('pjax:click', function(event,options) { //loading end
+            if(options.url.indexOf('/wp-admin')>0){
+                event.preventDefault();
+            }
+            if(options.url.indexOf('#')>0 && options.url.split('#')[0] == window.location.href.split('#')[0]){
+                event.preventDefault();
+            }
+            //移动端收回菜单
+            if($(event.target).closest('#yimik-mobile-menu').length>0){
+                yimikMobileMenu.toggle();
+            }
+        });
+        //init plugins
+        $(document).on('ready pjax:end', function(event) {
+            // 兼容 SyntaxHighlighter 插件
+            if ( window.SyntaxHighlighter )
+                SyntaxHighlighter.highlight();
+            // 兼容 Crayon Syntax Highlighter 插件
+            if ( window.CrayonSyntax )
+                CrayonSyntax.init();
+            // 兼容 Hermit 音乐播放器
+            if ( window.hermitjs )
+                hermitjs.reload( 0 );
+        });
+    }
 });
 /* end of as page load scripts */

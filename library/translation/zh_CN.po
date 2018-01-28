@@ -579,3 +579,9 @@ msgstr "上一篇:"
 
 msgid "If you link this blog, Please note its orginal linkage, Thanks!"
 msgstr "文章版权所有，转载请注明出处!"
+
+msgid "Enable PJAX"
+msgstr "是否启用全站ajax"
+
+msgid "Enable PJAX or not, defaults to false."
+msgstr "是否启用全站ajax，默认否"
