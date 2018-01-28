@@ -150,19 +150,22 @@ jQuery(document).ready(function ($) {
     });
 
     //slider
-    if($('.swiper-container').length){
-        var gallery = new Swiper('.swiper-container', {
-            autoHeight: true,
-            autoplay : 4000,
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-            pagination: '.swiper-pagination',
-            paginationType: 'progress',
-            loop:true,
-            mousewheelControl: true,
-            parallax: true
-        });
-    }
+    var renderSlider = function () {
+        if($('.swiper-container').length){
+            var gallery = new Swiper('.swiper-container', {
+                autoHeight: true,
+                autoplay : 4000,
+                nextButton: '.swiper-button-next',
+                prevButton: '.swiper-button-prev',
+                pagination: '.swiper-pagination',
+                paginationType: 'progress',
+                loop:true,
+                mousewheelControl: true,
+                parallax: true
+            });
+        }
+    };
+    renderSlider();
 
     // pjax
     if($.fn.pjax){
@@ -218,6 +221,8 @@ jQuery(document).ready(function ($) {
             // 兼容 Hermit 音乐播放器
             if ( window.hermitjs )
                 hermitjs.reload( 0 );
+            //首页轮播图
+            renderSlider();
         });
     }
 });
