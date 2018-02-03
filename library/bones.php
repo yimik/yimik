@@ -141,6 +141,10 @@ function bones_scripts_and_styles(){
         wp_register_script('mdui', get_stylesheet_directory_uri() . '/library/mdui/js/mdui.min.js', array(), '0.3.0', true);
         wp_register_style('mdui', get_stylesheet_directory_uri() . '/library/mdui/css/mdui.min.css', array(), '0.3.0');
 
+        //adding share library
+        wp_register_script('social-sharer', get_stylesheet_directory_uri() . '/library/social-sharer/jquery.social-sharer.min.js', array(), '1.1.2', true);
+        wp_register_style('social-sharer', get_stylesheet_directory_uri() . '/library/social-sharer/social-sharer.min.css', array(), '1.1.2');
+
         //add swiper library
         wp_register_script('swiper', get_stylesheet_directory_uri() . '/library/swiper/js/swiper.min.js', array(), '3.4.2', true);
         wp_register_style('swiper', get_stylesheet_directory_uri() . '/library/swiper/css/swiper.min.css', array(), '3.4.2');
@@ -171,6 +175,10 @@ function bones_scripts_and_styles(){
         // enqueue mdui
         wp_enqueue_script('mdui');
         wp_enqueue_style('mdui');
+
+        // enqueue share library
+        wp_enqueue_script('social-sharer');
+        wp_enqueue_style('social-sharer');
 
         // enqueue styles and scripts
         wp_enqueue_script('bones-modernizr');

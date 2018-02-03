@@ -79,6 +79,13 @@
 
         <?php the_tags('<p class="tags"><i class="mdui-icon material-icons">&#xe54e;</i><span class="tags-title">' . __('Tags:', 'bonestheme') . '</span> ', '', '</p>'); ?>
 
+        <!--share plugin-->
+        <div class="yimik-social-sharer">
+            <i class="mdui-icon material-icons"></i>
+            <span class="tags-title">分享至：</span>
+            <div class="social-sharer" data-title="" data-weibo-key="" data-services="weibo,wechat,qzone,qq,douban,yingxiang,renren,facebook,twitter,gplus,linkedin,evernote,email,webshare"></div>
+        </div>
+
     </footer> <?php // end article footer ?>
 
 </article> <?php // end article ?>

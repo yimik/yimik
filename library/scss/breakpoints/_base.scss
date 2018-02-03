@@ -572,6 +572,14 @@ POSTS & CONTENT STYLES
       vertical-align: middle;
       margin: 0 2.5em 0 0;
     }
+
+    .yimik-social-sharer{
+      display: inline-block;
+
+      i,span,div{
+        display: inline-block;
+      }
+    }
   }
 
   @at-root {
@@ -949,6 +957,7 @@ POSTS & CONTENT STYLES
   }
   a{
     margin-top: 5px;
+    margin-bottom: 5px;
     display: inline-block;
     background: darken($dark-gray, 20%);
     padding: 0 5px;

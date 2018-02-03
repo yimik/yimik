@@ -167,6 +167,9 @@ jQuery(document).ready(function ($) {
     };
     renderSlider();
 
+    //share plugin
+    $(".social-sharer").socialSharer();
+
     // pjax
     if($.fn.pjax){
         var progressBar = new ToProgress({
@@ -221,6 +224,9 @@ jQuery(document).ready(function ($) {
             // 兼容 Hermit 音乐播放器
             if ( window.hermitjs )
                 hermitjs.reload( 0 );
+
+            //分享组件
+            $(".social-sharer").socialSharer();
             //首页轮播图
             renderSlider();
         });
