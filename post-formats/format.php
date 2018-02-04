@@ -83,7 +83,7 @@
         <?php if(yimik_share_service()) :?>
         <div class="yimik-social-sharer">
             <i class="mdui-icon material-icons">&#xe80d;</i><span class="tags-title"><?php _e('Share:', 'bonestheme')?></span>
-            <div class="social-sharer" data-url="<?php echo wp_get_canonical_url()?>" data-summary="<?php echo get_meta_seo_array()['desc']?>" data-source="<?php bloginfo('name')?>" data-pic="" data-weibo-key="" data-twitter-via="" data-twitter-hash-tags="<?php echo join(',',array_map(function($t){return $t->name;},get_the_tags()))?>" data-services="<?php echo yimik_share_service()?>"></div>
+            <div class="social-sharer" data-url="<?php echo wp_get_canonical_url()?>" data-summary="<?php echo get_meta_seo_array()['desc']?>" data-source="<?php bloginfo('name')?>" data-pic="" data-weibo-key="" data-twitter-via="" data-twitter-hash-tags="<?php echo join(',',array_map(function($t){return $t->name;},get_the_tags()?get_the_tags():array()))?>" data-services="<?php echo yimik_share_service()?>"></div>
         </div>
         <?php endif;?>
     </footer> <?php // end article footer ?>
