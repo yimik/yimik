@@ -100,6 +100,36 @@ function optionsframework_options() {
 		'type' => 'heading'
 	);
 
+	$share_options = array(
+        'weibo' => __('Sina Weibo','bonestheme'),
+        'wechat' => __('Wechat','bonestheme'),
+        'qzone' => __('Qzone','bonestheme'),
+        'qq' => 'QQ',
+        'douban' => __('Douban','bonestheme'),
+        'yingxiang' => __('Evernote China','bonestheme'),
+        'facebook' => __('Facebook','bonestheme'),
+        'twitter' => __('Twitter','bonestheme'),
+        'gplus' => 'Google+',
+        'linkedin' => 'LinkedIn',
+        'evernote' => __('Evernote','bonestheme'),
+    );
+	$default_share_options = array(
+        'weibo' => 1,
+        'wechat' => 1,
+        'qzone' => 1,
+        'qq' => 1,
+        'douban' => 1,
+        'yingxiang' => 1,
+    );
+    $options[] = array(
+        'name' => __( 'Enable Social Share', 'bonestheme' ),
+        'desc' => __( 'Check to enable', 'bonestheme' ),
+        'id' => 'share',
+        'std' => $default_share_options,
+        'type' => 'multicheck',
+        'options' => $share_options
+    );
+
     $options[] = array(
         'name' => __( 'Custom CSS', 'bonestheme' ),
         'desc' => __( 'you can input custom css code here.', 'bonestheme' ),

@@ -585,3 +585,39 @@ msgstr "是否启用全站ajax"
 
 msgid "Enable PJAX or not, defaults to false."
 msgstr "是否启用全站ajax，默认否"
+
+msgid "Share:"
+msgstr "分享："
+
+msgid "Sina Weibo"
+msgstr "微博"
+
+msgid "Wechat"
+msgstr "微信"
+
+msgid "Qzone"
+msgstr "QQ空间"
+
+msgid "Douban"
+msgstr "豆瓣"
+
+msgid "Evernote China"
+msgstr "印象笔记"
+
+msgid "Renren"
+msgstr "人人网"
+
+msgid "Facebook"
+msgstr "脸书"
+
+msgid "Twitter"
+msgstr "推特"
+
+msgid "Evernote"
+msgstr "印象笔记国际版"
+
+msgid "Enable Social Share"
+msgstr "启用分享"
+
+msgid "Check to enable"
+msgstr "勾选要启用分享的社交网站"

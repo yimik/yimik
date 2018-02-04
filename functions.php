@@ -596,7 +596,7 @@ add_filter( 'get_avatar', 'yimik_get_avatar');
 /**
  * add seo meta to head
  */
-function meta_seo(){
+function get_meta_seo_array(){
     $description = '';
     $keywords = '';
 
@@ -632,8 +632,12 @@ function meta_seo(){
     }
     $description = trim(strip_tags($description));
     $keywords = trim(strip_tags($keywords));
-    printf('<meta name="keywords" content="%s"/>',$keywords);
-    printf('<meta name="description" content="%s"/>',$description);
+    return array('desc'=>$description,'keywords'=>$keywords);
+}
+function meta_seo(){
+    $meta_seo_array = get_meta_seo_array();
+    printf('<meta name="keywords" content="%s"/>',$meta_seo_array['keywords']);
+    printf('<meta name="description" content="%s"/>',$meta_seo_array['desc']);
 }
 
 /**
@@ -724,6 +728,19 @@ function custom_sanitize_textarea($input) {
 * 开启link manager
  */
 add_filter( 'pre_option_link_manager_enabled', '__return_true' );
+
+/**
+* 获取启用的分享网站
+ */
+function yimik_share_service(){
+    $shareOptions = array_filter(of_get_option('share'),function ($v, $k){
+        return $v;
+    },ARRAY_FILTER_USE_BOTH);
+    if(empty($shareOptions)){
+        return false;
+    }
+    return join(',',array_keys($shareOptions));
+}
 
 /**
  * Retrieves the navigation to next/previous post, when applicable.
