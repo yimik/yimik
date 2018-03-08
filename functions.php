@@ -733,9 +733,13 @@ add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 * 获取启用的分享网站
  */
 function yimik_share_service(){
-    $shareOptions = array_filter(of_get_option('share'),function ($v, $k){
+    if(!of_get_option('share')){
+        return false;
+    }
+    $valueTrue = function ($v){
         return $v;
-    },ARRAY_FILTER_USE_BOTH);
+    };
+    $shareOptions = array_filter(of_get_option('share'),$valueTrue);
     if(empty($shareOptions)){
         return false;
     }
