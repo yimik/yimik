@@ -567,6 +567,7 @@ POSTS & CONTENT STYLES
   footer {
     padding: 0.6em;
     border-top: 1px solid $light-gray;
+    text-align: center;
 
     .yimik-chip {
       vertical-align: middle;
@@ -575,9 +576,36 @@ POSTS & CONTENT STYLES
 
     .yimik-social-sharer{
       display: inline-block;
+      margin:0px;
+      width: 100%;
+      padding-top: 0.4em;
+      color: darken($dark-gray, 20%);
+
+      i{
+        font-size: 1em;
+      }
 
       i,span,div{
         display: inline-block;
+      }
+
+      .social-sharer{
+        a{
+          border: 0;
+          &:hover{
+            @extend %mdui-hoverable;
+          }
+        }
+        .icon{
+          font-size: 25px;
+          width: 36px;
+          height: 36px;
+          line-height: 36px;
+          margin: 0;
+          &:before{
+            font-size:25px;
+          }
+        }
       }
     }
   }
