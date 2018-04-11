@@ -178,7 +178,7 @@ jQuery(document).ready(function ($) {
             duration: 0.2,
             id:'yimik-loading-bar'
         });
-        $(document).pjax('a', '#main',{fragment:'#main', timeout:8000});
+        $(document).pjax('a:not([target=_blank])', '#main',{fragment:'#main', timeout:8000});
         //pjax评论、搜索
         $(document).on('submit', 'form', function(event) {
             $.pjax.submit(event,'#main',{fragment:'#main', timeout:8000})
