@@ -138,8 +138,8 @@ function bones_scripts_and_styles(){
             wp_enqueue_script('comment-reply');
         }
         //adding library mdui
-        wp_register_script('mdui', get_stylesheet_directory_uri() . '/library/mdui/js/mdui.min.js', array(), '0.3.0', true);
-        wp_register_style('mdui', get_stylesheet_directory_uri() . '/library/mdui/css/mdui.min.css', array(), '0.3.0');
+        wp_register_script('mdui', get_stylesheet_directory_uri() . '/library/mdui/js/mdui.min.js', array(), '0.4.1', true);
+        wp_register_style('mdui', get_stylesheet_directory_uri() . '/library/mdui/css/mdui.min.css', array(), '0.4.1');
 
         //adding share library
         wp_register_script('social-sharer', get_stylesheet_directory_uri() . '/library/social-sharer/jquery.social-sharer.min.js', array(), '1.1.2', true);

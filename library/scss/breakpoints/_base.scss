@@ -630,7 +630,6 @@ POSTS & CONTENT STYLES
   header{
     border:none;
 
-
     .single-title,.page-title,.entry-title {
       font-size: 1.7em;
       color: $black;
@@ -651,20 +650,22 @@ POSTS & CONTENT STYLES
   .entry-content{
     color: $black;
     font-size: 1em;
+    a{
+      text-indent: 0em;
+    }
     p{
       text-indent: 2em;
       line-height: 2em;
       margin-bottom: 0.6em;
     }
     ul{
-      margin-left:3em;
+      //margin-left:3em;
       list-style-type:circle;
     }
     ol{
-      margin-left:3em;
+      //margin-left:3em;
       list-style-type:decimal;
     }
-
     h3,h4,h5,h6{
       font-size: 1em;
       margin: 1em -1.5em;
@@ -1475,6 +1476,11 @@ SIDEBARS & ASIDES
       }
 
     }
+  }
+
+  &.widget_neteasemusic_widget{
+    margin: 0;
+    padding: 0;
   }
 }
 

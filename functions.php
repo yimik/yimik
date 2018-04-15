@@ -32,6 +32,23 @@ $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
     'yimik'
 );
 
+//引入插件依赖提醒,暂无
+//add_action( 'admin_notices', 'yimik_theme_dependencies' );
+//function yimik_theme_dependencies() {
+//	if(!is_plugin_active( 'wp-player/wp-player.php' ))	{
+//	    $pluginName = 'wp-player';
+//        $pluginLink = 'https://wordpress.org/plugins/wp-player/';
+//	    $plugin_messages[] = sprintf(__("This theme requires you to install the %s plugin, <a href='%s'>download it from here</a>.", 'bonestheme' ), $pluginName,$pluginLink);
+//	}
+//	if(count($plugin_messages) > 0)	{
+//		echo '<div id="message" class="error">';
+//			foreach($plugin_messages as $message) {
+//				echo '<p><strong>'.$message.'</strong></p>';
+//			}
+//		echo '</div>';
+//	}
+//}
+
 /*********************
 LAUNCH BONES
 Let's get everything up and running.
@@ -69,6 +86,7 @@ function bones_ahoy() {
 
   // adding sidebars to Wordpress (these are created in functions.php)
   add_action( 'widgets_init', 'bones_register_sidebars' );
+  add_action( 'widgets_init', 'bones_register_widget' );
 
   // cleaning up random code around images
   add_filter( 'the_content', 'bones_filter_ptags_on_images' );
@@ -246,6 +264,11 @@ function bones_register_sidebars() {
 
 	*/
 } // don't remove this bracket!
+//Widgetizes
+function bones_register_widget(){
+    require_once("widget/NetEaseMusic_Widget.php");
+    register_widget(NetEaseMusic_Widget::class);
+}
 
 //custom widget tag cloud
 add_filter( 'widget_tag_cloud_args', 'theme_tag_cloud_args' );
@@ -313,7 +336,7 @@ function bones_comments( $comment, $args, $depth ) {
           <p><?php _e( 'Your comment is awaiting moderation.', 'bonestheme' ) ?></p>
         </div>
       <?php endif; ?>
-      <section class="comment_content cf">
+      <section class="comment_content cf mdui-typo">
         <?php comment_text() ?>
       </section>
       <?php edit_comment_link(__( 'Edit', 'bonestheme' ),'<span class="yimik-comment-edit-btn mdui-btn mdui-ripple">','</span>')?>

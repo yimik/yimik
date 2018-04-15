@@ -621,3 +621,6 @@ msgstr "启用分享"
 
 msgid "Check to enable"
 msgstr "勾选要启用分享的社交网站"
+
+msgid "This theme requires you to install the %s plugin, <a href='%s'>download it from here</a>."
+msgstr "主题依赖插件%s，点击<a href='%s'>这里</a>下载"
