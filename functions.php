@@ -371,6 +371,15 @@ function alter_comment_form_defaults($defaults){
 }
 add_filter('comment_form_defaults','alter_comment_form_defaults');
 
+add_filter('comment_form_default_fields','yimik_comment_form_fields');
+function yimik_comment_form_fields($fields) {
+    if($fields['cookies']){
+        $fields['cookies'] = str_replace ('comment-form-cookies-consent','comment-form-cookies-consent hidden',$fields['cookies']);
+        $fields['cookies'] = str_replace ('type="checkbox"','type="checkbox" checked="checked"',$fields['cookies']);
+    }
+    return $fields;
+}
+
 //********************author link function***************************//
 /**
  * @return string|void
@@ -823,4 +832,48 @@ function yimik_post_navigation( $args = array() ) {
 
 	printf( $template, 'post-navigation mdui-shadow-1 mdui-hoverable', esc_html($args['screen_reader_text']), $previous . $next );
 }
+
+
+/**
+ * Removes required user's capabilities for core privacy tools by adding the
+ * `do_not_allow` capability.
+ *
+ *  - Disables the feature pointer.
+ *  - Removes the Privacy and Export/Erase Personal Data admin menu items.
+ *  - Disables the privacy policy guide and update bubbles.
+ *
+ * @param string[] $caps    Array of the user's capabilities.
+ * @param string   $cap     Capability name.
+ * @return string[] Array of the user's capabilities.
+ */
+function ds_disable_core_privacy_tools( $caps, $cap ) {
+    switch ( $cap ) {
+        case 'export_others_personal_data':
+        case 'erase_others_personal_data':
+        case 'manage_privacy_options':
+            $caps[] = 'do_not_allow';
+            break;
+    }
+
+    return $caps;
+}
+add_filter( 'map_meta_cap', 'ds_disable_core_privacy_tools', 10, 2 );
+
+/**
+ * Short circuits the option for the privacy policy page to always return 0.
+ *
+ * The option is used by get_privacy_policy_url() among others.
+ */
+add_filter( 'pre_option_wp_page_for_privacy_policy', '__return_zero' );
+
+/**
+ * Removes the default scheduled event used to delete old export files.
+ */
+remove_action( 'init', 'wp_schedule_delete_old_privacy_export_files' );
+
+/**
+ * Removes the hook attached to the default scheduled event for removing
+ * old export files.
+ */
+remove_action( 'wp_privacy_delete_old_export_files', 'wp_privacy_delete_old_export_files' );
 /* DON'T DELETE THIS CLOSING TAG */ ?>

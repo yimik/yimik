@@ -24,7 +24,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.hidden{
+  display: none;
+}
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -707,6 +709,20 @@ POSTS & CONTENT STYLES
         }
       }
 
+    }
+
+    .post-password-form{
+      text-align: center;
+      input[type=password]{
+        width: 50%;
+        display: inline;
+        vertical-align: baseline;
+      }
+      input[type=submit]{
+        @extend %btn;
+        height: 40px;
+        border: none;
+      }
     }
   }
 }

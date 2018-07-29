@@ -202,7 +202,7 @@ jQuery(document).ready(function ($) {
         });
         //禁止hash走ajax
         $(document).on('pjax:click', function(event,options) { //loading end
-            if(options.url.indexOf('/wp-admin')>0){
+            if(options.url.indexOf('/wp-admin')>0||options.url.indexOf('/wp-login')>0){
                 event.preventDefault();
             }
             if(options.url.indexOf('#')>0 && options.url.split('#')[0] == window.location.href.split('#')[0]){
