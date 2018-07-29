@@ -500,27 +500,26 @@ mobile. Make sure to double check these!
 .comment-respond {
   margin:0;
 
-  p{
-    width: 49%;
-    clear:none;
+  .comment-form{
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
 
-    &:nth-child(even){
-      float: left;
-    }
-    &:nth-child(odd){
-      float: right;
-    }
+    p{
+      width: 49%;
+      clear:none;
 
-    //fix Captcha by BestWebSoft bug
-    &>:first-child{
-      padding-bottom: 0;
-    }
-    &>:last-child{
+      //fix Captcha by BestWebSoft bug
+      &>:first-child{
+        padding-bottom: 0;
+      }
+      &>:last-child{
 
-    }
+      }
 
-    &.logged-in-as,&.comment-notes,&.comment-form-comment,&.form-submit,&.yimik-comment-smiles{
-      width: 100%;
+      &.logged-in-as,&.comment-notes,&.comment-form-comment,&.form-submit,&.yimik-comment-smiles{
+        width: 100%;
+      }
     }
   }
 }
