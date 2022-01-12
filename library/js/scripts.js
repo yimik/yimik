@@ -19,9 +19,11 @@
  * ( source: http://andylangton.co.uk/blog/development/get-viewport-size-width-and-height-javascript )
  */
 function updateViewportDimensions() {
-    var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0], x = w.innerWidth || e.clientWidth || g.clientWidth, y = w.innerHeight || e.clientHeight || g.clientHeight;
+    var w = window, d = document, e = d.documentElement, g = d.getElementsByTagName('body')[0],
+        x = w.innerWidth || e.clientWidth || g.clientWidth, y = w.innerHeight || e.clientHeight || g.clientHeight;
     return {width: x, height: y};
 }
+
 // setting the viewport width
 var viewport = updateViewportDimensions();
 
@@ -113,7 +115,7 @@ function loadGravatars() {
  */
 jQuery(document).ready(function ($) {
     //判断移动端
-    function is_mobile(){
+    function is_mobile() {
         return $('header .nav').is(':hidden');
     }
 
@@ -139,8 +141,9 @@ jQuery(document).ready(function ($) {
 
     //移动端菜单
     function rendMobileNavBtn() {
-        is_mobile()?$mobileMenuBar.removeClass('mdui-fab-hide'):$mobileMenuBar.addClass('mdui-fab-hide');
+        is_mobile() ? $mobileMenuBar.removeClass('mdui-fab-hide') : $mobileMenuBar.addClass('mdui-fab-hide');
     }
+
     rendMobileNavBtn();
     $(window).resize(function () {
         rendMobileNavBtn();
@@ -151,16 +154,22 @@ jQuery(document).ready(function ($) {
 
     //slider
     var renderSlider = function () {
-        if($('.swiper-container').length){
+        if ($('.swiper-container').length) {
             var gallery = new Swiper('.swiper-container', {
+                loop: true,
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'bullets',
+                },
                 autoHeight: true,
-                autoplay : 4000,
-                nextButton: '.swiper-button-next',
-                prevButton: '.swiper-button-prev',
-                pagination: '.swiper-pagination',
-                paginationType: 'progress',
-                loop:true,
-                mousewheelControl: true,
+                autoplay: {
+                    delay: 4000
+                },
+                mousewheel: true,
                 parallax: true
             });
         }
@@ -171,59 +180,59 @@ jQuery(document).ready(function ($) {
     $(".social-sharer").socialSharer();
 
     // pjax
-    if($.fn.pjax){
+    if ($.fn.pjax) {
         var progressBar = new ToProgress({
             color: '#FF6A00',
             height: '4px',
             duration: 0.2,
-            id:'yimik-loading-bar'
+            id: 'yimik-loading-bar'
         });
-        $(document).pjax('a:not([target=_blank])', '#main',{fragment:'#main', timeout:8000});
+        $(document).pjax('a:not([target=_blank])', '#main', {fragment: '#main', timeout: 8000});
         //pjax评论、搜索
-        $(document).on('submit', 'form', function(event) {
-            $.pjax.submit(event,'#main',{fragment:'#main', timeout:8000})
+        $(document).on('submit', 'form', function (event) {
+            $.pjax.submit(event, '#main', {fragment: '#main', timeout: 8000})
         });
         var progressInterval;
-        $(document).on('pjax:send', function() { //loading start
-            $('#yimik-loading-bar').css('z-index',99999);
-            $('#main').fadeTo(500,0.3);
+        $(document).on('pjax:send', function () { //loading start
+            $('#yimik-loading-bar').css('z-index', 99999);
+            $('#main').fadeTo(500, 0.3);
             progressInterval = setInterval(function () {
-                if(progressBar.getProgress()<=80){
+                if (progressBar.getProgress() <= 80) {
                     progressBar.increase(10);
                 }
-            },200);
+            }, 200);
         });
-        $(document).on('pjax:complete', function() { //loading end
-            $('#main').fadeTo(500,1);
-            if(progressInterval){
+        $(document).on('pjax:complete', function () { //loading end
+            $('#main').fadeTo(500, 1);
+            if (progressInterval) {
                 clearInterval(progressInterval);
             }
             progressBar.finish();
         });
         //禁止hash走ajax
-        $(document).on('pjax:click', function(event,options) { //loading end
-            if(options.url.indexOf('/wp-admin')>0||options.url.indexOf('/wp-login')>0){
+        $(document).on('pjax:click', function (event, options) { //loading end
+            if (options.url.indexOf('/wp-admin') > 0 || options.url.indexOf('/wp-login') > 0) {
                 event.preventDefault();
             }
-            if(options.url.indexOf('#')>0 && options.url.split('#')[0] == window.location.href.split('#')[0]){
+            if (options.url.indexOf('#') > 0 && options.url.split('#')[0] == window.location.href.split('#')[0]) {
                 event.preventDefault();
             }
             //移动端收回菜单
-            if($(event.target).closest('#yimik-mobile-menu').length>0){
+            if ($(event.target).closest('#yimik-mobile-menu').length > 0) {
                 yimikMobileMenu.toggle();
             }
         });
         //init plugins
-        $(document).on('ready pjax:end', function(event) {
+        $(document).on('ready pjax:end', function (event) {
             // 兼容 SyntaxHighlighter 插件
-            if ( window.SyntaxHighlighter )
+            if (window.SyntaxHighlighter)
                 SyntaxHighlighter.highlight();
             // 兼容 Crayon Syntax Highlighter 插件
-            if ( window.CrayonSyntax )
+            if (window.CrayonSyntax)
                 CrayonSyntax.init();
             // 兼容 Hermit 音乐播放器
-            if ( window.hermitjs )
-                hermitjs.reload( 0 );
+            if (window.hermitjs)
+                hermitjs.reload(0);
 
             //分享组件
             $(".social-sharer").socialSharer();

@@ -24,9 +24,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-.hidden{
+
+.hidden {
   display: none;
 }
+
 /********************
 WORDPRESS BODY CLASSES
 style a page via class
@@ -73,7 +75,7 @@ style a page via class
 
 /* individual paged search (i.e. body.search-paged-3) */
 .error404 {
-  #main{
+  #main {
     .article-header {
       text-align: center;
       font-size: 9em;
@@ -122,13 +124,13 @@ style a page via class
       transition: all .1s linear;
     }
 
-    .entry-content,.search,.article-footer {
+    .entry-content, .search, .article-footer {
       color: #666;
       text-shadow: 0 1px 0 #fff;
       letter-spacing: 1px;
       padding: 0 3em;
 
-      &:not(.search){
+      &:not(.search) {
         text-align: center;
       }
     }
@@ -246,7 +248,7 @@ LAYOUT & GRID STYLES
 LINK STYLES
 *********************/
 
-a{
+a {
   text-decoration: none;
   outline: none;
   color: $link-color;
@@ -334,17 +336,19 @@ HEADER STYLES
   a {
     color: $white;
 
-    img{
+    img {
       display: none;
     }
 
-    .blog_title{
+    .blog_title {
       font-size: 1em;
-      strong{
+
+      strong {
         display: inline-block;
         font-size: 1.3em;
       }
-      i{
+
+      i {
         display: inline-block;
         font-style: normal;
       }
@@ -357,29 +361,32 @@ NAVIGATION STYLES
 *********************/
 
 //mobile nav
-#yimik-mobile-menu{
-  .mobile-menu-head{
+#yimik-mobile-menu {
+  .mobile-menu-head {
     font-size: 1.4em;
-    background:url(../images/background_header.png) no-repeat left top;
-    @include background-size(100%,100%);
+    background: url(../images/background_header.png) no-repeat left top;
+    @include background-size(100%, 100%);
     height: 6.5em;
     margin: 0;
     text-align: center;
     padding: 3em 0;
-    color:darken($white,5%);
+    color: darken($white, 5%);
   }
 
-  .nav{
+  .nav {
     display: block;
-    ul{
-      margin:0;
+
+    ul {
+      margin: 0;
     }
-    li{
-      div{
+
+    li {
+      div {
         border-bottom: 1px solid $dark-gray;
         padding-left: 3em;
       }
-      a{
+
+      a {
         color: $black;
       }
     }
@@ -459,6 +466,7 @@ and more scalable.
     }
 
   }
+
   /* end .menu li */
 
   /* highlight current page */
@@ -470,6 +478,7 @@ and more scalable.
     }
 
   }
+
   /* end current highlighters */
 
 }
@@ -477,9 +486,10 @@ and more scalable.
 /* end .nav */
 
 //breadcrumbs
-.breadcrumbs{
+.breadcrumbs {
   display: none;
 }
+
 /*********************
 POSTS & CONTENT STYLES
 *********************/
@@ -493,16 +503,17 @@ POSTS & CONTENT STYLES
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom:$container-padding;
+  margin-bottom: $container-padding;
   //padding: 0.5em;
   width: 100%;
+  overflow: hidden;
 
-  .swiper-wrapper{
-    a{
+  .swiper-wrapper {
+    a {
       position: relative;
       display: block;
 
-      .slide-title{
+      .slide-title {
         position: absolute;
         bottom: 0em;
         width: 100%;
@@ -517,26 +528,31 @@ POSTS & CONTENT STYLES
 
     .swiper-slide {
       overflow: hidden;
-      img{
-        width:100%;
+
+      img {
+        width: 100%;
         margin: 0;
         display: block;
       }
     }
   }
 
-  .swiper-button-next, .swiper-button-prev{
+  .swiper-button-next, .swiper-button-prev {
     display: none;
     background-color: #fff;
     @include border-radius(100%);
     width: 3.5em;
     height: 3.5em;
-    background-size: 1.3em;
     position: absolute;
+
+    &:after {
+      font-size: 2em;
+    }
   }
-  .swiper-pagination{
+
+  .swiper-pagination {
     bottom: 0;
-    top:auto !important;
+    top: auto !important;
   }
 }
 
@@ -544,8 +560,8 @@ POSTS & CONTENT STYLES
   background-color: $white;
   margin-bottom: $container-padding;
 
-  &>a{
-    width:100%;
+  & > a {
+    width: 100%;
     display: block;
   }
 
@@ -576,36 +592,39 @@ POSTS & CONTENT STYLES
       margin: 0 2.5em 0 0;
     }
 
-    .yimik-social-sharer{
+    .yimik-social-sharer {
       display: inline-block;
-      margin:0px;
+      margin: 0px;
       width: 100%;
       padding-top: 0.4em;
       color: darken($dark-gray, 20%);
 
-      i{
+      i {
         font-size: 1em;
       }
 
-      i,span,div{
+      i, span, div {
         display: inline-block;
       }
 
-      .social-sharer{
-        a{
+      .social-sharer {
+        a {
           border: 0;
-          &:hover{
+
+          &:hover {
             @extend %mdui-hoverable;
           }
         }
-        .icon{
+
+        .icon {
           font-size: 25px;
           width: 36px;
           height: 36px;
           line-height: 36px;
           margin: 0;
-          &:before{
-            font-size:25px;
+
+          &:before {
+            font-size: 25px;
           }
         }
       }
@@ -613,11 +632,12 @@ POSTS & CONTENT STYLES
   }
 
   @at-root {
-    #post-not-found.hentry{
-      header{
+    #post-not-found.hentry {
+      header {
         border: none;
       }
-      footer{
+
+      footer {
         padding: 2em 0.6em;
         border: none;
       }
@@ -628,61 +648,71 @@ POSTS & CONTENT STYLES
 
 /* end .hentry */
 //sigle view aritile
-.yimik-article{
-  header{
-    border:none;
+.yimik-article {
+  header {
+    border: none;
 
-    .single-title,.page-title,.entry-title {
+    .single-title, .page-title, .entry-title {
       font-size: 1.7em;
       color: $black;
       text-align: center;
     }
-    .entry-meta{
+
+    .entry-meta {
       background: $gray;
       margin: 0.6em -0.6em;
       padding: 1em;
       line-height: 0.6em;
       text-align: center;
-      a{
+
+      a {
         display: inline-block;
         width: auto;
       }
     }
   }
-  .entry-content{
+
+  .entry-content {
     color: $black;
     font-size: 1em;
-    a{
+
+    a {
       text-indent: 0em;
     }
-    p{
+
+    p {
       text-indent: 2em;
       line-height: 2em;
       margin-bottom: 0.6em;
     }
-    ul{
+
+    ul {
       //margin-left:3em;
-      list-style-type:circle;
+      list-style-type: circle;
     }
-    ol{
+
+    ol {
       //margin-left:3em;
-      list-style-type:decimal;
+      list-style-type: decimal;
     }
-    h3,h4,h5,h6{
+
+    h3, h4, h5, h6 {
       font-size: 1em;
       margin: 1em -1.5em;
       background: $light-gray;
       padding: 0.5em 1em;
       @include border-left();
     }
-    h1{
+
+    h1 {
       font-size: 1.7em;
       margin: 1em -0.88em;;
       background: $light-gray;
       padding: 0.5em 1.7em;
       @include border-left();
     }
-    h2{
+
+    h2 {
       font-size: 1.3em;
       margin: 1em -1.15em;
       background: $light-gray;
@@ -691,18 +721,21 @@ POSTS & CONTENT STYLES
     }
 
     //pagination
-    .page-links{
+    .page-links {
       text-align: center;
-      margin:0.5em 0;
-      span{
+      margin: 0.5em 0;
+
+      span {
         min-width: 0;
-        background:rgba(0,0,0,.1);
+        background: rgba(0, 0, 0, .1);
         width: auto;
       }
-      a{
-        span{
+
+      a {
+        span {
           background: $white;
-          &:hover{
+
+          &:hover {
             background: $blue;
             color: #fff;
           }
@@ -711,14 +744,16 @@ POSTS & CONTENT STYLES
 
     }
 
-    .post-password-form{
+    .post-password-form {
       text-align: center;
-      input[type=password]{
+
+      input[type=password] {
         width: 50%;
         display: inline;
         vertical-align: baseline;
       }
-      input[type=submit]{
+
+      input[type=submit] {
         @extend %btn;
         height: 40px;
         border: none;
@@ -901,8 +936,10 @@ POSTS & CONTENT STYLES
   */
   .alignleft, img.alignleft {
   }
+
   .alignright, img.alignright {
   }
+
   .aligncenter, img.aligncenter {
   }
 
@@ -994,13 +1031,15 @@ POSTS & CONTENT STYLES
   margin: 0;
   color: darken($dark-gray, 20%);
 
-  i{
+  i {
     font-size: 1em;
   }
-  .tags-title{
+
+  .tags-title {
 
   }
-  a{
+
+  a {
     margin-top: 5px;
     margin-bottom: 5px;
     display: inline-block;
@@ -1009,11 +1048,13 @@ POSTS & CONTENT STYLES
     line-height: 2em;
     height: 2em;
     color: $white;
-    @include transition(background,400ms);
-    &:not(:last-child){
+    @include transition(background, 400ms);
+
+    &:not(:last-child) {
       margin-right: 1em;
     }
-    &:hover,&:focus{
+
+    &:hover, &:focus {
       background: darken($dark-gray, 40%);
     }
   }
@@ -1022,18 +1063,18 @@ POSTS & CONTENT STYLES
 /******************************************************************
 POST NAVI STYLES
 ******************************************************************/
-.post-navigation{
-  margin-bottom:$container-padding;
+.post-navigation {
+  margin-bottom: $container-padding;
   background-color: $white;
   padding: 0.6em $container-padding;
 
-  h1,h2,h3,h4,h5,h6{
+  h1, h2, h3, h4, h5, h6 {
     font-size: 1em;
-    margin-top:0;
+    margin-top: 0;
   }
 
-  .nav-links{
-    div{
+  .nav-links {
+    div {
       margin-top: 0.5em;
     }
   }
@@ -1125,7 +1166,7 @@ PAGE NAVI STYLES
 /******************************************************************
 COMMENT STYLES
 ******************************************************************/
-.yimik-comment-panel{
+.yimik-comment-panel {
 }
 
 /* h3 comment title */
@@ -1159,7 +1200,7 @@ COMMENT STYLES
   position: relative;
   clear: both;
 
-  article{
+  article {
     background: $white;
     padding: 0.6em;
   }
@@ -1203,6 +1244,7 @@ COMMENT STYLES
     }
 
   }
+
   /* end .commentlist .vcard */
 
   &:last-child {
@@ -1218,23 +1260,31 @@ COMMENT STYLES
     /* variations */
     .comment {
     }
+
     .alt {
     }
+
     .odd {
     }
+
     .even {
     }
+
     .depth-1 {
     }
+
     /* change number for different depth */
     .byuser {
     }
+
     .bypostauthor {
     }
+
     .comment-author-admin {
     }
 
   }
+
   /* end children */
 
   &[class*=depth-] {
@@ -1251,38 +1301,53 @@ COMMENT STYLES
 
   &.depth-2 {
   }
+
   &.depth-3 {
   }
+
   &.depth-4 {
   }
+
   &.depth-5 {
   }
 
   /* general comment classes */
   &.alt {
   }
+
   &.odd {
   }
+
   &.even {
   }
+
   &.parent {
   }
+
   &.comment {
   }
+
   &.children {
   }
+
   &.pingback {
   }
+
   &.bypostauthor {
   }
+
   &.comment-author {
   }
+
   &.comment-author-admin {
   }
+
   &.thread-alt {
   }
+
   &.thread-odd {
   }
+
   &.thread-even {
   }
 }
@@ -1316,7 +1381,7 @@ COMMENT STYLES
 /* end .commentlist .comment_content */
 
 /* comment reply link */
-.yimik-reply-btn{
+.yimik-reply-btn {
   @extend .blue-btn;
   float: right;
   min-width: 0;
@@ -1326,6 +1391,7 @@ COMMENT STYLES
   line-height: 25px;
   margin-right: 1.5em;
 }
+
 a.comment-reply-link {
   display: block;
   color: $white;
@@ -1335,10 +1401,11 @@ a.comment-reply-link {
   height: 100%;
   padding: 0 1em;
 
-  &:visited,&:active,&:focus{
+  &:visited, &:active, &:focus {
     color: $white;
   }
-  &:hover{
+
+  &:hover {
     color: $black;
   }
 }
@@ -1346,10 +1413,11 @@ a.comment-reply-link {
 /* end .commentlist .comment-reply-link */
 
 /* edit comment link */
-.yimik-comment-edit-btn{
+.yimik-comment-edit-btn {
   @extend .yimik-reply-btn;
   background: $bones-pink;
 }
+
 a.comment-edit-link {
   @extend .comment-reply-link;
 }
@@ -1358,24 +1426,25 @@ a.comment-edit-link {
 COMMENT FORM STYLES
 ******************************************************************/
 
-.yimik-comment-panel-respond{
+.yimik-comment-panel-respond {
   @extend .cf;
   padding: 1.5em;
   margin: 1.1em 0 1.1em 0;
   background: $white;
 }
-.comment-respond {
-  margin:0;
 
-  p{
+.comment-respond {
+  margin: 0;
+
+  p {
     width: 100%;
 
     //fix emoji size
-    &.yimik-comment-smiles{
-      margin-top:0.5em;
+    &.yimik-comment-smiles {
+      margin-top: 0.5em;
       font-size: 24px;
 
-      a{
+      a {
         margin-right: 3px !important;
       }
     }
@@ -1472,8 +1541,10 @@ SIDEBARS & ASIDES
   a {
     text-decoration: none;
   }
+
   ul {
-    margin:0;
+    margin: 0;
+
     li {
       margin-bottom: 0.6em;
 
@@ -1481,7 +1552,7 @@ SIDEBARS & ASIDES
       }
 
       &:last-child {
-        margin-bottom:0;
+        margin-bottom: 0;
       }
 
       a {
@@ -1494,7 +1565,7 @@ SIDEBARS & ASIDES
     }
   }
 
-  &.widget_neteasemusic_widget{
+  &.widget_neteasemusic_widget {
     margin: 0;
     padding: 0;
   }
@@ -1505,6 +1576,7 @@ SIDEBARS & ASIDES
     display: none;
   }
 }
+
 //search form style
 #searchform {
   position: relative;
@@ -1514,6 +1586,7 @@ SIDEBARS & ASIDES
     width: calc(100% - 5em);
     display: inline-block;
   }
+
   .search-submit {
     min-width: 5em; //override mdui
     width: 5em;
@@ -1526,10 +1599,11 @@ SIDEBARS & ASIDES
 }
 
 /*meta,archive,categories widget*/
-.widget_archive,.widget_meta,.widget_categories {
+.widget_archive, .widget_meta, .widget_categories {
   ul {
     position: relative;
     overflow: hidden;
+
     li {
       width: 50%;
       float: left;
@@ -1537,8 +1611,8 @@ SIDEBARS & ASIDES
   }
 }
 
-.widget_tag_cloud{
-  a{
+.widget_tag_cloud {
+  a {
     display: inline-block;
     padding: 3px;
   }
@@ -1546,34 +1620,40 @@ SIDEBARS & ASIDES
 
 /* calendar widget */
 .widget_calendar {
-  .calendar_wrap{
-    width:100%;
+  .calendar_wrap {
+    width: 100%;
     text-align: center;
 
-    caption{
+    caption {
       font-size: 1.1em;
     }
 
-    table{
-      width:100%;
+    table {
+      width: 100%;
     }
-    th{
+
+    th {
 
     }
-    td:not(.pad):not(#prev):not(#next){
+
+    td:not(.pad):not(#prev):not(#next) {
       @extend %mdui-hoverable;
     }
-    a{
+
+    a {
 
     }
-    #today{
+
+    #today {
       background-color: $blue;
       color: #fff;
     }
-    #prev{
+
+    #prev {
       text-align: left;
     }
-    #next{
+
+    #next {
       text-align: right;
     }
   }
@@ -1623,7 +1703,7 @@ view.
 }
 
 //fixed button
-#mobile-menu-bar{
+#mobile-menu-bar {
   &.mdui-fab-wrapper {
     bottom: 50px;
   }

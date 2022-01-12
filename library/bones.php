@@ -146,8 +146,8 @@ function bones_scripts_and_styles(){
         wp_register_style('social-sharer', get_stylesheet_directory_uri() . '/library/social-sharer/social-sharer.min.css', array(), '1.1.3');
 
         //add swiper library
-        wp_register_script('swiper', get_stylesheet_directory_uri() . '/library/swiper/js/swiper.min.js', array(), '3.4.2', true);
-        wp_register_style('swiper', get_stylesheet_directory_uri() . '/library/swiper/css/swiper.min.css', array(), '3.4.2');
+        wp_register_script('swiper', get_stylesheet_directory_uri() . '/library/swiper/swiper-bundle.min.js', array(), '7.4.1', true);
+        wp_register_style('swiper', get_stylesheet_directory_uri() . '/library/swiper/swiper-bundle.min.css', array(), '7.4.1');
 
         // register pjax lib
         if(of_get_option("pjax")) {
